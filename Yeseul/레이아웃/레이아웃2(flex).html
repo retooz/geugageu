@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{ 
+            margin: 0px;
+            background-color: rgba(55, 53, 53, 0.588);
+        }
+        
+    
+        #wrap{
+            width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+          
+        }
+    
+        #header{
+            width: 1200px;
+            height: 250px;
+            background-color: rgb(49, 50, 50);
+            margin-top: 14px;
+        }
+    
+        #nav{
+            width: 1200px;
+            height: 65px;
+            background-color: #87898b;
+        }
+    
+        #aside{
+            width: 400px;
+            height: 680px;
+            background-color: #aaaaaa;
+        }
+        
+        #section{
+            width: 800px;
+            height: 680px;
+            background-color: #d2cfcb;
+        }
+    
+        #footer{
+            width: 1200px;
+            height: 50px;
+            background-color: #2d2d2d;
+            margin-bottom: 18px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 
+        😊flex 
+        - 요소들을 자유자재로 위치시키는 속성.
+        - flex요소는 float속성과 다르게 부모요소에만 적용.
+        - flex-wrap(부모요소에 적용하는 속성값)
+          1. flex-wrap:wrap : 부모요소를 넘어간다면 줄바꿈.
+          2. flex-wrap:nowrap : 부모요소를 넘어가더라도 계속 한줄에 배치.
+          3. flex-wrap:wrap-reverse : wrap과 같은 방식으로 작동하지만 역순으로 배치.
+    -->
+    <div id="wrap">
+        <div id="header"></div>
+        <div id="nav"></div>
+        <div id="aside"></div>
+        <div id="section"></div>
+        <div id="footer"></div>
+    </div>
+</body>
+</html>

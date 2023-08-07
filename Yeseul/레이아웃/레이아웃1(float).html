@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       *{
+        margin: 0px;
+        
+       }
+    
+       body{
+        background-color: rgba(0, 0, 0, 0.889);
+       }
+       #wrap{
+        width: 1200px;
+        margin: 0 auto;
+      
+       }
+
+       #header{
+        width: 1200px;
+        height: 250px;
+        background-color: rgb(49, 50, 50);
+        margin-top: 14px;
+       }
+
+       #nav{
+        width: 1200px;
+        height: 65px;
+        background-color: #87898b;
+       }
+
+       #aside{
+        width: 400px;
+        height: 680px;
+        background-color: #aaaaaa;
+        float: left; 
+    }
+    #section{
+        width: 800px;
+        height: 680px;
+        background-color: #d2cfcb;
+        float: right;
+    }
+
+    #footer{
+        width: 1200px;
+        height: 50px;
+        background-color: #2d2d2d;
+        clear: both; 
+        margin-bottom: 18px;
+    }
+        
+    </style>
+</head>
+<body>
+    <!-- 
+        😊float 
+        - flaot를 사용할시 영역이 깨지는 버그(부모요소가 자식요소의 높이를 인지못함)
+        1) 깨지는 영역에 'clear: both' 속성을 사용.(비추)
+        
+        2) 부모 요소 영역에 overflow:hidden을 설정.
+            visible	: 기본값. 요소밖으로 넘친 컨텐츠를 그대로 표시.
+            hidden : 요소 밖으로 넘친 컨텐츠는 잘리고 보이지 않음.
+            scroll : 넘친 컨텐츠는 잘리고 스크롤바가 생겨서 볼 수 있음. 가로/세로 모두 생김.
+            auto : 컨텐츠가 넘칠 경우 자동으로 스크롤바가 생성.가로/세로 모두 생김.
+
+        3) flaot을 사용한 부모요소에 clearfix를 설정.
+            .clearfix::before,     //- ::before, ::after : 가상요소 사용하여 컨테츠를 사용
+            .clearfix::after {     //- ::before, ::after : 가상요소 사용하여 컨테츠를 사용
+                content: '';
+                display: block;
+                line-height: 0;
+            }
+
+            .clearfix::after {
+                clear: both;   //flaot 의 성질을 양족에서 차단하는 역할
+            }
+        
+        4) float를 취소할 때에는 float:none;
+
+        left : 좌측 빈공간부터 채워 내려옴
+        right : 우측 빈공간부터 채워 내려옴
+        both : 어느쪽도 채우지 않고 다시 한단으로 배치
+    -->
+    <div id="wrap">
+        <div id="header"></div>
+        <div id="nav"></div>
+        <div id="aside"></div>
+        <div id="section"></div>
+        <div id="footer"></div>
+    </div>
+</body>
+</html>
