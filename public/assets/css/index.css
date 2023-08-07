@@ -8,7 +8,7 @@
 }
 
 .submenu {
-    padding: 3vh 0 0 3vw;
+    padding: 2vh 0 0 3vw;
     font-size: 1em;
     color: var(--main-color);
     background-color: var(--menu-bar);
@@ -196,6 +196,10 @@
 
 /* Cover Page */
 
+.swiper {
+    width: 100vw;
+    height: 85vh;
+}
 .ingredient {
     color: #F67329;
 }
