@@ -1,0 +1,492 @@
+/* side menu */
+
+.submenu-icon,
+.submenu-close {
+    cursor: pointer;
+    font-size: 1.5em;
+    padding: 1vw
+}
+
+.submenu {
+    padding: 2vh 0 0 3vw;
+    font-size: 1em;
+    color: var(--main-color);
+    background-color: var(--menu-bar);
+    position: absolute;
+    z-index: 2;
+    height: 100vh;
+    transition: all 0.3s ease-in;
+    width: 0;
+    overflow: hidden;
+    transform: translateX(-160px);
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.68);
+    text-decoration: none;
+    list-style: none;
+}
+
+.show_menu {
+    width: 25vw;
+    transform: translateX(0);
+}
+
+.submenu-header {
+    display: flex;
+    height: 10vh;
+    align-items: center;
+}
+
+.submenu-logo {
+    width: 100%;
+    height: 10vh;
+    padding-left: 4vh;
+    visibility: hidden;
+}
+
+.submenu-content {
+    width: 100%;
+}
+
+.submenu-user {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 5vh 0;
+    padding: 0 2vw;
+    font-size: 1.5em;
+}
+
+#sub-before-login {
+    color: #FE5F05;
+}
+
+#sub-after-login {
+    display: none;
+}
+
+.submenu-close {
+    line-height: 10vh;
+}
+
+
+.submenu-icon {
+    font-size: 1em;
+}
+
+/* modal */
+.modal {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.4);
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100%;
+    z-index: 10;
+    display: none;
+}
+
+.modal-content {
+    background-color: #EEE9E9;
+    width: 20vw;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.modal form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+#pw,
+#id {
+    width: 100%;
+    height: 5vh;
+    padding: 0 10px;
+    margin-top: 18px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.btn-submit {
+    font-size: 15px;
+    font-weight: bold;
+    width: 100%;
+    height: 5vh;
+    padding: 0 10px;
+    margin-top: 18px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    color: white;
+    background-color: #FE5F05;
+}
+
+.btn-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #FE5F05;
+    font-weight: bold;
+    font-size: 25px;
+    padding: 0 10px;
+}
+
+.search {
+    margin-top: 18px;
+    display: flex;
+    justify-content: space-around;
+    color: rgb(1, 1, 1);
+    font-weight: bold;
+    font-size: 15px;
+    text-decoration: none;
+    margin-bottom: 2vh;
+}
+
+.search a {
+    color: rgb(1, 1, 1);
+    font-weight: bold;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.btn-close {
+    color: #FE5F05;
+    font-weight: bold;
+    font-size: 25px;
+    padding: 0 10px;
+}
+
+.kakao-login {
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    height: 5vh;
+}
+
+.logo-img {
+    width: 292px;
+    height: 70px;
+    flex-shrink: 0;
+    color: #FE5F05;
+    text-align: center;
+    font-family: Jomhuria;
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 40px;
+}
+
+.modal h2 {
+    font-weight: 700;
+    font-size: 2em;
+    padding: 2vh 0;
+}
+
+/* Cover Page */
+
+.swiper {
+    width: 100vw;
+    height: 85vh;
+}
+.ingredient {
+    color: #F67329;
+}
+
+/*------------------------section1-------------------------------*/
+
+#section1-wrap {
+    width: 100%;
+    height: 85%;
+    position: relative;
+    display: block;
+}
+
+.video-wrap {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#video1 {
+    position: absolute;
+    float: left;
+    width: 100%;
+    height: 85vh;
+}
+
+.video-wrap video {
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100vh;
+    object-fit: fill;
+}
+
+
+/*------------------------section2-------------------------------*/
+.section-header2 {
+    height: 10vh;
+}
+
+#section2 {
+    background-color: white;
+    margin-top: 10%;
+}
+
+.section2-title {
+    font-size: 1.5em;
+    color: #F67329;
+    padding-left: 71%;
+    font-weight: 800;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.section2-title::after {
+    width: 22%;
+    height: 0.1em;
+    display: inline-block;
+    content: '';
+    background: #F67329;
+    vertical-align: middle;
+    margin: 0% 0.1%;
+}
+
+
+#section2 p {
+    color: #000;
+    text-align: center;
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 800;
+}
+
+.btn-wrap {
+    margin: auto;
+    display: block;
+    text-align: center;
+    position: relative;
+    padding-top: 3%;
+}
+
+.custom-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 45px;
+    border: 3px solid #F67329;
+    background-color: transparent;
+    color: #F67329;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.custom-button:hover {
+    background-color: #F67329;
+    color: white;
+}
+
+.circle-div {
+    width: 100%;
+    height: 7em;
+    flex-shrink: 0;
+    border-radius: 100%;
+    background: white;
+    position: absolute;
+    z-index: 1;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+.slide-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: loop 20s linear infinite;
+}
+
+/* 애니메이션 스탑 */
+.container:hover>.slide-container {
+    animation-play-state: paused;
+}
+
+/* 이미지 hover시 커지는 초 */
+.slide-image {
+    margin: 5px;
+    cursor: pointer;
+    transition: scale 0.5s ease;
+    padding-top: 2%;
+}
+
+/* 이미지 hover시 커짐 */
+.slide-image:hover {
+    scale: 0.9;
+}
+
+.section2-title {
+    color: #F67329;
+    font-size: 1.5em;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    width: 8%;
+    height: 5em;
+    transform: rotate(-88.584deg);
+}
+
+@keyframes loop {
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@-webkit-keyframes loop {
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+/*------------------------section3-------------------------------*/
+#section3-wrap {
+    width: 100%;
+    height: 85%;
+    position: relative;
+    display: block;
+}
+
+.section3-title {
+    font-size: 1.5em;
+    color: #F67329;
+    padding-left: 2%;
+    font-weight: 800;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.section3-title:before {
+    width: 22%;
+    height: 0.1em;
+    display: inline-block;
+    content: '';
+    background: #F67329;
+    vertical-align: middle;
+    margin: 0% 0.1%;
+}
+
+.section3-video {
+    position: relative;
+    padding-left: 13%;
+    padding-top: 4%;
+}
+
+#video3 {
+    position: absolute;
+    float: left;
+    border-radius: 50%;
+    width: 40%;
+    height: 70vh;
+}
+
+div.section3-m p {
+    padding-left: 55%;
+    text-align: left;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+p.m1 {
+    color: #000000;
+    padding-top: 10%;
+    font-size: 3.5em;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+p.m2 {
+    color: #000;
+    padding-top: 2%;
+    font-size: 1.5em;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+
+/*------------------------section4-------------------------------*/
+#section4-wrap {
+    width: 100%;
+    height: 85%;
+    position: relative;
+    display: block;
+}
+
+.section4-title {
+    font-size: 1.5em;
+    color: #F67329;
+    padding-left: 71%;
+    font-weight: 800;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.section4-title::after {
+    width: 22%;
+    height: 0.1em;
+    display: inline-block;
+    content: '';
+    background: #F67329;
+    vertical-align: middle;
+    margin: 0% 0.1%;
+}
+
+.section4-i {
+    padding-right: 15%;
+    padding-top: 2.5%;
+}
+
+.section4-i img {
+    float: right;
+}
+
+div.section4-m p {
+    padding-left: 15%;
+    text-align: left;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+p.m3 {
+    color: #000000;
+    padding-top: 13%;
+    font-size: 3.5em;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+p.m4 {
+    color: #000;
+    padding-top: 2%;
+    font-size: 1.5em;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}

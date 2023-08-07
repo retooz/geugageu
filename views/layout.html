@@ -5,14 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GeuGaGue</title>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../public/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/reset.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/assets/css/header.css">
+    <link rel="stylesheet" href="/assets/css/index.css">
+    
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 </head>
 <body>
+    <div class="submenu show" style="visibility: hidden;">
+        <div class="submenu-header">
+            <div class="submenu-close">
+                <i class="fa-solid fa-xmark submenu-close-btn"></i>
+            </div>
+            <div class="submenu-logo">
+                <img class="logo" src="/images/geugageu_logo.png"/>
+            </div>
+        </div>
+
+        <div class="submenu-content">
+            <div class="submenu-user" id="sub-before-login">
+                <a href="" class="submenu-login">로그인</a>
+                <a href="">회원가입</a>
+            </div>
+            <div class="submenu-user" id="sub-after-login">
+                <div class="submenu-icon">
+                        <a href="" class="fa-solid fa-camera"></a>
+                        <a href="" class="fa-regular fa-user"></a>
+                        <a href="" class="fa-regular fa-heart"></a>
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <ul class="menu-list">
+                <li><a href="#">모든제품</a></li>
+                <li><a href="#">거실</a></li>
+                <li><a href="#">침실</a></li>
+                <li><a href="#">주방</a></li>
+                <li><a href="#">어린이</a></li>
+                <li><a href="#">홈오피스</a></li>
+                <li><a href="#">욕실</a></li>
+            </ul>
+        </div>
+    </div>
     {% include 'header.html' %}
     {% block content %}
     {% endblock %}
     {% include 'footer.html' %}
+    <div class="modal">
+        <div class="modal-content">
+            <a class="btn-close" href="#none">X</a>
+            <img class="logo-img" src="/images/geugageu_logo.png" alt="">
+            <h2>Login</h2>
+            <form method="" action="">
+                <input type="text" placeholder="아이디" id="id" required>
+                <input type="password" placeholder="비밀번호" id="pw" required>
+                <input type="submit" value="로그인" class="btn-submit">
+            </form>
+            <div class="search">
+                <a href="">아이디찾기</a>
+                <a href="">비밀번호찾기</a>
+                <a href="">회원가입</a>
+            </div>
+            <div class="kakao-login">
+                <img class="kakao-login-btn" src="/images/kakao_login.png" alt=""/>
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/148f0d9cbf.js" crossorigin="anonymous"></script>
+    <script src="/assets/js/layout.js"></script>
 </body>
 </html>
