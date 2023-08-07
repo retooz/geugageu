@@ -1,0 +1,182 @@
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 100;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 300;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 400;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 500;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 700;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 900;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format('opentype');}
+
+%font {
+    font-family : 'Noto Sans KR', sans-serif;
+}
+$orange: #FE5F05;
+$white : #EEE9E9;
+$grey:#949494;
+$f-size : 1.5em;
+%btn {
+    background-color: inherit;
+    cursor:pointer;
+    font-size : 1.5em;
+}
+.font-grey{
+    color:$grey;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none; //a태그 밑줄 없애기
+    list-style: none; //li태그 점 없애기
+    border-style: none;
+    color:black;
+}
+
+// @media screen and (max-width:768px) {
+//     .header-menubar{
+//         flex-direction: column;
+//         align-items:flex-start;
+//         padding:8px 24px;
+//     }
+// }
+
+.submenu{
+    padding: 7vh 0 0 9vh;
+    font-size: 1em;
+    color: var(--main-color);
+    background-color: var(--menu-bar);
+    position: fixed;
+    z-index: 2;
+    height: 1000px;
+    transition: all 0.3s ease-in;
+    width: 0;
+    overflow: hidden;
+    transform: translateX(-160px); 
+    cursor:pointer;
+    background-color:rgba(255, 255, 255, 0.68);
+    text-decoration: none; //a태그 밑줄 없애기
+    list-style: none; //li태그 점 없애기
+}
+
+.menu{
+    font-size: $f-size*2;
+}
+
+.show_menu {
+    width: 60vh;
+    transform: translateX(0); 
+
+}
+
+//header navbar 부분
+.header {
+    display: flex;
+    height: 10vh;
+    padding: 7vh;
+}
+
+.header-logo{
+    width: 40vh;
+    height: 10vh;
+    padding-left: 3.5vh;
+    margin-right: 3vh;
+}
+.submenu-logo {
+    width: 40vh;
+    height: 10vh;
+    padding-left: 4vh;
+}
+
+.logo{
+    height:100%;
+    object-fit: cover;
+}
+
+.submenu-user{
+    display: flex;
+    justify-content: space-between;
+    width: 42vh;
+    margin:3vh;
+}
+
+.header-search-input {
+    display: inline-block;
+}
+
+.submenu-header{
+    display: flex;
+}
+.submenu-close {
+    @extend %btn;
+    line-height: 11vh;
+}
+
+.submenu-content{
+    width: 30vh;
+}
+
+.submenu-icon {
+    @extend %btn;
+    font-size: 1em;
+}
+
+.header-menubar {
+    @extend %btn;
+    padding: 1vh;
+    line-height: 9vh;
+}
+
+
+.header-search{
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid $orange;
+    border-radius: 2em;
+    width: 180vh;
+    height: 5vh;
+    margin: 3vh 0 0 6vh;
+    .input-icon{
+        padding : 2vh;
+    }
+    .search-input{
+        border-style: none;
+    }
+}
+
+.header-login{
+    width: 30vh;
+    margin: 3vh 0 0 8vh;
+}
+
+.header-join{
+    width: 30vh;
+    margin: 3vh 0 0 8vh;
+}
+
+
+.header-user{
+    width: 60vh;
+    padding-left: 7vh;
+    line-height: 10vh;
+    font-size: $f-size;
+    display: flex;
+    .camera-btn{
+        margin-right:2vh;       
+    }
+    .user-btn{
+        margin-right:2vh;
+    }
+}
+
+// hr{
+//     width: 60vh;
+//     margin: 80vh;
+//     size:50%;
+//     color: $orange;
+// }
+
+//

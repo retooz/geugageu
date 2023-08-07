@@ -1,0 +1,118 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+$red:#f00f00;
+$pink:#ffb8c3;
+$orange:#ff9a02;
+$yellow:#ffdb00;
+$green:#3b7d22;
+$turquoise:#77ddd0;
+$blue:#0058a3;
+$lilac:#a96ecc;
+$beige:#f4f3d7;
+$grey:#949494;
+$brown:#814820;
+
+%color{
+    width: 5vh;
+    height: 5vh;
+    border-radius: 50%;
+    margin: 2vh 2vh 2vh 2vh;
+}
+
+.join{
+    display: flex;
+    justify-content: center;
+}
+
+img{
+    width: 40vh;
+    height: 10vh;
+}
+
+h2{
+    display: flex;
+    justify-content: center;
+}
+.font-grey{
+    color : $grey;
+}
+
+#id, #pw1, #pw2, #nick{
+    width: 100%;
+    height: 5vh;
+    padding: 0 10px;
+    margin-top: 3px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  }
+//2.내가 좋아하는 색상 선택
+.color-table1{
+    display: flex;
+    .box1{
+        @extend %color;
+        background-color :$red;
+    }
+    .box2{
+        @extend %color;
+        background-color :$orange;
+    }
+    .box3{
+        @extend %color;
+        background-color :$yellow;
+    }
+    .box4{
+        @extend %color;
+        background-color :$green;
+    }
+}
+
+.color-table2{
+    display: flex;
+    .box5{
+        @extend %color;
+        background-color :$pink;
+    }
+    .box6{
+        @extend %color;
+        background-color :$lilac;
+    }
+    .box7{
+        @extend %color;
+        background-color :$turquoise;
+    }
+    .box8{
+        @extend %color;
+        background-color :$blue;
+    }
+}
+
+.color-table3{
+    display: flex;
+    .box9{
+        @extend %color;
+        background-color :white;
+        border: 0.2px solid $grey;
+    }
+    .box10{
+        @extend %color;
+        background-color :$beige;
+    }
+    .box11{
+        @extend %color;
+        background-color :$grey;
+    }
+    .box12{
+        @extend %color;
+        background-color :$brown;
+    }
+    .box13{
+        @extend %color;
+        background-color :black;
+    }
+}

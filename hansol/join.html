@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./join.css">
+</head>
+<body>
+    <div class="join">
+            <form method="" action="" class="join-content">
+                <img src="./img/KakaoTalk_20230802_124006483_01.png" alt="">
+                <h2>회원가입</h2>
+                <p>아이디*</p>
+                <input type="text" placeholder="아이디" id="id">
+                <p>비밀번호*</p>
+                <input type="password" placeholder="비밀번호" id="pw1">
+                <p class="font-grey">※ 비밀번호는 8자이상 문자,숫자로만 입력가능</p>
+                <p>비밀번호확인*</p>
+                <input type="password" placeholder="비밀번호" id="pw2">
+                <p>닉네임*</p>
+                <input type="text" placeholder="닉네임" id="nick">
+                <p class="font-grey">※ 다른 유저와 겹치지 않도록 입력해주세요(2~15자)</p>
+                <h2>설문조사</h2>
+                <p class="font-grey">※ 어울리는 가구 추천을 위해 필요한 설문조사입니다.</p>
+                <p>1. 내가 지금 필요한 가구는?</p>
+                <div class="dropdown">
+                    <div class="dropdown-toggle">
+                        <select class="show-item">
+                            <option value="" class="dropdown-item">침대</option>
+                            <option value="" class="dropdown-item">매트리스/토퍼</option>
+                            <option value="" class="dropdown-item">테이블/식탁/책상</option>
+                            <option value="" class="dropdown-item">소파</option>
+                            <option value="" class="dropdown-item">서랍/수납장</option>
+                            <option value="" class="dropdown-item">거실장/TV장</option>
+                            <option value="" class="dropdown-item">선반</option>
+                            <option value="" class="dropdown-item">진열장/책장</option>
+                            <option value="" class="dropdown-item">의자</option>
+                            <option value="" class="dropdown-item">행거/옷장</option>
+                            <option value="" class="dropdown-item">거울</option>
+                            <option value="" class="dropdown-item">화장대/콘솔</option>
+                            <option value="" class="dropdown-item">영유아가구</option>
+                        </select>
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                        선택
+                        </button>
+                    </div>
+             
+                <p>2. 내가 좋아하는 색상 선택</span><span class="font-grey"> ※중복선택가능</span>
+                <div class="color-table">
+                    <div class="color-table1">
+                        <div class="box1"></div>
+                        <div class="box2"></div>
+                        <div class="box3"></div>
+                        <div class="box4"></div>
+                    </div>
+                    <div class="color-table2">
+                        <div class="box5"></div>
+                        <div class="box6"></div>
+                        <div class="box7"></div>
+                        <div class="box8"></div>
+                    </div>
+                    <div class="color-table3">
+                        <div class="box9"></div>
+                        <div class="box10"></div>
+                        <div class="box11"></div>
+                        <div class="box12"></div>
+                        <div class="box13"></div>
+                    </div>
+                </div>
+                <p>3. 가족구성원 (선택) </p>
+                <p>영유아(생후65개월미만)가 있습니까?</p>
+                <input type="checkbox" name="chk_info" value="yes">
+                <p>약관동의</p>
+                <p>필수 항목에 동의해주세요.</p>
+                <p><input type="submit" value="회원가입하기"></p>
+                </div>
+            </form>
+    </div>
+
+
+    <script src="https://kit.fontawesome.com/148f0d9cbf.js" crossorigin="anonymous"></script>
+    <script src="./join.js"></script>
+</body>
+</html>
