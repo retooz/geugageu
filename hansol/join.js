@@ -1,18 +1,8 @@
-
-function test() {
-    var pw1 = $('#pw1').val();
-    var pw2 = $('#pw2').val();
-
-    if (pw1.length < 6) {
-        alert("입력한 글자가 6글자 이상이어야 함");
-        return false;
-    }
-
-    if (pw1 !== pw2) {
-        alert("비밀번호 불일치");
-        return false;
-    } else {
-        alert("비밀번호 일치");
-        return true;
-    }
-}
+// let pw = prompt("비밀번호 입력해줘")
+//         if(pw.length >= 15){
+//             alert("매우 안전한 비밀번호")
+//         } else if(pw.length >= 8){
+//             alert("약간 안전한 비밀번호")
+//         } else{
+//             alert("비밀번호 8자리 이상 설정해줘")
+//         }
