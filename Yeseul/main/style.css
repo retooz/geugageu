@@ -1,16 +1,55 @@
-@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 100;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.otf) format('opentype');}
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 100;
+    src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.otf) format('opentype');
+}
 
-@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 300;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');}
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');
+}
 
-@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 400;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');}
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');
+}
 
-@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 500;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');}
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');
+}
 
-@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 700;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');}
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 700;
+    src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');
+}
 
-@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 900;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format('opentype');}
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 900;
+    src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format('opentype');
+}
 
-body, h1, h2, h3, h4, h5, h6, input, textarea, select {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+textarea,
+select {
     font-family: 'Noto Sans KR', sans-serif;
 }
 
@@ -23,25 +62,25 @@ body, h1, h2, h3, h4, h5, h6, input, textarea, select {
 
 
 body {
-  display: block;
-  width: 100%;
-  height: 100vh;
-  margin: 0;
+    display: block;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
 }
 
 
 /* 글자 강조 */
-.ingredient{
+.ingredient {
     color: #F67329;
 }
 
 
 /*------------------------section1-------------------------------*/
 #section1-wrap {
-  width: 100%;
-  height: 85%;
-  position: relative;
-  display: block;
+    width: 100%;
+    height: 85%;
+    position: relative;
+    display: block;
 }
 
 .video-wrap {
@@ -58,7 +97,7 @@ body {
     width: 100%;
     height: 85vh;
 }
-  
+
 .video-wrap video {
     left: 50%;
     transform: translateX(-50%);
@@ -73,8 +112,8 @@ body {
 }
 
 #section2 {
-  background-color: white;
-  margin-top: 10%;
+    background-color: white;
+    margin-top: 10%;
 }
 
 .section2-title {
@@ -84,8 +123,8 @@ body {
     font-weight: 800;
     font-family: 'Noto Sans KR', sans-serif;
 }
-  
-.section2-title::after{
+
+.section2-title::after {
     width: 22%;
     height: 0.1em;
     display: inline-block;
@@ -94,7 +133,7 @@ body {
     vertical-align: middle;
     margin: 0% 0.1%;
 }
-  
+
 
 #section2 p {
     color: #000;
@@ -103,7 +142,7 @@ body {
     font-style: normal;
     font-weight: 800;
 }
-  
+
 .btn-wrap {
     margin: auto;
     display: block;
@@ -111,7 +150,7 @@ body {
     position: relative;
     padding-top: 3%;
 }
-  
+
 .custom-button {
     display: inline-block;
     padding: 10px 20px;
@@ -124,12 +163,12 @@ body {
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 }
-  
+
 .custom-button:hover {
     background-color: #F67329;
     color: white;
 }
-  
+
 .circle-div {
     width: 100%;
     height: 7em;
@@ -139,7 +178,7 @@ body {
     position: absolute;
     z-index: 1;
 }
-    
+
 .container {
     position: relative;
     width: 100%;
@@ -147,19 +186,19 @@ body {
     display: flex;
     overflow: hidden;
 }
-  
+
 .slide-container {
     display: flex;
     justify-content: center;
     align-items: center;
     animation: loop 20s linear infinite;
 }
-  
+
 /* 애니메이션 스탑 */
-.container:hover > .slide-container {
+.container:hover>.slide-container {
     animation-play-state: paused;
 }
-  
+
 /* 이미지 hover시 커지는 초 */
 .slide-image {
     margin: 5px;
@@ -167,12 +206,12 @@ body {
     transition: scale 0.5s ease;
     padding-top: 2%;
 }
-  
+
 /* 이미지 hover시 커짐 */
 .slide-image:hover {
     scale: 0.9;
 }
-  
+
 .section2-title {
     color: #F67329;
     font-size: 1.5em;
@@ -183,16 +222,16 @@ body {
     height: 5em;
     transform: rotate(-88.584deg);
 }
-  
+
 @keyframes loop {
     100% {
         transform: translateX(-100%);
     }
 }
-  
+
 @-webkit-keyframes loop {
     100% {
-      transform: translateX(-100%);
+        transform: translateX(-100%);
     }
 }
 
@@ -212,7 +251,7 @@ body {
     font-weight: 800;
     font-family: 'Noto Sans KR', sans-serif;
 }
-  
+
 .section3-title:before {
     width: 22%;
     height: 0.1em;
@@ -221,8 +260,8 @@ body {
     background: #F67329;
     vertical-align: middle;
     margin: 0% 0.1%;
-} 
-  
+}
+
 .section3-video {
     position: relative;
     padding-left: 13%;
@@ -236,14 +275,14 @@ body {
     width: 40%;
     height: 70vh;
 }
-  
+
 div.section3-m p {
     padding-left: 55%;
     text-align: left;
     font-family: 'Noto Sans KR', sans-serif;
 }
-  
-  
+
+
 p.m1 {
     color: #000000;
     padding-top: 10%;
@@ -252,7 +291,7 @@ p.m1 {
     font-weight: 800;
     line-height: normal;
 }
-  
+
 p.m2 {
     color: #000;
     padding-top: 2%;
@@ -278,8 +317,8 @@ p.m2 {
     font-weight: 800;
     font-family: 'Noto Sans KR', sans-serif;
 }
-  
-.section4-title::after{
+
+.section4-title::after {
     width: 22%;
     height: 0.1em;
     display: inline-block;
@@ -287,23 +326,23 @@ p.m2 {
     background: #F67329;
     vertical-align: middle;
     margin: 0% 0.1%;
-} 
-  
+}
+
 .section4-i {
     padding-right: 15%;
     padding-top: 2.5%;
 }
-  
+
 .section4-i img {
     float: right;
 }
-           
+
 div.section4-m p {
     padding-left: 15%;
     text-align: left;
     font-family: 'Noto Sans KR', sans-serif;
 }
-  
+
 p.m3 {
     color: #000000;
     padding-top: 13%;
@@ -312,7 +351,7 @@ p.m3 {
     font-weight: 800;
     line-height: normal;
 }
-  
+
 p.m4 {
     color: #000;
     padding-top: 2%;
@@ -331,24 +370,24 @@ p.m4 {
     clear: both;
 }
 
-.footer-wrap{
+.footer-wrap {
     flex-direction: column;
     justify-self: center;
     align-items: center;
     display: flex;
 }
-  
+
 .footer-logo {
     text-align: center;
     padding-top: 3%;
 }
-  
-#footer-logo{
+
+#footer-logo {
     max-width: 35%;
     vertical-align: middle;
     display: inline-block;
 }
-  
+
 .footer-link-wrap {
     justify-content: center;
     align-items: center;
@@ -357,7 +396,7 @@ p.m4 {
     text-decoration: none;
     display: flex;
 }
-  
+
 .clause {
     color: black;
     margin-left: 0.3em;
@@ -368,7 +407,7 @@ p.m4 {
     font-weight: 400;
     line-height: normal;
 }
-  
+
 .footer-info {
     justify-content: center;
     align-items: center;
@@ -376,13 +415,12 @@ p.m4 {
     display: flex;
     padding-top: 2.5%;
 }
-  
+
 .footer-label {
     font-size: 0.8em;
 }
-  
+
 .footer-label-last {
     font-size: 0.6em;
     padding-top: 5%;
 }
-
