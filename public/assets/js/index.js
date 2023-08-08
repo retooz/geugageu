@@ -6,6 +6,7 @@ $('.submenu-login').click(function(){
 $('.btn-close').click(function(){
     $('.modal').fadeOut()
 })
+
 const swiper = new Swiper('.swiper', {
     direction: 'vertical',
     scrollbar: {
@@ -13,6 +14,7 @@ const swiper = new Swiper('.swiper', {
     },
     mousewheel: {
         invert: false,
-        releaseOnEdges: true,
-    }
+    },
+    autoHeight: true,
+    speed: 600,
 });
