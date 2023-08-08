@@ -12,13 +12,3 @@ $('.submenu-close').on('click', function() {
 
 
 
-$('.header-login-btn').click(function(){
-    $('.modal').fadeIn()
-    console.log('clicked')
-})
-$('.submenu-login').click(function(){
-    $('.modal').fadeIn()
-})
-$('.btn-close').click(function(){
-    $('.modal').fadeOut()
-})
