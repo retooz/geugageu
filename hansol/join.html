@@ -32,25 +32,29 @@
             <p class="font-grey">※ 어울리는 가구 추천을 위해 필요한 설문조사입니다.</p>
             <p>1. 내가 지금 필요한 가구는?</p>
             <div class="dropdown">
-                <div class="dropdown-container">
+                <div class="dropdown-container" id="inputPlan">
                     <select class="show-item">
-                        <option value="" class="dropdown-item">침대</option>
-                        <option value="" class="dropdown-item">매트리스/토퍼</option>
-                        <option value="" class="dropdown-item">테이블/식탁/책상</option>
-                        <option value="" class="dropdown-item">소파</option>
-                        <option value="" class="dropdown-item">서랍/수납장</option>
-                        <option value="" class="dropdown-item">거실장/TV장</option>
-                        <option value="" class="dropdown-item">선반</option>
-                        <option value="" class="dropdown-item">진열장/책장</option>
-                        <option value="" class="dropdown-item">의자</option>
-                        <option value="" class="dropdown-item">행거/옷장</option>
-                        <option value="" class="dropdown-item">거울</option>
-                        <option value="" class="dropdown-item">화장대/콘솔</option>
-                        <option value="" class="dropdown-item">영유아가구</option>
+                        <option value="침대" class="dropdown-item">침대</option>
+                        <option value="매트리스/토퍼" class="dropdown-item">매트리스/토퍼</option>
+                        <option value="테이블/식탁/책상" class="dropdown-item">테이블/식탁/책상</option>
+                        <option value="소파" class="dropdown-item">소파</option>
+                        <option value="서랍/수납장" class="dropdown-item">서랍/수납장</option>
+                        <option value="거실장/TV장" class="dropdown-item">거실장/TV장</option>
+                        <option value="선반" class="dropdown-item">선반</option>
+                        <option value="진열장/책장" class="dropdown-item">진열장/책장</option>
+                        <option value="의자" class="dropdown-item">의자</option>
+                        <option value="행거/옷장" class="dropdown-item">행거/옷장</option>
+                        <option value="거울" class="dropdown-item">거울</option>
+                        <option value="화장대/콘솔" class="dropdown-item">화장대/콘솔</option>
+                        <option value="영유아가구" class="dropdown-item">영유아가구</option>
                     </select>
-                    <button type="button" class="choice-btn">선택</button>
+                    <button onclick="list()" type="button" class="choice-btn">선택</button>
+                    <div class="planlist-content">
+                        <div id="planList"></div>
+                    </div>
                 </div>
             </div>
+
             <br>
             <p>2. 내가 좋아하는 색상 선택</span><span class="font-grey"> ※중복선택가능</span>
             <div class="color-table">
