@@ -6,6 +6,7 @@ const session = require('express-session')
 const fileStore = require('session-file-store')(session)
 const cors = require('cors')
 const passport = require('passport')
+const flash = require('express-flash')
 
 const indexRouter = require('./src/routes')
 const userRouter = require('./src/routes/user')
@@ -30,6 +31,7 @@ app.use(session({
     store : new fileStore()
 }))
 
+app.use(flash())
 app.use(passport.initialize())
 app.use(passport.session())
 

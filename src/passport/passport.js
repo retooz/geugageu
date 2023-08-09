@@ -9,9 +9,12 @@ passport.use(new LocalStrategy(
     { usernameField: 'user_id', passwordField: 'user_pw' },
     async (user_id, user_pw, done) => {
         try {
-            const [userRows] = await conn.query(selectUserById, [user_id, user_pw])
+            const [userRows] = await conn.query(selectUserById, [user_id, user_pw], (err,rows) => {
+                console.log(err)
+                console.log(rows)
+            })
             const user = userRows[0]
-
+            console.log(user)
             if (!user) {
                 return done(null, false, { message: '입력한 정보와 일치하는 회원이 없습니다.' })
             }
@@ -21,10 +24,6 @@ passport.use(new LocalStrategy(
             return done(err)
         }
     }
-))
-
-passport.use(new KakaoStrategy(
-
 ))
 
 // 사용자 정보를 세션에 저장하는 serializeUser 함수를 설정합니다.

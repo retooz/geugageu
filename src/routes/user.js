@@ -1,7 +1,7 @@
 const express = require('express');
 const homeService = require('../services/homeService');
 const router = express.Router()
-const passport = require('passport')
+const passport = require('../passport/passport')
 
 router.post('/join', async (req, res) => {
     const data = req.body;
