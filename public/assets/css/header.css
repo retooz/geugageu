@@ -93,11 +93,14 @@
 #after-login {
     font-size: 1.5em;
     align-items: center;
-    display: none;
 }
 
 #after-login div {
     padding: 0 1.5vw;
+}
+
+#after-login a {
+    color : black;
 }
 
 /*------------------------footer-------------------------------*/

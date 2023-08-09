@@ -1,228 +1,195 @@
-<!DOCTYPE html>
-<html lang="ko">
+{% extends 'layout.html'%}
+{% block content %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GeuGaGue</title>
-    <script src="/assets/js/jquery-3.7.0.min.js"></script>
-    <script src="/assets/js/swiper-bundle.min.js"></script>
-    <link rel="stylesheet" href="/assets/css/reset.css">
-    <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="/assets/css/index.css">
-    <link rel="stylesheet" href="/assets/css/all.min.css">
-</head>
-
-<body>
-    <div class="submenu show" style="visibility: hidden;">
-        <div class="submenu-header">
-            <div class="submenu-close">
-                <i class="fa-solid fa-xmark submenu-close-btn"></i>
-            </div>
-            <div class="submenu-logo">
-                <img class="logo" src="/images/geugageu_logo.png" />
-            </div>
+{% if user.user != undefined%}
+<link rel="stylesheet" href="/assets/css/after-index.css">
+{% include 'submenu.html' %}
+{% include 'header.html' %}
+{% else %}
+<link rel="stylesheet" href="/assets/css/swiper-bundle.min.css" />
+<link rel="stylesheet" href="/assets/css/before-index.css">
+<div class="submenu show" style="visibility: hidden;">
+    <div class="submenu-header">
+        <div class="submenu-close">
+            <i class="fa-solid fa-xmark submenu-close-btn"></i>
         </div>
-        <div class="submenu-user">
-            <div id="sub-before-login">
-                <button class="submenu-login" type="button">로그인</button>
-                <a href="">회원가입</a>
-            </div>
-            <div id="sub-after-login">
-                <div class="submenu-icon">
-                    <a href="" class="fa-solid fa-camera"></a>
-                    <a href="" class="fa-regular fa-user"></a>
-                    <a href="" class="fa-regular fa-heart"></a>
+        <div class="submenu-logo">
+            <img class="logo" src="/images/geugageu_logo.png" />
+        </div>
+    </div>
+    <div class="submenu-user">
+        <div id="sub-before-login">
+            <button class="submenu-login" type="button">로그인</button>
+            <a href="">회원가입</a>
+        </div>
+    </div>
+    <div class="submenu-content">
+        <div class="menu">
+            <ul class="menu-list">
+                <li><a href="#">모든제품</a></li>
+                <li><a href="#">거실</a></li>
+                <li><a href="#">침실</a></li>
+                <li><a href="#">주방</a></li>
+                <li><a href="#">어린이</a></li>
+                <li><a href="#">홈오피스</a></li>
+                <li><a href="#">욕실</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<header>
+    <div class="header-menubar">
+        <i class="fa-solid fa-bars" class="menubar_icon"></i>
+    </div>
+    <div id="header-logo-wrap">
+        <div class="header-logo">
+            <a href="#"><img class="logo" src="/images/geugageu_logo.png" /></a>
+        </div>
+    </div>
+</header>
+<div class="swiper">
+    <div class="swiper-wrapper">
+        <!-- 1번쨰 -->
+        <div class="section swiper-slide section" id="section1-wrap">
+            <div class="container">
+                <div class="video-wrap">
+                    <video id="video1" src="/videos/cover.mp4" autoplay muted loop>해당 영상의 경로가 올바르지 않습니다.</video>
                 </div>
             </div>
         </div>
-        <div class="submenu-content">
-            <div class="menu">
-                <ul class="menu-list">
-                    <li><a href="#">모든제품</a></li>
-                    <li><a href="#">거실</a></li>
-                    <li><a href="#">침실</a></li>
-                    <li><a href="#">주방</a></li>
-                    <li><a href="#">어린이</a></li>
-                    <li><a href="#">홈오피스</a></li>
-                    <li><a href="#">욕실</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <header>
-        <div class="header-menubar">
-            <i class="fa-solid fa-bars" class="menubar_icon"></i>
-        </div>
-        <div id="header-logo-wrap">
-            <div class="header-logo">
-                <a href="#"><img class="logo" src="/images/geugageu_logo.png" /></a>
-            </div>
-        </div>
-    </header>
-    <div class="swiper">
-        <div class="swiper-wrapper">
-            <!-- 1번쨰 -->
-            <div class="section swiper-slide section" id="section1-wrap">
+        <!-- ----------------------------------------------------------------------------- -->
+        <!-- 2번째 -->
+        <div class="section swiper-slide" id="section2-wrap">
+            <div class="section-blank"></div>
+            <span class="section2-title">
+                02/04
+            </span>
+            <div class="section-header2"></div>
+            <div id="section2">
+                <p>GueGaGue가 올린 사진을 분석하여 <br />어울리는 <span class="ingredient">컬러 조합 제품</span>을 추천해 드립니다.</p>
+                <div class="btn-wrap">
+                    <button class="custom-button">추천받아보기</button> <!-- 회원가입 창으로 넘어가기 -->
+                </div>
                 <div class="container">
-                    <div class="video-wrap">
-                        <video id="video1" src="/videos/cover.mp4" autoplay muted loop>해당 영상의 경로가 올바르지 않습니다.</video>
-                    </div>
-                </div>
-            </div>
-            <!-- ----------------------------------------------------------------------------- -->
-            <!-- 2번째 -->
-            <div class="section swiper-slide" id="section2-wrap">
-                <div class="section-blank"></div>
-                <span class="section2-title">
-                    02/04
-                </span>
-                <div class="section-header2"></div>
-                <div id="section2">
-                    <p>GueGaGue가 올린 사진을 분석하여 <br />어울리는 <span class="ingredient">컬러 조합 제품</span>을 추천해 드립니다.</p>
-                    <div class="btn-wrap">
-                        <button class="custom-button">추천받아보기</button> <!-- 회원가입 창으로 넘어가기 -->
-                    </div>
-                    <div class="container">
-                        <div class="circle-div"></div>
-                        <div class="slide-container">
-                            <div class="slide-image">
-                                <img src="/images/Frame 19 (1).png" alt="image 1">
-                            </div>
-                            <div class="slide-image">
-                                <img src="/images/Frame 19 (2).png" alt="image 2">
-                            </div>
-                            <div class="slide-image">
-                                <img src="/images/Frame 19 (3).png" alt="image 3">
-                            </div>
-                            <div class="slide-image">
-                                <img src="/images/Frame 19 (4).png" alt="image 4">
-                            </div>
-                            <div class="slide-image">
-                                <img src="/images/Frame 19.png" alt="image 5">
-                            </div>
-                            <div class="slide-image">
-                                <img src="/images/Frame 20.png" alt="image 6">
-                            </div>
-                            <div class="slide-image">
-                                <img src="/images/Frame 21.png" alt="image 7">
-                            </div>
-                            <div class="slide-image">
-                                <img src="/images/Frame 22.png" alt="image 8">
-                            </div>
-                            <div class="slide-image">
-                                <img src="/images/Frame 23.png" alt="image 9">
-                            </div>
-                            <div class="slide-image">
-                                <img src="/images/Frame 24.png" alt="image 10">
-                            </div>
-                            <div class="slide-image">
-                                <img src="/images/Frame 25.png" alt="image 11">
-                            </div>
-                            <div class="slide-image">
-                                <img src="/images/Frame 26.png" alt="image 12">
-                            </div>
+                    <div class="circle-div"></div>
+                    <div class="slide-container">
+                        <div class="slide-image">
+                            <img src="/images/Frame 19 (1).png" alt="image 1">
                         </div>
+                        <div class="slide-image">
+                            <img src="/images/Frame 19 (2).png" alt="image 2">
+                        </div>
+                        <div class="slide-image">
+                            <img src="/images/Frame 19 (3).png" alt="image 3">
+                        </div>
+                        <div class="slide-image">
+                            <img src="/images/Frame 19 (4).png" alt="image 4">
+                        </div>
+                        <div class="slide-image">
+                            <img src="/images/Frame 19.png" alt="image 5">
+                        </div>
+                        <div class="slide-image">
+                            <img src="/images/Frame 20.png" alt="image 6">
+                        </div>
+                        <div class="slide-image">
+                            <img src="/images/Frame 21.png" alt="image 7">
+                        </div>
+                        <div class="slide-image">
+                            <img src="/images/Frame 22.png" alt="image 8">
+                        </div>
+                        <div class="slide-image">
+                            <img src="/images/Frame 23.png" alt="image 9">
+                        </div>
+                        <div class="slide-image">
+                            <img src="/images/Frame 24.png" alt="image 10">
+                        </div>
+                        <div class="slide-image">
+                            <img src="/images/Frame 25.png" alt="image 11">
+                        </div>
+                        <div class="slide-image">
+                            <img src="/images/Frame 26.png" alt="image 12">
+                        </div>
+                    </div>
 
-                        <div class="slide-container">
-                            <div class="slide-image">
-                                <img src="/images/Frame 19 (1).png" alt="image 1">
-                            </div>
-                            <div class="slide-image">
-                                <img src="/images/Frame 19 (2).png" alt="image 2">
-                            </div>
-                            <div class="slide-image">
-                                <img src="/images/Frame 19 (3).png" alt="image 3">
-                            </div>
-                            <div class="slide-image">
-                                <img src="/images/Frame 19 (4).png" alt="image 4">
-                            </div>
-                            <div class="slide-image">
-                                <img src="/images/Frame 19.png" alt="image 5">
-                            </div>
-                            <div class="slide-image">
-                                <img src="/images/Frame 20.png" alt="image 6">
-                            </div>
-                            <div class="slide-image">
-                                <img src="/images/Frame 21.png" alt="image 7">
-                            </div>
-                            <div class="slide-image">
-                                <img src="/images/Frame 22.png" alt="image 8">
-                            </div>
-                            <div class="slide-image">
-                                <img src="/images/Frame 23.png" alt="image 9">
-                            </div>
-                            <div class="slide-image">
-                                <img src="/images/Frame 24.png" alt="image 10">
-                            </div>
-                            <div class="slide-image">
-                                <img src="/images/Frame 25.png" alt="image 11">
-                            </div>
-                            <div class="slide-image">
-                                <img src="/images/Frame 26.png" alt="image 12">
-                            </div>
+                    <div class="slide-container">
+                        <div class="slide-image">
+                            <img src="/images/Frame 19 (1).png" alt="image 1">
+                        </div>
+                        <div class="slide-image">
+                            <img src="/images/Frame 19 (2).png" alt="image 2">
+                        </div>
+                        <div class="slide-image">
+                            <img src="/images/Frame 19 (3).png" alt="image 3">
+                        </div>
+                        <div class="slide-image">
+                            <img src="/images/Frame 19 (4).png" alt="image 4">
+                        </div>
+                        <div class="slide-image">
+                            <img src="/images/Frame 19.png" alt="image 5">
+                        </div>
+                        <div class="slide-image">
+                            <img src="/images/Frame 20.png" alt="image 6">
+                        </div>
+                        <div class="slide-image">
+                            <img src="/images/Frame 21.png" alt="image 7">
+                        </div>
+                        <div class="slide-image">
+                            <img src="/images/Frame 22.png" alt="image 8">
+                        </div>
+                        <div class="slide-image">
+                            <img src="/images/Frame 23.png" alt="image 9">
+                        </div>
+                        <div class="slide-image">
+                            <img src="/images/Frame 24.png" alt="image 10">
+                        </div>
+                        <div class="slide-image">
+                            <img src="/images/Frame 25.png" alt="image 11">
+                        </div>
+                        <div class="slide-image">
+                            <img src="/images/Frame 26.png" alt="image 12">
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- ----------------------------------------------------------------------------- -->
-            <!-- 3번쨰 -->
-            <div class="section swiper-slide section" id="section3-wrap">
-                <div class="section-blank"></div>
-                <span class="section3-title">
-                    03/04
-                </span>
-                <div class="section3-video">
-                    <video id="video3" src="/videos/webpage3.mp4" autoplay muted loop>해당 영상의 경로가 올바르지 않습니다.</video>
-                </div>
-                <div class="section3-m">
-                    <p class="m1">최적의 <span class="ingredient">가구 배치</span></p>
-                    <p class="m2">스타일링샷을 통해 다른 사람의 공간을 참고하여<br /> 아름다운 공간을 만들어 보실 수 있습니다.</p>
-                </div>
-            </div>
-            <!-- ----------------------------------------------------------------------------- -->
-            <!-- 4번쨰 -->
-            <div class="section swiper-slide section" id="section4-wrap">
-                <div class="section-blank"></div>
-                <span class="section4-title">
-                    04/04
-                </span>
-                <div class="section4-i">
-                    <img src="/images/image 72.png" alt="가구">
-                </div>
-                <div class="section4-m">
-                    <p class="m3">스마트한 <span class="ingredient">소비</span></p>
-                    <p class="m4">비교 시스템을 통해 단순한 선택이 아닌<br /> 최상의 선택을 할 수 있습니다. 놓치지 말아야 할<br />최고의 선택을 지금 당장 경험해 보세요.
-                    </p>
-                </div>
-            </div>
-            <!-- ----------------------------------------------------------------------------- -->
         </div>
-        <div class="swiper-scrollbar"></div>
-    </div>
-    <div class="modal">
-        <div class="modal-content">
-            <button class="btn-close" type="button">X</button>
-            <img class="logo-img" src="/images/geugageu_logo.png" alt="">
-            <h2>Login</h2>
-            <form method="" action="">
-                <input type="text" placeholder="아이디" id="id" required>
-                <input type="password" placeholder="비밀번호" id="pw" required>
-                <input type="submit" value="로그인" class="btn-submit">
-            </form>
-            <div class="search">
-                <a href="">아이디찾기</a>
-                <a href="">비밀번호찾기</a>
-                <a href="">회원가입</a>
+        <!-- ----------------------------------------------------------------------------- -->
+        <!-- 3번쨰 -->
+        <div class="section swiper-slide section" id="section3-wrap">
+            <div class="section-blank"></div>
+            <span class="section3-title">
+                03/04
+            </span>
+            <div class="section3-video">
+                <video id="video3" src="/videos/webpage3.mp4" autoplay muted loop>해당 영상의 경로가 올바르지 않습니다.</video>
             </div>
-            <div class="kakao-login">
-                <img class="kakao-login-btn" src="/images/kakao_login.png" alt="" />
+            <div class="section3-m">
+                <p class="m1">최적의 <span class="ingredient">가구 배치</span></p>
+                <p class="m2">스타일링샷을 통해 다른 사람의 공간을 참고하여<br /> 아름다운 공간을 만들어 보실 수 있습니다.</p>
             </div>
         </div>
+        <!-- ----------------------------------------------------------------------------- -->
+        <!-- 4번쨰 -->
+        <div class="section swiper-slide section" id="section4-wrap">
+            <div class="section-blank"></div>
+            <span class="section4-title">
+                04/04
+            </span>
+            <div class="section4-i">
+                <img src="/images/image 72.png" alt="가구">
+            </div>
+            <div class="section4-m">
+                <p class="m3">스마트한 <span class="ingredient">소비</span></p>
+                <p class="m4">비교 시스템을 통해 단순한 선택이 아닌<br /> 최상의 선택을 할 수 있습니다. 놓치지 말아야 할<br />최고의 선택을 지금 당장 경험해 보세요.
+                </p>
+            </div>
+        </div>
+        <!-- ----------------------------------------------------------------------------- -->
     </div>
-    <script src="/assets/js/all.min.js"></script>
-    <script src="/assets/js/layout.js"></script>
-    <script src="/assets/js/index.js"></script>
-</body>
-
-</html>
+    <div class="swiper-scrollbar"></div>
+</div>
+<script src="/assets/js/all.min.js"></script>
+<script src="/assets/js/swiper-bundle.min.js"></script>
+<script src="/assets/js/layout.js"></script>
+<script src="/assets/js/index.js"></script>
+{% endif %}
+{% endblock %}

@@ -11,6 +11,16 @@ const homeService = {
             console.log(err)
             throw err;
         }
+    },
+
+    idCheck : async (data) => {
+        try {
+            const [results] = await conn.query(queries.idDoubleCheck, [data.user_id])
+            return results
+        } catch (err) {
+            console.log(err)
+            throw err;
+        }
     }
 }
 

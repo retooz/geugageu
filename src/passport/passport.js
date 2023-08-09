@@ -1,15 +1,17 @@
 const passport = require('passport');
 const conn = require('../../config/database')
 const queries = require('../queries/userQueries')
-const { selectUserById } = queries
+const { selectUser } = queries
 const LocalStrategy = require('passport-local').Strategy
 const KakaoStrategy = require('passport-kakao').Strategy
 
 passport.use(new LocalStrategy(
     { usernameField: 'user_id', passwordField: 'user_pw' },
     async (user_id, user_pw, done) => {
+        console.log(user_id,user_pw)
         try {
-            const [userRows] = await conn.query(selectUserById, [user_id, user_pw], (err,rows) => {
+            console.log('asd')
+            const [userRows] = await conn.query(selectUser, [user_id, user_pw], (err,rows) => {
                 console.log(err)
                 console.log(rows)
             })

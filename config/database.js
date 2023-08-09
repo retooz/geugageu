@@ -1,6 +1,6 @@
 const mysql = require('mysql2')
 
-let conn = mysql.createConnection({
+const pool = mysql.createPool({
     host : 'project-db-stu3.smhrd.com',
     user : 'Insa4_JSB_hacksim_1',
     password : 'aishcool1',
@@ -8,6 +8,6 @@ let conn = mysql.createConnection({
     database : 'Insa4_JSB_hacksim_1'
 })
 
-conn.connect()
+const conn = pool.promise();
 
 module.exports = conn;

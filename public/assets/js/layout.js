@@ -10,5 +10,10 @@ $('.submenu-close').on('click', function() {
     $('.header-menubar').css('visibility', 'visible');
 });
 
+$('.header-login-btn').on('click', function() {
+    $('.modal').fadeIn()
+})
 
-
+$('.btn-close').click(function(){
+    $('.modal').fadeOut()
+})
