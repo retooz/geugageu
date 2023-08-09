@@ -5,8 +5,10 @@ const nunjucks = require('nunjucks')
 const session = require('express-session')
 const fileStore = require('session-file-store')(session)
 const cors = require('cors')
+const passport = require('passport')
 
-const indexRouter = require('./routes')
+const indexRouter = require('./src/routes')
+const userRouter = require('./src/routes/user')
 
 app.set('port', process.env.PORT || 3333)
 
@@ -28,7 +30,11 @@ app.use(session({
     store : new fileStore()
 }))
 
+app.use(passport.initialize())
+app.use(passport.session())
+
 app.use('/', indexRouter)
+app.use('/user', userRouter)
 
 app.listen(app.get('port'), () => {
     console.log('Listening at port '+app.get('port'))
