@@ -8,22 +8,46 @@
 //         }
 
 //아이디
-function checkIdValid() {
-    var id = $('#id').val;
-    var regex = /^[a-zA-Z][a-zA-Z0-9]{5,19}$/;
-    if (!regex.test(id)) {
-      alert('아이디는 영문자와 숫자를 조합하여 6~20자 이내로 입력해주세요.');
-      $('#id').val = '';
-      $('#id').focus();
-      return false;
-    }
-    else {
-      return true;
-    }
-  }
+// function checkIdValid() {
+//     var id = $('#id').val;
+//     var regex = /^[a-zA-Z][a-zA-Z0-9]{5,19}$/;
+//     if (!regex.test(id)) {
+//       alert('아이디는 영문자와 숫자를 조합하여 6~20자 이내로 입력해주세요.');
+//       $('#id').val = '';
+//       $('#id').focus();
+//       return false;
+//     }
+//     else {
+//       return true;
+//     }
+//   }
 
-  var inputId = $('#id');
-  $('#inputId').on('blur', checkIdValid);
+//   var inputId = $('#id');
+//   $('#inputId').on('blur', checkIdValid);
+
+
+$(function(){
+  $('#alert-success').hide();
+  $('#alert-danger').hide();
+  $('input').keyup(function(){
+    var pwd1=$('#pwd1').val();
+    var pwd2=$('#pwd2').val();
+    if(pwd1 != "" || pwd2 != ""){
+      if(pwd1 == pwd2){
+        $('#alert-success').show();
+        $('#alert-danger').hide();
+        $('submit').removeAttr("disabled");
+      } else{
+        $('#alert-success').hide();
+        $('#alert-danger').show();
+        $('submit').attr("disabled", "disabled");
+      }
+    }
+
+  })
+
+})
+
 
 
 // //비밀번호
