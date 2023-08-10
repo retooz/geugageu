@@ -78,24 +78,28 @@ h2 {
 .choice-btn{
     width: 12%;
     height: 4vh;
-    margin-left: 8%;
+    margin: 0 0 1% 8%;
     background-color: #FE5F05;
     color:white;
     border: none;
     border-radius: 10px;
 }
 
-//해결하지못한...문제, 가로정렬하고싶어요
 .planlist-content{
     display: flex;
     flex-direction: row;
 }
 
-#planlist{
-    display: flex; 
-    justify-content: flex-end; 
-}
 
+.del-btn{
+    width: 5vh;
+    height: 3vh;
+    background-color:#949494;
+    margin-bottom: 0.5%;
+    color:white;
+    border: none;
+    border-radius: 10px;
+}
 
 .color-table1 {
     display: flex;
@@ -148,6 +152,14 @@ h2 {
 .color-table3 .box13 {
     background-color: black;
 }
+
+.test{
+    width: 5vw;
+    height: 5vh;
+    border : 5px solid #EEE9E9;
+	visibility: hidden;
+}
+
 //가족구성원(선택)
 .choice-content{
     border:1px solid #FE5F05;
