@@ -1,0 +1,94 @@
+{%extends 'layout.html'%}
+{%block content%}
+{% include 'submenu.html' %}
+{% include 'header.html' %}
+<link rel="stylesheet" href="/assets/css/index.css">
+<link rel="stylesheet" href="/assets/css/product-detail.css">
+<div class="wrap">
+    <div class="small-wrap">
+        <div class="direction-horizon" id="info">
+            <div class="content">
+                <img src="/images/bed.png" alt="">
+            </div>
+            <div class="detail-content">
+                <div id="detail-right">
+                    <div class="name direction-horizon">
+                        <h1>
+                            가구입니다~!
+                        </h1>
+                        <div class="mark">
+                            <i class="fa-regular fa-bookmark"></i>
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+                    <p id="product-price">399,000</p>
+                    <p id="product-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet
+                        vestibulum scelerisque. Mauris ultricies ut ipsum ac interdum. Pellentesque posuere interdum
+                        justo, iaculis iaculis nisl cursus in. Morbi est sem, varius vel tempor a, faucibus luctus
+                        nulla. Phasellus maximus massa augue, in feugiat erat venenatis et.</p>
+                </div>
+                <div>
+                    <button class="get-btn"><a href="">구매하러 가기</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="direciton-vertical" id="section-detail">
+        <div class="small-wrap">
+            <div class="divide"></div>
+            <div class="arrow-btn">
+                <p>제품설명</p><i class="fa-solid fa-arrow-right"></i>
+            </div>
+            <div class="divide"></div>
+            <div class="arrow-btn">
+                <p>참고</p><i class="fa-solid fa-arrow-right"></i>
+            </div>
+            <div class="divide"></div>
+            <div class="arrow-btn">
+                <p>소재</p><i class="fa-solid fa-arrow-right"></i>
+            </div>
+            <div class="divide"></div>
+            <div class="arrow-btn">
+                <p>치수</p><i class="fa-solid fa-arrow-right"></i>
+            </div>
+            <div class="divide"></div>
+        </div>
+    </div>
+
+
+    <div class="small-wrap direction-vertical">
+        <div>
+            <p>스타일링샷</p>
+            <div class="divide review-divide"></div>
+        </div>
+        <div class="direction-horizon" id="img-section">
+            <div><img class="style-img" src="/images/bed.png" alt=""></div>
+            <div><img class="style-img" src="/images/bed.png" alt=""></div>
+            <div><img class="style-img" src="/images/bed.png" alt=""></div>
+            <div><img class="style-img" src="/images/bed.png" alt=""></div>
+        </div>
+    </div>
+
+    <div class="direction-horizon">
+        <form action="" method="post" id="rating">
+            <fieldset>
+                <input type="radio" name="rating" value="5" id="rate5"><label for="rate5">★</label>
+                <input type="radio" name="rating" value="4" id="rate4"><label for="rate4">★</label>
+                <input type="radio" name="rating" value="3" id="rate3"><label for="rate3">★</label>
+                <input type="radio" name="rating" value="2" id="rate2"><label for="rate2">★</label>
+                <input type="radio" name="rating" value="1" id="rate1"><label for="rate1">★</label>
+            </fieldset>
+        </form>
+        <div class="submit">
+            <button id="submit-btn" type="button">평가하기</button>
+        </div>
+    </div>
+</div>
+</div>
+
+<script src="/assets/js/product-detail.js"></script>
+<script src="/assets/js/all.min.js"></script>
+<script src="/assets/js/layout.js"></script>
+{% include 'footer.html' %}
+{% endblock %}
