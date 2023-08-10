@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>내가지금 필요한 가구는?</h1>
+    <input id="inputPlan">
+    <button onclick="list()">추가</button>
+    <div id="planList"></div>
+    <br>
+
+
+    <script>
+
+let todoList =[]
+
+            const render = ()=>{
+                let planList = document.getElementById("planList")
+                let text = ""
+                //배열에 저장된 내용을 토대로 태그 형식으로 만들어줌!
+                for(let i = 0; i < todoList.length; i++){
+                text += `<span>${todoList[i]}</span><button onclick='deleteList(${i})'>삭제</button><br>`;  
+                }
+                planList.innerHTML = text
+            }
+     
+            const list=()=>{
+            let inputPlan = document.getElementById("inputPlan")
+            todoList.push(inputPlan.value) //사용자가 입력한 내용을 배열에 저장
+
+            render();
+            //3. 사용자가 입력한 내용이 되었다면 input 태그의 내용을 비우고 싶습니다!
+            //4. 삭제버튼 -> 해당하는 내용만 삭제
+            //4-1. innerHTML 출력할 때 리스트를 통해서 출력 되게끔
+            //4-2. 삭제버튼이 눌려지면 splice 이용해서 요소 삭제!
+            inputPlan.value = "";
+            inputPlan.focus(); // 실행위치조정
+        }
+        //삭제 기능 
+        const deleteList = (index) =>{
+            // index =>삭제 버튼의 위치
+            todoList.splice(index, 1);
+            //삭제한 내용을 토대로 다시 출력!!
+            render();
+        }
+    </script>
+</body>
+</html>

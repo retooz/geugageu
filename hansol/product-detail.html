@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product-detail</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./product-detail.css">
+    <link rel="stylesheet" href="../public/assets/css/reset.css">
+</head>
+
+<body>
+    <div style="display: flex; justify-content: center; width: 100vw;">
+        <div style="width: 80vw;">
+
+            <div class="div1 section direction-horizon section1">
+                <div class="content">
+                    <img src="./img/bed.png" alt="">
+                </div>
+                <div class="detail-content">
+                    <div class="name direction-horizon">가구입니다~!
+                        <div class="mark">
+                            <i class="fa-regular fa-bookmark"></i>
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="price">\가격</div>
+                    <button class="get-btn"><a href="">구매하러 가기</a></button>
+                    <div>가구 설명란입니다~</div>
+                </div>
+            </div>
+
+            <div class="div2">
+                <div class="section direciton-vertical">
+                    <div class="section2">
+                        <div class="detail-list"></div>
+                        <div class="arrow-btn">
+                            <div>제품설명</div><i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                        <div class="detail-list"></div>
+                        <div class="arrow-btn">
+                            <div>참고</div><i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                        <div class="detail-list"></div>
+                        <div class="arrow-btn">
+                            <div>소재</div><i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                        <div class="detail-list"></div>
+                        <div class="arrow-btn">
+                            <div>치수</div><i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                        <div class="detail-list"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section direction-horizon section3">
+                <div>
+                    <div>스타일링샷</div>
+                    <div class="cut"></div>
+                    <div class="direction-horizon">
+                        <div><img class="style-img" src="./img/bed.png" alt=""></div>
+                        <div><img class="style-img" src="./img/bed.png" alt=""></div>
+                        <div><img class="style-img" src="./img/bed.png" alt=""></div>
+                        <div><img class="style-img" src="./img/bed.png" alt=""></div>
+                        <div><img class="style-img" src="./img/bed.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="direction-horizon" >
+                <div class="section review-title direction-vertical">
+                    <div class="review-title">
+                        <div class="title-review" id="title-review-div"><button id="review-btn-btn">리뷰</button></div>
+                        <div class="title-review"><button id="write-review-btn">리뷰쓰기</button></div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="cut"></div>
+            </div>
+
+            <div class="direction-horizon"> 
+                <div class="section review-form">
+                    <h1>리뷰 작성하기</h1>
+                    <div class="form-group">
+                        <label for="rating">평점</label>
+                        <select id="rating" name="rating" required>
+                            <option value="" disabled selected>평점을 선택하세요</option>
+                            <option value="5">5</option>
+                            <option value="4">4</option>
+                            <option value="3">3</option>
+                            <option value="2">2</option>
+                            <option value="1">1</option>
+                        </select>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="review">리뷰</label>
+                        <textarea id="review" name="review" placeholder="리뷰를 작성하세요" required>
+                        </textarea>
+                    </div>
+                    <div class="submit">
+                        <button id="submit-btn" type="button">리뷰 작성 완료</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+            
+            <script src="./product-detail.js"></script>
+            <script src="https://kit.fontawesome.com/148f0d9cbf.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

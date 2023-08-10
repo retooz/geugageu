@@ -18,61 +18,81 @@
             <h2>회원가입</h2>
             <p>아이디*</p>
             <input type="text" placeholder="아이디" id="id">
-            <button class="id-check">확인</button>
+            <button class="id-check">중복확인</button>
             <p>비밀번호*</p>
-            <input type="password" placeholder="비밀번호" id="pw1">
+            <input type="password" placeholder="비밀번호" id="pwd1">
             <p class="font-grey">※ 비밀번호는 8자이상 문자,숫자로만 입력가능</p>
             <p>비밀번호확인*</p>
-            <input type="password" placeholder="비밀번호" id="pw2">
+            <input type="password" placeholder="비밀번호" id="pwd2">
+            <div class="alert alert-success" id="alert-success">비밀번호가 일치합니다.</div>
+            <div class="alert alert-danger" id="alert-danger">비밀번호가 일치하지 않습니다.</div>
             <p>닉네임*</p>
             <input type="text" placeholder="닉네임" id="nick">
-            <button class="nick-check">확인</button>
+            <button class="nick-check">중복확인</button>
             <p class="font-grey">※ 다른 유저와 겹치지 않도록 입력해주세요(2~15자)</p>
             <h2>설문조사</h2>
             <p class="font-grey">※ 어울리는 가구 추천을 위해 필요한 설문조사입니다.</p>
-            <p>1. 내가 지금 필요한 가구는?</p>
+            <p>1. 내가 지금 필요한 가구는? (선택) </p>
             <div class="dropdown">
-                <div class="dropdown-container">
+                <div class="dropdown-container" id="inputPlan">
                     <select class="show-item">
-                        <option value="" class="dropdown-item">침대</option>
-                        <option value="" class="dropdown-item">매트리스/토퍼</option>
-                        <option value="" class="dropdown-item">테이블/식탁/책상</option>
-                        <option value="" class="dropdown-item">소파</option>
-                        <option value="" class="dropdown-item">서랍/수납장</option>
-                        <option value="" class="dropdown-item">거실장/TV장</option>
-                        <option value="" class="dropdown-item">선반</option>
-                        <option value="" class="dropdown-item">진열장/책장</option>
-                        <option value="" class="dropdown-item">의자</option>
-                        <option value="" class="dropdown-item">행거/옷장</option>
-                        <option value="" class="dropdown-item">거울</option>
-                        <option value="" class="dropdown-item">화장대/콘솔</option>
-                        <option value="" class="dropdown-item">영유아가구</option>
+                        <option value="침대" class="dropdown-item">침대</option>
+                        <option value="매트리스/토퍼" class="dropdown-item">매트리스/토퍼</option>
+                        <option value="테이블/식탁/책상" class="dropdown-item">테이블/식탁/책상</option>
+                        <option value="소파" class="dropdown-item">소파</option>
+                        <option value="서랍/수납장" class="dropdown-item">서랍/수납장</option>
+                        <option value="거실장/TV장" class="dropdown-item">거실장/TV장</option>
+                        <option value="선반" class="dropdown-item">선반</option>
+                        <option value="진열장/책장" class="dropdown-item">진열장/책장</option>
+                        <option value="의자" class="dropdown-item">의자</option>
+                        <option value="행거/옷장" class="dropdown-item">행거/옷장</option>
+                        <option value="거울" class="dropdown-item">거울</option>
+                        <option value="화장대/콘솔" class="dropdown-item">화장대/콘솔</option>
+                        <option value="영유아가구" class="dropdown-item">영유아가구</option>
                     </select>
-                    <button type="button" class="choice-btn">선택</button>
+                    <button onclick="list()" type="button" class="choice-btn">선택</button>
+                    <div class="planlist-content">
+                        <div id="planList"></div>
+                    </div>
                 </div>
             </div>
+
             <br>
             <p>2. 내가 좋아하는 색상 선택</span><span class="font-grey"> ※중복선택가능</span>
             <div class="color-table">
                 <div class="color-table1">
                     <div class="box1"></div>
+                    <input class="chk-color" type="checkbox" name="chk_info" value="yes">
                     <div class="box2"></div>
+                    <input class="chk-color" type="checkbox" name="chk_info" value="yes">
                     <div class="box3"></div>
+                    <input class="chk-color" type="checkbox" name="chk_info" value="yes">
                     <div class="box4"></div>
+                    <input class="chk-color" type="checkbox" name="chk_info" value="yes">
                 </div>
                 <div class="color-table2">
                     <div class="box5"></div>
+                    <input class="chk-color" type="checkbox" name="chk_info" value="yes">
                     <div class="box6"></div>
+                    <input class="chk-color" type="checkbox" name="chk_info" value="yes">
                     <div class="box7"></div>
+                    <input class="chk-color" type="checkbox" name="chk_info" value="yes">
                     <div class="box8"></div>
+                    <input class="chk-color"  type="checkbox" name="chk_info" value="yes">
                 </div>
                 <div class="color-table3">
                     <div class="box9"></div>
+                    <input class="chk-color" type="checkbox" name="chk_info" value="yes">
                     <div class="box10"></div>
+                    <input class="chk-color"  type="checkbox" name="chk_info" value="yes">
                     <div class="box11"></div>
+                    <input class="chk-color" type="checkbox" name="chk_info" value="yes">
                     <div class="box12"></div>
+                    <input class="chk-color" type="checkbox" name="chk_info" value="yes">
                     <div class="box13"></div>
+                    <input class="chk-color" type="checkbox" name="chk_info" value="yes">
                 </div>
+                <div class="test"></div>
             </div>
             <p>3. 가족구성원 (선택) </p>
             <div> 
@@ -85,7 +105,6 @@
                 <div class="agree-content-container">
                     <div><input type="checkbox"> 전체동의</div>
                     <div><input type="checkbox"> 만 14세 이상입니다(필수)</div>
-                    <div><input type="checkbox"><a href=""> 이용약관(필수) ></a></div>
                     <div><input type="checkbox"><a href=""> 개인정보수집 및 이용동의(필수) ></a></div>
                 </div>
             </div>
@@ -96,7 +115,6 @@
 
         </form>
     </div>
-    <button type="button" class="btn btn-outline-danger">Danger</button>
     
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
