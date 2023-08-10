@@ -21,6 +21,16 @@ const homeService = {
             console.log(err)
             throw err;
         }
+    },
+
+    productDetail : async(data) => {
+        try {
+            const [results] = await conn.query(queries.productDetail, [data])
+            return results
+        } catch (err) {
+            console.log(err)
+            throw err;
+        }
     }
 }
 

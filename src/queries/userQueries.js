@@ -4,5 +4,7 @@ module.exports = {
 
     selectUser : `SELECT * FROM tb_user WHERE user_id = ? and user_pw = ?`,
 
-    idDoubleCheck : `SELECT * FROM tB_user WHERE user_id = ?`
+    idDoubleCheck : `SELECT * FROM tb_user WHERE user_id = ?`,
+
+    productDetail : `SELECT * FROM tb_product WHERE p_id = ?`
 }

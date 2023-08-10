@@ -1,0 +1,79 @@
+{%extends 'layout.html'%}
+{%block content%}
+{% include 'submenu.html' %}
+{% include 'header.html' %}
+<link rel="stylesheet" href="/assets/css/index.css">
+<link rel="stylesheet" href="/assets/css/userpage.css">
+<nav>
+    <div class="wrap">
+        <ul>
+            <li><a href="">나의 그가그</a></li>
+            <li><a href="">스크랩</a></li>
+            <li><a href="">좋아요</a></li>
+            <li><a href="" id="current">내 정보</a></li>
+        </ul>
+    </div>
+    <hr>
+</nav>
+<div class="wrap horizon section-head">
+    <div class="picture-section">
+        <h1>사진</h1>
+    </div>
+    <div class="first-blank"></div>
+    <div class="user-info-section">
+        <h1>회원정보</h1>
+    </div>
+</div>
+<div class="wrap section horizon" id="picture-info">
+    <div class="border-orange picture-section">
+        <img src="/images/Frame 22.png" alt="">
+    </div>
+    <div class="first-blank"></div>
+    <div class="border-orange user-info-section horizon">
+        <div class="ul-container vertical">
+            <ul>
+                <li>닉네임</li>
+                <li>아이디</li>
+                <li>선호가구</li>
+                <li>선호색상</li>
+            </ul>
+        </div>
+        <div class="ul-container vertical">
+            <ul>
+                <li>test</li>
+                <li>test</li>
+                <li>test</li>
+                <li>
+                    <div class="color" id="black"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="wrap section-head">
+    <h1>찜</h1>
+</div>
+<div class="wrap section">
+    <div class="border-orange container horizon">
+        <div class="content"><a href=""><img src="/images/bed.png" alt=""></a></div>
+        <div class="content"></div>
+        <div class="content"></div>
+        <div class="content"></div>
+    </div>
+</div>
+<div class="wrap section-head">
+    <h1>스크랩</h1>
+</div>
+<div class="wrap section">
+    <div class="border-orange container horizon">
+        <div class="content"><img src="/images/frame 19.png" alt=""></div>
+        <div class="content"><img src="" alt=""></div>
+        <div class="content"><img src="" alt=""></div>
+        <div class="content"><img src="" alt=""></div>
+    </div>
+</div>
+
+<script src="/assets/js/all.min.js"></script>
+<script src="/assets/js/layout.js"></script>
+{% include 'footer.html' %}
+{% endblock %}
