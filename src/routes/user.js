@@ -47,5 +47,19 @@ router.post('/check', async (req,res) => {
     }
 })
 
+router.get('/mypage', (req,res) => {
+    res.render('userpage')
+})
 
+router.get('/myGeuGaGeu', (req, res) => {
+    res.render('mygeugageu')
+})
+
+router.get('/scrape', (req, res) => {
+    res.render('scrape')
+})
+
+router.get('/like', (req, res) => {
+    res.render('like')
+})
 module.exports = router

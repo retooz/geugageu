@@ -40,4 +40,7 @@ router.post('/update', async (req,res)=>{
 
 
 
+router.post('/update', async(req,res) => {
+    console.log('as')
+})
 module.exports = router
