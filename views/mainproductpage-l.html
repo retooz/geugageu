@@ -1,0 +1,489 @@
+{%extends 'layout.html'%}
+{%block content%}
+{% include 'submenu.html' %}
+{% include 'header.html' %}
+
+<link rel="stylesheet" href="/assets/css/index.css">
+<link rel="stylesheet" href="/assets/css/menu.css">
+<link rel="stylesheet" href="/assets/css/gggfilter.css">
+<link rel="stylesheet" href="/assets/css/mainproductpage-l.css">
+<link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico" />
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css"/>
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+{%include 'bedroom.html'%}
+<div class="wrap">
+        
+    <main>
+        
+        <section>
+            <!-- 슬라이더 영역 -->
+            <section class="slider">
+                <ul>
+                    <li>
+                    <a href="#"
+                        ><img src="/images/mainproduct1.jpg" alt="item1"
+                    /></a>
+                        
+                    </li>
+                    <li>
+                    <a href="#"
+                        ><img src="/images/mainproduct2.jpg" alt="item2"
+                    /></a>
+                    </li>
+                    <li>
+                    <a href="#"
+                        ><img src="/images/mainproduct3.jpg" alt="item3"
+                    /></a>
+                    </li>
+                    <li>
+                    <a href="#"
+                        ><img src="/images/mainproduct4.jpg" alt="item4"
+                    /></a>
+                    </li>
+                    <li>
+                    <a href="#"
+                        ><img src="/images/mainproduct5.jpg" alt="item5"
+                    /></a>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 베스트셀러 영역 상위 4개만-->
+            <section class="best">
+                <h3>
+                    <span>베스트셀러</span>
+                </h3>
+                <article>
+                    <a href="#">
+                        <div class="thumb">
+                            <img src="https://via.placeholder.com/230X230" alt="t1">
+                        </div>
+                        <img class="badge" src="https://atimg.sonyunara.com/2021/renewal/best/rank/best (1).png" alt="best-seller-badge">
+                        <h2>상품명</h2>
+                        <p>간단한 상품 설명</p>
+                        <div class="price">27,000</div>
+                    </a>
+                </article>
+                <article>
+                    <a href="#">
+                        <div class="thumb">
+                            <img src="https://via.placeholder.com/230X230" alt="t1">
+                        </div>
+                        <img class="badge" src="https://atimg.sonyunara.com/2021/renewal/best/rank/best (2).png" alt="best-seller-badge">
+                        <h2>상품명</h2>
+                        <p>간단한 상품 설명</p>
+                        <div class="price">27,000</div>
+                    </a>
+                </article>
+                <article>
+                    <a href="#">
+                        <div class="thumb">
+                            <img src="https://via.placeholder.com/230X230" alt="t1">
+                        </div>
+                        <img class="badge" src="https://atimg.sonyunara.com/2021/renewal/best/rank/best (3).png" alt="best-seller-badge">
+                        <h2>상품명</h2>
+                        <p>간단한 상품 설명</p>
+                        <div class="price">27,000</div>
+                    </a>
+                </article>
+                <article>
+                    <a href="#">
+                        <div class="thumb">
+                            <img src="https://via.placeholder.com/230X230" alt="t1">
+                        </div>
+                        <img class="badge" src="https://atimg.sonyunara.com/2021/renewal/best/rank/best (4).png" alt="best-seller-badge">
+                        <h2>상품명</h2>
+                        <p>간단한 상품 설명</p>
+                        <div class="price">27,000</div>
+                    </a>
+                </article>
+                
+            </section>
+
+            <!-- 필터링 -->
+            <div class="btn-wrap">
+                <button class="filter-button" type="button" id="color" aria-expanded="true">색상</button>
+                <div class="drop-down" id="colorDropdown">
+                    <label class="checkbox-wrap">
+                        <span class="checkbox-txt">화이트</span>
+                        <span class="checkbox-subtle">
+                            <input type="checkbox" name="화이트" id="white" data-testid="checkbox" value="white" onclick='getCheckboxValue()'>
+                            <span class="checkbox-symbol"></span>
+                        </span>
+                    </label>
+                    <label class="checkbox-wrap">
+                        <span class="checkbox-txt">그레이</span>
+                        <span class="checkbox-subtle">
+                            <input type="checkbox" name="그레이" id="grey" data-testid="checkbox" value="grey"  onclick='getCheckboxValue()'>
+                            <span class="checkbox-symbol"></span>
+                        </span>
+                    </label>
+                    <label class="checkbox-wrap">
+                        <span class="checkbox-txt">블랙</span>
+                        <span class="checkbox-subtle">
+                            <input type="checkbox" name="블랙" id="black" data-testid="checkbox" value="black" onclick='getCheckboxValue()'>
+                            <span class="checkbox-symbol"> </span>
+                        </span>
+                    </label>
+                    <label class="checkbox-wrap">
+                        <span class="checkbox-txt">레드</span>
+                        <span class="checkbox-subtle">
+                            <input type="checkbox" name="레드" id="red" data-testid="checkbox" value="red" onclick='getCheckboxValue()'>
+                            <span class="checkbox-symbol"></span>
+                        </span>
+                    </label>
+                    <label class="checkbox-wrap">
+                        <span class="checkbox-txt">핑크</span>
+                        <span class="checkbox-subtle">
+                            <input type="checkbox" name="핑크" id="pink" data-testid="checkbox" value="pink" onclick='getCheckboxValue()'>
+                            <span class="checkbox-symbol"> </span>
+                        </span>
+                    </label>
+                    <label class="checkbox-wrap">
+                        <span class="checkbox-txt">그린</span>
+                        <span class="checkbox-subtle">
+                            <input type="checkbox" name="그린" id="green" data-testid="checkbox" value="green" onclick='getCheckboxValue()'>
+                            <span class="checkbox-symbol"> </span>
+                        </span>
+                    </label>
+                    <label class="checkbox-wrap">
+                        <span class="checkbox-txt">베이지</span>
+                        <span class="checkbox-subtle">
+                            <input type="checkbox" name="베이지" id="beige" data-testid="checkbox" value="beige" onclick='getCheckboxValue()'>
+                            <span class="checkbox-symbol"> </span>
+                        </span>
+                    </label>
+                    <label class="checkbox-wrap">
+                        <span class="checkbox-txt">브라운</span>
+                        <span class="checkbox-subtle">
+                            <input type="checkbox" name="브라운" id="brown" data-testid="checkbox" value="brown" onclick='getCheckboxValue()'>
+                            <span class="checkbox-symbol"> </span>
+                        </span>
+                    </label>
+                    <label class="checkbox-wrap">
+                        <span class="checkbox-txt">오렌지</span>
+                        <span class="checkbox-subtle">
+                            <input type="checkbox" name="오렌지" id="orange" data-testid="checkbox" value="orange" onclick='getCheckboxValue()'>
+                            <span class="checkbox-symbol"> </span>
+                        </span>
+                    </label>
+                    <label class="checkbox-wrap">
+                        <span class="checkbox-txt">라일락</span>
+                        <span class="checkbox-subtle">
+                            <input type="checkbox" name="라일락" id="lilac" data-testid="checkbox" value="lilac" onclick='getCheckboxValue()'>
+                            <span class="checkbox-symbol"> </span>
+                        </span>
+                    </label>
+                    <label class="checkbox-wrap">
+                        <span class="checkbox-txt">블루</span>
+                        <span class="checkbox-subtle">
+                            <input type="checkbox" name="블루" id="blue" data-testid="checkbox" value="blue" onclick='getCheckboxValue()'>
+                            <span class="checkbox-symbol"> </span>
+                        </span>
+                    </label>
+                    <label class="checkbox-wrap">
+                        <span class="checkbox-txt">옐로우</span>
+                        <span class="checkbox-subtle">
+                            <input type="checkbox" name="블루" id="yellow" data-testid="checkbox" value="yellow" onclick='getCheckboxValue()'>
+                            <span class="checkbox-symbol"> </span>
+                        </span>
+                    </label>
+                    <label class="checkbox-wrap">
+                        <span class="checkbox-txt">터키석</span>
+                        <span class="checkbox-subtle">
+                            <input type="checkbox" name="터키석" id="turquoise" data-testid="checkbox" value="turquoise" onclick='getCheckboxValue()'>
+                            <span class="checkbox-symbol"> </span>
+                        </span>
+                    </label>
+                </div>
+
+                <button class="filter-button" type="button" id="price" aria-expanded="true">가격</button>
+                <div class="drop-down" id="priceDropdown">
+                    <label class="checkbox-wrap">
+                        <span class="checkbox-txt">0 ~ 199,999</span>
+                        <span class="checkbox-subtle">
+                            <input type="checkbox" name="0 ~ 199,999" id="PRICE_0_20000000" data-testid="checkbox" value="PRICE_0_20000000" onclick='getCheckboxValue()'>
+                            <span class="checkbox-symbol"></span>
+                        </span>
+                    </label>
+                    <label class="checkbox-wrap">
+                        <span class="checkbox-txt">200,000 ~ 399,999</span>
+                        <span class="checkbox-subtle">
+                            <input type="checkbox" name="200,000 ~ 399,9990" id="PRICE_20000000_40000000" data-testid="checkbox" value="PRICE_20000000_40000000" onclick='getCheckboxValue()'>
+                            <span class="checkbox-symbol"></span>
+                        </span>
+                    </label>
+                    <label class="checkbox-wrap">
+                        <span class="checkbox-txt">400,000 ~ 599,999</span>
+                        <span class="checkbox-subtle">
+                            <input type="checkbox" name="400,000 ~ 599,999" id="PRICE_40000000_60000000" data-testid="checkbox" value="PRICE_40000000_60000000" onclick='getCheckboxValue()'>
+                            <span class="checkbox-symbol"></span>
+                        </span>
+                    </label>
+                    <label class="checkbox-wrap">
+                        <span class="checkbox-txt">600,000 ~ 799,999</span>
+                        <span class="checkbox-subtle">
+                            <input type="checkbox" name="600,000 ~ 799,999" id="PRICE_60000000_80000000" data-testid="checkbox" value="PRICE_60000000_80000000" onclick='getCheckboxValue()'>
+                            <span class="checkbox-symbol"></span>
+                        </span>
+                    </label>
+                    <label class="checkbox-wrap">
+                        <span class="checkbox-txt">800,000 ~</span>
+                        <span class="checkbox-subtle">
+                            <input type="checkbox" name="800,000 ~" id="PRICE_80000000_2147483647" data-testid="checkbox" value="PRICE_80000000_2147483647" onclick='getCheckboxValue()'>
+                            <span class="checkbox-symbol"></span>
+                        </span>
+                    </label>
+                </div>
+                
+                <button class="filter-button" type="button" id="material" aria-expanded="true">소재</button>
+                <div class="drop-down" id="materialDropdown">
+                    <label class="checkbox-wrap">
+                        <span class="checkbox-txt">패브릭</span>
+                        <span class="checkbox-subtle">
+                            <input type="checkbox" name="패브릭" id="38828" data-testid="checkbox" value="38828" onclick='getCheckboxValue()'>
+                            <span class="checkbox-symbol"></span>
+                        </span>
+                    </label>
+                    <label class="checkbox-wrap">
+                        <span class="checkbox-txt">인조가죽</span>
+                        <span class="checkbox-subtle">
+                            <input type="checkbox" name="인조가죽" id="38830" data-testid="checkbox" value="38830" onclick='getCheckboxValue()'>
+                            <span class="checkbox-symbol"></span>
+                        </span>
+                    </label>
+                    <label class="checkbox-wrap">
+                        <span class="checkbox-txt">가죽</span>
+                        <span class="checkbox-subtle">
+                            <input type="checkbox" name="가죽" id="38829" data-testid="checkbox" value="38829" onclick='getCheckboxValue()'>
+                            <span class="checkbox-symbol"></span>
+                        </span>
+                    </label>
+                    <label class="checkbox-wrap">
+                        <span class="checkbox-txt">목재(보드포함)</span>
+                        <span class="checkbox-subtle">
+                            <input type="checkbox" name="목재(보드포함)" id="47349" data-testid="checkbox" value="47349" onclick='getCheckboxValue()'>
+                            <span class="checkbox-symbol"></span>
+                        </span>
+                    </label>
+                    <label class="checkbox-wrap">
+                        <span class="checkbox-txt">메탈</span>
+                        <span class="checkbox-subtle">
+                            <input type="checkbox" name="메탈" id="47350" data-testid="checkbox" value="47350" onclick='getCheckboxValue()'>
+                            <span class="checkbox-symbol"></span>
+                        </span>
+                    </label>
+                    <label class="checkbox-wrap">
+                        <span class="checkbox-txt">원목</span>
+                        <span class="checkbox-subtle">
+                            <input type="checkbox" name="원목" id="50788" data-testid="checkbox" value="50788" onclick='getCheckboxValue()'>
+                            <span class="checkbox-symbol"></span>
+                        </span>
+                    </label>
+                    <label class="checkbox-wrap">
+                        <span class="checkbox-txt">대나무</span>
+                        <span class="checkbox-subtle">
+                            <input type="checkbox" name="대나무" id="47653" data-testid="checkbox" value="47653" onclick='getCheckboxValue()'>
+                            <span class="checkbox-symbol"></span>
+                        </span>
+                    </label>
+                    <label class="checkbox-wrap">
+                        <span class="checkbox-txt">합성섬유</span>
+                        <span class="checkbox-subtle">
+                            <input type="checkbox" name="힙성섬유" id="48360" data-testid="checkbox" value="48360" onclick='getCheckboxValue()'>
+                            <span class="checkbox-symbol"></span>
+                        </span>
+                    </label>
+                    <label class="checkbox-wrap">
+                        <span class="checkbox-txt">천연섬유</span>
+                        <span class="checkbox-subtle">
+                            <input type="checkbox" name="천연섬유" id="47477" data-testid="checkbox" value="47477" onclick='getCheckboxValue()'>
+                            <span class="checkbox-symbol"></span>
+                        </span>
+                    </label>
+                    <label class="checkbox-wrap">
+                        <span class="checkbox-txt">플라스틱</span>
+                        <span class="checkbox-subtle">
+                            <input type="checkbox" name="플라스틱" id="47675" data-testid="checkbox" value="47675" onclick='getCheckboxValue()'>
+                            <span class="checkbox-symbol"></span>
+                        </span>
+                    </label>
+                    <label class="checkbox-wrap">
+                        <span class="checkbox-txt">유리</span>
+                        <span class="checkbox-subtle">
+                            <input type="checkbox" name="유리" id="47660" data-testid="checkbox" value="47660" onclick='getCheckboxValue()'>
+                            <span class="checkbox-symbol"></span>
+                        </span>
+                    </label>
+                    <label class="checkbox-wrap">
+                        <span class="checkbox-txt">베니어</span>
+                        <span class="checkbox-subtle">
+                            <input type="checkbox" name="베니어" id="53958" data-testid="checkbox" value="53958" onclick='getCheckboxValue()'>
+                            <span class="checkbox-symbol"></span>
+                        </span>
+                    </label>
+                </div>
+                <button class="filter-button" id="reset-button" type="button">재설정하기</button>
+            </div>
+
+                
+            
+            <!-- 상품-->                
+            <section class="product">
+                <div id="result">
+                    <!-- 선택된 목록들을 보여줄 공간 -->
+                </div>    
+                <section class="list">
+                    <ul class="sort">
+                        <li>
+                            <a href="#">별점높은순</a>
+                        </li>
+                        <li>
+                            <a href="#">높은가격순</a>
+                        </li>
+                        <li>
+                            <a href="#" class="on">낮은가격순</a>
+                        </li>
+                        <li>
+                            <a href="#">베스트셀러</a>
+                        </li>
+                        <li>
+                            <a href="#" class="on">전체보기</a>
+                        </li>
+                    </ul>
+                <article>
+                    <a href="#">
+                        <div class="thumb">
+                            <img src="https://via.placeholder.com/230X230" alt="t1">
+                        </div>
+                        <h2>상품명</h2>
+                        <p>간단한 상품 설명</p>
+                        <div class="price">27,000</div>
+                    </a>
+                </article>
+                <article>
+                    <a href="#">
+                        <div class="thumb">
+                            <img src="https://via.placeholder.com/230X230" alt="t1">
+                        </div>
+                        <h2>상품명</h2>
+                        <p>간단한 상품 설명</p>
+                        <div class="price">27,000</div>
+                    </a>
+                </article>
+                <article>
+                    <a href="#">
+                        <div class="thumb">
+                            <img src="https://via.placeholder.com/230X230" alt="t1">
+                        </div>
+                        <h2>상품명</h2>
+                        <p>간단한 상품 설명</p>
+                        <div class="price">27,000</div>
+                    </a>
+                </article>
+                <article>
+                    <a href="#">
+                        <div class="thumb">
+                            <img src="https://via.placeholder.com/230X230" alt="t1">
+                        </div>
+                        <h2>상품명</h2>
+                        <p>간단한 상품 설명</p>
+                        <div class="price">27,000</div>
+                    </a>
+                </article>
+                <article>
+                    <a href="#">
+                        <div class="thumb">
+                            <img src="https://via.placeholder.com/230X230" alt="t1">
+                        </div>
+                        <h2>상품명</h2>
+                        <p>간단한 상품 설명</p>
+                        <div class="price">27,000</div>
+                    </a>
+                </article>
+                <article>
+                    <a href="#">
+                        <div class="thumb">
+                            <img src="https://via.placeholder.com/230X230" alt="t1">
+                        </div>
+                        <h2>상품명</h2>
+                        <p>간단한 상품 설명</p>
+                        <div class="price">27,000</div>
+                    </a>
+                </article>
+                <article>
+                    <a href="#">
+                        <div class="thumb">
+                            <img src="https://via.placeholder.com/230X230" alt="t1">
+                        </div>
+                        <h2>상품명</h2>
+                        <p>간단한 상품 설명</p>
+                        <div class="price">27,000</div>
+                    </a>
+                </article>
+                <article>
+                    <a href="#">
+                        <div class="thumb">
+                            <img src="https://via.placeholder.com/230X230" alt="t1">
+                        </div>
+                        <h2>상품명</h2>
+                        <p>간단한 상품 설명</p>
+                        <div class="price">27,000</div>
+                    </a>
+                </article>
+                <article>
+                    <a href="#">
+                        <div class="thumb">
+                            <img src="https://via.placeholder.com/230X230" alt="t1">
+                        </div>
+                        <h2>상품명</h2>
+                        <p>간단한 상품 설명</p>
+                        <div class="price">27,000</div>
+                    </a>
+                </article>
+                <article>
+                    <a href="#">
+                        <div class="thumb">
+                            <img src="https://via.placeholder.com/230X230" alt="t1">
+                        </div>
+                        <h2>상품명</h2>
+                        <p>간단한 상품 설명</p>
+                        <div class="price">27,000</div>
+                    </a>
+                </article>
+                <article>
+                    <a href="#">
+                        <div class="thumb">
+                            <img src="https://via.placeholder.com/230X230" alt="t1">
+                        </div>
+                        <h2>상품명</h2>
+                        <p>간단한 상품 설명</p>
+                        <div class="price">27,000</div>
+                    </a>
+                </article>
+                <article>
+                    <a href="#">
+                        <div class="thumb">
+                            <img src="https://via.placeholder.com/230X230" alt="t1">
+                        </div>
+                        <h2>상품명</h2>
+                        <p>간단한 상품 설명</p>
+                        <div class="price">27,000</div>
+                    </a>
+                </article>
+                <button class="load-more-button" id="loadMore">더 보기</button>
+                
+
+            </section>
+        </section>
+    </main>
+</div>
+
+
+<script src="/assets/js/mainproductpage-l.js"></script>
+<script src="/assets/js/gggfilter.js"></script>
+<script src="/assets/js/all.min.js"></script>
+<script src="/assets/js/layout.js"></script>
+{% include 'footer.html' %}
+{% endblock %}
