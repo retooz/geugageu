@@ -16,7 +16,8 @@ const homeService = {
     idCheck : async (data) => {
         try {
             const [results] = await conn.query(queries.idDoubleCheck, [data.user_id])
-            return results
+
+            return [results]
         } catch (err) {
             console.log(err)
             throw err;
@@ -26,7 +27,7 @@ const homeService = {
     productDetail : async(data) => {
         try {
             const [results] = await conn.query(queries.productDetail, [data])
-            return results
+            return results[0]
         } catch (err) {
             console.log(err)
             throw err;

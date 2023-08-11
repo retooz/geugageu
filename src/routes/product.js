@@ -7,12 +7,15 @@ router.get('/:p_id', async (req,res) => {
     try {
         const result = await homeService.productDetail(p_id)
 
-        console.log(result)
-        res.render('product-detail', {p_detail : result[0]})
+        result.p_desc = result.p_desc.replace('[', '').replace(']', '')
+        res.render('product-detail', {p_detail : result})
     } catch (err) {
         res.status(500).json({ message : 'error occured'})
     }
     
 })
 
+router.post('/update', async(req,res) => {
+    console.log('as')
+})
 module.exports = router

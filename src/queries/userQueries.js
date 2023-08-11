@@ -6,5 +6,5 @@ module.exports = {
 
     idDoubleCheck : `SELECT * FROM tb_user WHERE user_id = ?`,
 
-    productDetail : `SELECT * FROM tb_product WHERE p_id = ?`
+    productDetail : `SELECT * FROM tb_product WHERE p_id = ? LIMIT 1`
 }
