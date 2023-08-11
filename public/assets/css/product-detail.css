@@ -61,10 +61,16 @@
   color: white;
   border: none;
   border-radius: 2vh;
+  cursor: pointer;
 }
 
 .get-btn a {
   color: white;
+}
+
+#heart:hover {
+    color: #FE5F05;
+    cursor: pointer;
 }
 
 .divide {
@@ -82,6 +88,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  cursor: pointer;
 }
 
 .arrow-btn:hover {

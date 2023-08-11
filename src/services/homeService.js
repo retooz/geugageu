@@ -26,12 +26,23 @@ const homeService = {
     productDetail : async(data) => {
         try {
             const [results] = await conn.query(queries.productDetail, [data])
-            return results
+            return results[0]
         } catch (err) {
             console.log(err)
             throw err;
         }
+    },
+    ratingModify : async (new_rat_value,new_rat_count, p_id)=>{
+        console.log('haha')
+        try {
+            const[results] = await conn.query(queries.rating, [new_rat_value, new_rat_count, p_id])
+            return results
+        } catch (err){
+            console.log(err)
+            throw err;
+        }
     }
+
 }
 
 module.exports = homeService;

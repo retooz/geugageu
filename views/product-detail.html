@@ -4,88 +4,118 @@
 {% include 'header.html' %}
 <link rel="stylesheet" href="/assets/css/index.css">
 <link rel="stylesheet" href="/assets/css/product-detail.css">
+
 <div class="wrap">
     <div class="small-wrap">
         <div class="direction-horizon" id="info">
             <div class="content">
-                <img src="/images/bed.png" alt="">
+                <img src="{{p_detail.img_url}}" alt="">
             </div>
             <div class="detail-content">
                 <div id="detail-right">
                     <div class="name direction-horizon">
                         <h1>
-                            {{ p_detail.p_name }}
+                            {{p_detail.p_name}}
                         </h1>
                         <div class="mark">
-                            <i class="fa-regular fa-bookmark"></i>
-                            <i class="fa-regular fa-heart"></i>
+                            <i id="heart" class="fa-regular fa-heart"></i>
                         </div>
                     </div>
-                    <p id="product-price">{{ p_detail.p_price}}</p>
-                    <p id="product-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet
-                        vestibulum scelerisque. Mauris ultricies ut ipsum ac interdum. Pellentesque posuere interdum
-                        justo, iaculis iaculis nisl cursus in. Morbi est sem, varius vel tempor a, faucibus luctus
-                        nulla. Phasellus maximus massa augue, in feugiat erat venenatis et.</p>
+                    <p id="product-price"> {{p_detail.p_price}}₩</p>
+                    <p id="product-desc">{{p_detail.p_desc | safe}}</p>
                 </div>
                 <div>
-                    <button class="get-btn"><a href="">구매하러 가기</a></button>
+                    <p>평점 {{p_detail.rat_value}} ({{p_detail.rat_count}})</p>
+                </div>
+                <div>
+                    <a href="{{p_detail.pip_url}}">
+                        <button class="get-btn">
+                            구매하러 가기
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="direciton-vertical" id="section-detail">
-        <div class="small-wrap">
-            <div class="divide"></div>
-            <div class="arrow-btn">
-                <p>제품설명</p><i class="fa-solid fa-arrow-right"></i>
+        <div class="direciton-vertical" id="section-detail">
+            <div class="small-wrap">
+                <div class="divide"></div>
+                <div class="arrow-btn">
+                    <p>제품설명</p><i class="fa-solid fa-arrow-right" style=" transform:rotate(90deg);"></i>
+                </div>
+                <div><br>{{p_detail.p_detail | safe}}</div>
+                <div class="divide"></div>
+                <div class="arrow-btn">
+                    <p>소재</p><i class="fa-solid fa-arrow-right" style=" transform:rotate(90deg);"></i>
+                </div>
+                <div><br>{{p_detail.p_material | safe}}</div>
+                <div class="divide"></div>
+                <div class="arrow-btn">
+                    <p>치수</p><i class="fa-solid fa-arrow-right" style=" transform:rotate(90deg);"></i>
+                </div>
+                <div><br>{{p_detail.p_measure_detail | safe }}</div>
+                <div class="divide"></div>
             </div>
-            <div class="divide"></div>
-            <div class="arrow-btn">
-                <p>참고</p><i class="fa-solid fa-arrow-right"></i>
-            </div>
-            <div class="divide"></div>
-            <div class="arrow-btn">
-                <p>소재</p><i class="fa-solid fa-arrow-right"></i>
-            </div>
-            <div class="divide"></div>
-            <div class="arrow-btn">
-                <p>치수</p><i class="fa-solid fa-arrow-right"></i>
-            </div>
-            <div class="divide"></div>
         </div>
-    </div>
 
 
-    <div class="small-wrap direction-vertical">
-        <div>
-            <p>스타일링샷</p>
-            <div class="divide review-divide"></div>
+        <div class="small-wrap direction-vertical">
+            <div>
+                <p>스타일링샷</p>
+                <div class="divide review-divide"></div>
+            </div>
+            <div class="direction-horizon" id="img-section">
+                <div><img class="style-img" src="/images/bed.png" alt=""></div>
+                <div><img class="style-img" src="/images/bed.png" alt=""></div>
+                <div><img class="style-img" src="/images/bed.png" alt=""></div>
+                <div><img class="style-img" src="/images/bed.png" alt=""></div>
+            </div>
         </div>
-        <div class="direction-horizon" id="img-section">
-            <div><img class="style-img" src="/images/bed.png" alt=""></div>
-            <div><img class="style-img" src="/images/bed.png" alt=""></div>
-            <div><img class="style-img" src="/images/bed.png" alt=""></div>
-            <div><img class="style-img" src="/images/bed.png" alt=""></div>
-        </div>
-    </div>
 
-    <div class="direction-horizon">
-        <form action="" method="post" id="rating">
-            <fieldset>
-                <input type="radio" name="rating" value="5" id="rate5"><label for="rate5">★</label>
-                <input type="radio" name="rating" value="4" id="rate4"><label for="rate4">★</label>
-                <input type="radio" name="rating" value="3" id="rate3"><label for="rate3">★</label>
-                <input type="radio" name="rating" value="2" id="rate2"><label for="rate2">★</label>
-                <input type="radio" name="rating" value="1" id="rate1"><label for="rate1">★</label>
-            </fieldset>
-        </form>
-        <div class="submit">
-            <button id="submit-btn" type="button">평가하기</button>
+        <div class="direction-horizon">
+            <form action="http://localhost:3333/product/update" method="post" id="rating">
+                <input type="hidden" name="p_id" value="{{p_detail.p_id}}">
+                <fieldset>
+                    <input type="radio" name="rating" value="5" id="rate5"><label for="rate5">★</label>
+                    <input type="radio" name="rating" value="4" id="rate4"><label for="rate4">★</label>
+                    <input type="radio" name="rating" value="3" id="rate3"><label for="rate3">★</label>
+                    <input type="radio" name="rating" value="2" id="rate2"><label for="rate2">★</label>
+                    <input type="radio" name="rating" value="1" id="rate1"><label for="rate1">★</label>
+                    <input type="submit" style="display:none;" id="rating-submit">
+                </fieldset>
+            </form>
+            <div class="submit">
+                <label for="rating-submit" id="submit-btn">평가하기
+                    <!-- <button id="submit-btn" type="button">평가하기</button> -->
+                </label>
+            </div>
         </div>
     </div>
 </div>
-</div>
+
+<script>
+
+    document.getElementById("rating").addEventListener("submit", function(event) {
+        const formData = new FormData(event.target);
+
+        fetch(window.location.href, {
+            method : "POST",
+            body : formData,
+        }).then ((response) => response.text())
+        .then(()=>{
+            window.location.reload();
+            window.scrollTo(0,0);
+        }).catch((err)=>{
+            console.error('error',err);
+        })
+    })
+    
+
+        
+
+
+</script>
+
 
 <script src="/assets/js/product-detail.js"></script>
 <script src="/assets/js/all.min.js"></script>
