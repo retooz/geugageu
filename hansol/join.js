@@ -75,19 +75,3 @@ const deleteList = (index) =>{
     todoList.splice(index, 1);
     render();
 }
-
-
-// 2. 내가 좋아하는 색상 선택
-
-let count = 0;
-
-const select = () => {
-  count++;
-if (count % 2 === 1) {
-    $('.test').addClass('visible');
-  } else {
-    $('.test').removeClass('visible');
-  }
-};
-
-$('.chk-color').on('click', select);
