@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="/assets/css/reset.css">
     <link rel="stylesheet" href="/assets/css/header.css">
     <link rel="stylesheet" href="/assets/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css" />
 </head>
 <body>
-    
     {% block content %}
     {% endblock %}
     <div class="modal">
@@ -29,14 +31,16 @@
                 <a href="">회원가입</a>
             </div>
             <div class="kakao-login">
-                <img class="kakao-login-btn" src="/images/kakao_login.png" alt=""/>
+                <img class="kakao-login-btn" src="/images/kakao_login.png" alt="" />
             </div>
         </div>
     </div>
     <script src="/assets/js/all.min.js"></script>
     <script src="/assets/js/layout.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     <script>
         console.log('{{ user }}')
     </script>
 </body>
+
 </html>

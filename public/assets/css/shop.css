@@ -5,27 +5,16 @@ main > section > section {
     height: auto;
     box-sizing: border-box;
 }
-/* 여기란다--------------------------------------------------------------------------------------------------------------------
-ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
-ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
-gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
-ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
-ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg */
+
 article {
     float: left;
     width: 25%;
-    height: 50%;
+    height: 345px;
     box-sizing: border-box;
-    padding-bottom: 5%;
 }
 
-article img {
-    width: 80%;
-}
-/* gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
-ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
-gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
-ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg */
+
+
 h2 {
     font-size: 15px;
     font-weight: bold;
@@ -121,3 +110,6 @@ main section {
     border-right: 1px solid #ddd;
 }
 
+.bxwraper {
+    box-shadow: none;
+}

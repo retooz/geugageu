@@ -126,7 +126,7 @@
     height: 100%;
 }
 
-.wrap>h1 {
+.userpage-head h1 {
     font-size: 2em;
     margin: 7vh 0 2vh;
     text-align: center;
