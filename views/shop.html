@@ -9,6 +9,14 @@
 <link rel="stylesheet" href="/assets/css/shop.css">
 {% if category == "bedroom"%}
 {%include 'bedroom.html'%}
+{% elif category == 'kitchen' %}
+{% include 'kitchen.html'%}
+{% elif category == 'kids' %}
+{% include 'kids.html'%}
+{% elif category == 'homeoffice' %}
+{% include 'homeoffice.html'%}
+{% elif category == 'bathroom' %}
+{% include 'bathroom.html'%}
 {% endif %}
 <div class="wrap">
 
@@ -45,7 +53,7 @@
                 <article>
                     <a href="#">
                         <div class="thumb">
-                            <img src="https://via.placeholder.com/230X230" alt="t1">
+                            <div class="image-container"></div>
                         </div>
                         <img class="badge" src="https://atimg.sonyunara.com/2021/renewal/best/rank/best (1).png"
                             alt="best-seller-badge">
@@ -57,7 +65,7 @@
                 <article>
                     <a href="#">
                         <div class="thumb">
-                            <img src="https://via.placeholder.com/230X230" alt="t1">
+                            <div class="image-container"></div>
                         </div>
                         <img class="badge" src="https://atimg.sonyunara.com/2021/renewal/best/rank/best (2).png"
                             alt="best-seller-badge">
@@ -69,7 +77,7 @@
                 <article>
                     <a href="#">
                         <div class="thumb">
-                            <img src="https://via.placeholder.com/230X230" alt="t1">
+                            <div class="image-container"></div>
                         </div>
                         <img class="badge" src="https://atimg.sonyunara.com/2021/renewal/best/rank/best (3).png"
                             alt="best-seller-badge">
@@ -81,7 +89,7 @@
                 <article>
                     <a href="#">
                         <div class="thumb">
-                            <img src="https://via.placeholder.com/230X230" alt="t1">
+                            <div class="image-container"></div>
                         </div>
                         <img class="badge" src="https://atimg.sonyunara.com/2021/renewal/best/rank/best (4).png"
                             alt="best-seller-badge">
@@ -377,7 +385,7 @@
                     <article>
                         <a href="#">
                             <div class="thumb">
-                                <img src="https://via.placeholder.com/230X230" alt="t1">
+                                <div class="image-container"></div>
                             </div>
                             <h2>상품명</h2>
                             <p>간단한 상품 설명</p>
@@ -387,7 +395,7 @@
                     <article>
                         <a href="#">
                             <div class="thumb">
-                                <img src="https://via.placeholder.com/230X230" alt="t1">
+                                <div class="image-container"></div>
                             </div>
                             <h2>상품명</h2>
                             <p>간단한 상품 설명</p>
@@ -397,7 +405,7 @@
                     <article>
                         <a href="#">
                             <div class="thumb">
-                                <img src="https://via.placeholder.com/230X230" alt="t1">
+                                <div class="image-container"></div>
                             </div>
                             <h2>상품명</h2>
                             <p>간단한 상품 설명</p>
@@ -407,7 +415,7 @@
                     <article>
                         <a href="#">
                             <div class="thumb">
-                                <img src="https://via.placeholder.com/230X230" alt="t1">
+                                <div class="image-container"></div>
                             </div>
                             <h2>상품명</h2>
                             <p>간단한 상품 설명</p>
@@ -417,7 +425,7 @@
                     <article>
                         <a href="#">
                             <div class="thumb">
-                                <img src="https://via.placeholder.com/230X230" alt="t1">
+                                <div class="image-container"></div>
                             </div>
                             <h2>상품명</h2>
                             <p>간단한 상품 설명</p>
@@ -427,7 +435,7 @@
                     <article>
                         <a href="#">
                             <div class="thumb">
-                                <img src="https://via.placeholder.com/230X230" alt="t1">
+                                <div class="image-container"></div>
                             </div>
                             <h2>상품명</h2>
                             <p>간단한 상품 설명</p>
@@ -437,7 +445,7 @@
                     <article>
                         <a href="#">
                             <div class="thumb">
-                                <img src="https://via.placeholder.com/230X230" alt="t1">
+                                <div class="image-container"></div>
                             </div>
                             <h2>상품명</h2>
                             <p>간단한 상품 설명</p>
@@ -447,7 +455,7 @@
                     <article>
                         <a href="#">
                             <div class="thumb">
-                                <img src="https://via.placeholder.com/230X230" alt="t1">
+                                <div class="image-container"></div>
                             </div>
                             <h2>상품명</h2>
                             <p>간단한 상품 설명</p>
@@ -457,7 +465,7 @@
                     <article>
                         <a href="#">
                             <div class="thumb">
-                                <img src="https://via.placeholder.com/230X230" alt="t1">
+                                <div class="image-container"></div>
                             </div>
                             <h2>상품명</h2>
                             <p>간단한 상품 설명</p>
@@ -467,7 +475,7 @@
                     <article>
                         <a href="#">
                             <div class="thumb">
-                                <img src="https://via.placeholder.com/230X230" alt="t1">
+                                <div class="image-container"></div>
                             </div>
                             <h2>상품명</h2>
                             <p>간단한 상품 설명</p>
@@ -477,28 +485,16 @@
                     <article>
                         <a href="#">
                             <div class="thumb">
-                                <img src="https://via.placeholder.com/230X230" alt="t1">
+                                <div class="image-container"></div>
                             </div>
                             <h2>상품명</h2>
                             <p>간단한 상품 설명</p>
                             <div class="price">27,000</div>
                         </a>
                     </article>
-                    <article>
-                        <a href="#">
-                            <div class="thumb">
-                                <img src="https://via.placeholder.com/230X230" alt="t1">
-                            </div>
-                            <h2>상품명</h2>
-                            <p>간단한 상품 설명</p>
-                            <div class="price">27,000</div>
-                        </a>
-                    </article>
-                    <button class="load-more-button" id="loadMore">더 보기</button>
-
-
                 </section>
             </section>
+            <button class="load-more-button filter-button" id="loadMore">더 보기</button>
     </main>
 </div>
 

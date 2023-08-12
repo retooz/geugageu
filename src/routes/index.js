@@ -16,7 +16,7 @@ router.get('/login', (req,res) => {
 })
 
 router.get('/test', (req,res) => {
-    res.render('mainproductpage-l')
+    res.render('shop')
 })
 
 router.get('/mypage', (req,res) => {

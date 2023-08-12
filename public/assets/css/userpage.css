@@ -96,7 +96,7 @@
 
 .container {
     width: 70vw;
-    height: 40vh;
+    height: auto;
     width: 100%;
     table-layout: fixed;
 }
@@ -123,7 +123,18 @@
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
-    height: 100%;
+    height: 35vh;
+}
+
+.like-product-desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.like-product-desc * {
+    padding-top: 1vh;
+    color: black;
 }
 
 .userpage-head h1 {
@@ -144,4 +155,7 @@
 #contens-not-exist h1 {
     font-size: 1em;
     padding: 0.5em;
+}
+.price::after {
+    content: "원";
 }

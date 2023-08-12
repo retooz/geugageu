@@ -9,10 +9,22 @@ main > section > section {
 article {
     float: left;
     width: 25%;
-    height: 345px;
+    height: auto;
+    padding-bottom: 5%;
     box-sizing: border-box;
 }
 
+.thumb {
+    display: flex;
+    justify-content: center;
+    height: 30vh;
+    padding-bottom: 2vh;
+}
+.image-container {
+    width: 80%;
+    height: 100%;
+    background-color: black;
+}
 
 
 h2 {
