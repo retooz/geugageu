@@ -3,7 +3,6 @@ const conn = require('../../config/database')
 const queries = require('../queries/userQueries')
 const { selectUser } = queries
 const LocalStrategy = require('passport-local').Strategy
-const KakaoStrategy = require('passport-kakao').Strategy
 
 passport.use(new LocalStrategy(
     { usernameField: 'user_id', passwordField: 'user_pw' },

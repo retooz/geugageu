@@ -5,8 +5,217 @@
 <link rel="stylesheet" href="/assets/css/index.css">
 <link rel="stylesheet" href="/assets/css/join.css">
 
-<div class="wrap">
-    
+<div class="wrap join">
+    <form method="post" action="/user/join">
+        <h2>회원가입</h2>
+        <p class="required">아이디</p>
+        <div id="id-container">
+            <input type="text" name="id" id="id-join" class="join-input" placeholder="아이디">
+            <button class="dup-check">중복확인</button>
+        </div>
+        <p class="required">비밀번호</p>
+        <input type="password" name="pw" id="pwd1" class="join-input" placeholder="비밀번호">
+        <p class="font-grey alert">※ 비밀번호는 8자이상 문자,숫자로만 입력가능</p>
+        <p class="required">비밀번호 확인</p>
+        <input type="password" name="pw2" id="pwd2" class="join-input" placeholder="비밀번호 확인">
+        <div class="alert" id="alert">비밀번호가 일치하지 않습니다.</div>
+        <p class="required">닉네임</p>
+        <input type="text" name="nick" id="nick" class="join-input" placeholder="닉네임">
+        <button class="nick-check"></button>
+
+        <div class="survey">
+            <h2>설문조사</h2>
+            <p class="font-grey">※ 어울리는 가구 추천을 위해 필요한 설문조사입니다.</p>
+            <div class="survey-container">
+                <p>1. 내가 지금 필요한 가구는? (선택) </p>
+                <div class="dropdown">
+                    <button class="dropdown-open" type="button" id="furniture-button" aria-expanded="true">가구
+                        선택</button>
+                    <div class="dropdown-container" id="inputPlan">
+                        <label for="" class="checkbox-wrap">
+                            <span class="checkbox-txt">침대</span>
+                            <span class="checkbox-subtitle">
+                                <input type="checkbox" name="" id="bed" data-testid="checkbox" value="침대">
+                                <span class="checkbox-symbol"></span>
+                            </span>
+                        </label>
+                        <label for="" class="checkbox-wrap">
+                            <span class="checkbox-txt">매트리스/토퍼</span>
+                            <span class="checkbox-subtitle">
+                                <input type="checkbox" name="" id="sofa" data-testid="checkbox" value="매트리스/토퍼">
+                                <span class="checkbox-symbol"></span>
+                            </span>
+                        </label>
+                        <label for="" class="checkbox-wrap">
+                            <span class="checkbox-txt">테이블/식탁/책상</span>
+                            <span class="checkbox-subtitle">
+                                <input type="checkbox" name="" id="sofa" data-testid="checkbox" value="테이블/식탁/책상">
+                                <span class="checkbox-symbol"></span>
+                            </span>
+                        </label>
+                        <label for="" class="checkbox-wrap">
+                            <span class="checkbox-txt">서랍/수납장</span>
+                            <span class="checkbox-subtitle">
+                                <input type="checkbox" name="" id="sofa" data-testid="checkbox" value="서랍/수납장">
+                                <span class="checkbox-symbol"></span>
+                            </span>
+                        </label>
+                        <label for="" class="checkbox-wrap">
+                            <span class="checkbox-txt">거실장/TV장</span>
+                            <span class="checkbox-subtitle">
+                                <input type="checkbox" name="" id="sofa" data-testid="checkbox" value="거실장/TV장">
+                                <span class="checkbox-symbol"></span>
+                            </span>
+                        </label>
+                        <label for="" class="checkbox-wrap">
+                            <span class="checkbox-txt">선반</span>
+                            <span class="checkbox-subtitle">
+                                <input type="checkbox" name="" id="sofa" data-testid="checkbox" value="선반">
+                                <span class="checkbox-symbol"></span>
+                            </span>
+                        </label>
+                        <label for="" class="checkbox-wrap">
+                            <span class="checkbox-txt">진열장/책장</span>
+                            <span class="checkbox-subtitle">
+                                <input type="checkbox" name="" id="sofa" data-testid="checkbox" value="진열장/책장">
+                                <span class="checkbox-symbol"></span>
+                            </span>
+                        </label>
+                        <label for="" class="checkbox-wrap">
+                            <span class="checkbox-txt">의자</span>
+                            <span class="checkbox-subtitle">
+                                <input type="checkbox" name="" id="sofa" data-testid="checkbox" value="의자">
+                                <span class="checkbox-symbol"></span>
+                            </span>
+                        </label>
+                        <label for="" class="checkbox-wrap">
+                            <span class="checkbox-txt">행거/옷장</span>
+                            <span class="checkbox-subtitle">
+                                <input type="checkbox" name="" id="sofa" data-testid="checkbox" value="행거/옷장">
+                                <span class="checkbox-symbol"></span>
+                            </span>
+                        </label>
+                        <label for="" class="checkbox-wrap">
+                            <span class="checkbox-txt">의자</span>
+                            <span class="checkbox-subtitle">
+                                <input type="checkbox" name="" id="sofa" data-testid="checkbox" value="의자">
+                                <span class="checkbox-symbol"></span>
+                            </span>
+                        </label>
+                        <label for="" class="checkbox-wrap">
+                            <span class="checkbox-txt">거울</span>
+                            <span class="checkbox-subtitle">
+                                <input type="checkbox" name="" id="sofa" data-testid="checkbox" value="거울">
+                                <span class="checkbox-symbol"></span>
+                            </span>
+                        </label>
+                        <label for="" class="checkbox-wrap">
+                            <span class="checkbox-txt">화장대/콘솔</span>
+                            <span class="checkbox-subtitle">
+                                <input type="checkbox" name="" id="sofa" data-testid="checkbox" value="화장대/콘솔">
+                                <span class="checkbox-symbol"></span>
+                            </span>
+                        </label>
+                        <label for="" class="checkbox-wrap">
+                            <span class="checkbox-txt">영유아가구</span>
+                            <span class="checkbox-subtitle">
+                                <input type="checkbox" name="" id="sofa" data-testid="checkbox" value="영유아가구">
+                                <span class="checkbox-symbol"></span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="survey-container">
+                <p>2. 내가 좋아하는 색상 선택</p>
+                <div class="color-select">
+                    <div class="color-select-obj">
+                        <div class="color">
+                            <input type="checkbox" name="colors" id="red">
+                            <label for="red" class="red"></label>
+                        </div>
+                        <div class="color">
+                            <input type="checkbox" name="colors" id="orange">
+                            <label for="orange" class="orange"></label>
+                        </div>
+                        <div class="color">
+                            <input type="checkbox" name="colors" id="yellow">
+                            <label for="yellow" class="yellow"></label>
+                        </div>
+                        <div class="color">
+                            <input type="checkbox" name="colors" id="green">
+                            <label for="green" class="green"></label>
+                        </div>
+                        <div class="color">
+                            <input type="checkbox" name="colors" id="pink">
+                            <label for="pink" class="pink"></label>
+                        </div>
+                        <div class="color">
+                            <input type="checkbox" name="colors" id="purple">
+                            <label for="purple" class="purple"></label>
+                        </div>
+                    </div>
+                    <div class="color-select-obj">
+                        <div class="color">
+                            <input type="checkbox" name="colors" id="lightblue">
+                            <label for="lightblue" class="lightblue"></label>
+                        </div>
+                        <div class="color">
+                            <input type="checkbox" name="colors" id="blue">
+                            <label for="blue" class="blue"></label>
+                        </div>
+                        <div class="color">
+                            <input type="checkbox" name="colors" id="white">
+                            <label for="white" class="white"></label>
+                        </div>
+                        <div class="color">
+                            <input type="checkbox" name="colors" id="beige">
+                            <label for="beige" class="beige"></label>
+                        </div>
+                        <div class="color">
+                            <input type="checkbox" name="colors" id="grey">
+                            <label for="grey" class="grey"></label>
+                        </div>
+                        <div class="color">
+                            <input type="checkbox" name="colors" id="brown">
+                            <label for="brown" class="brown"></label>
+                        </div>
+                        <div class="color">
+                            <input type="checkbox" name="colors" id="black">
+                            <label for="black" class="black"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="survey-container">
+                <p>3. 가족구성원 (선택)</p>
+                <div class="checkbox-container">
+                    <p>
+                        <input type="checkbox" name="" id="select-check">
+                        <label for="select-check" class="check">영유아(생후65개월미만)가 있습니까?</label>
+                    </p>
+                </div>
+                <p>약관동의</p>
+                <div class="checkbox-container" id="agree-container">
+                    <p>
+                        <input type="checkbox" name="" id="all">
+                        <label for="all">전체동의</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" name="" id="age-check">
+                        <label for="age-check">만 14세 이상입니다(필수)</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" name="" id="agree">
+                        <label for="agree"><a href="">개인정보수집 및 이용동의</a></label>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <input type="submit" value="회원가입하기" class="submit">
+        </div>
+    </form>
 </div>
 
 

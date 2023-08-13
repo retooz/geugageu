@@ -26,52 +26,62 @@
 //   $('#inputId').on('blur', checkIdValid);
 
 
-$(function(){
-  $('#alert-success').hide();
-  $('#alert-danger').hide();
-  $('input').keyup(function(){
-    var pwd1=$('#pwd1').val();
-    var pwd2=$('#pwd2').val();
-    if(pwd1 != "" || pwd2 != ""){
-      if(pwd1 == pwd2){
-        $('#alert-success').show();
-        $('#alert-danger').hide();
-        $('submit').removeAttr("disabled");
-      } else{
-        $('#alert-success').hide();
-        $('#alert-danger').show();
-        $('submit').attr("disabled", "disabled");
+$(function () {
+  let alert = $('#alert')
+  alert.hide();
+  $('input').keyup(() => {
+    let pwd1 = $('#pwd1').val();
+    let pwd2 = $('#pwd2').val();
+    console.log(pwd1.length)
+    if (pwd1 != "" && pwd2 != "") {
+      if (pwd1 == pwd2) {
+        if (pwd1.length > 7) {
+          alert.hide()
+        } else {
+          alert.show()
+          alert.text('비밀번호가 일치하지 않습니다.')
+        }
+      } else {
+        alert.show()
+        alert.text('비밀번호가 일치하지 않습니다.')
       }
+    } else {
+      alert.show()
+      alert.text('비밀번호를 입력해주세요.')
     }
-
   })
-
 })
 
+$(document).ready(() => {
+  $('#furniture-button').click(() => {
+    $('.dropdown-container').toggle()
+  })
 
-//1. 내가 필요한 가구는?
-let todoList =[]
-
-const render = ()=>{
-    let planList = $("#planList");
-    let text = " "
-    for(let i = 0; i < todoList.length; i++){
-      text += `${todoList[i]}<button class="del-btn" onclick='deleteList(${i})'>삭제</button>`;    
+  $('#all').change(function () {
+    if ($(this).is(':checked')) {
+      $('#age-check').prop("checked", true);
+      $('#agree').prop('checked', true)
     }
-    planList.html(text);
-}
+    else {
+      $('#age-check').prop("checked", false);
+      $('#agree').prop('checked', false)
+    }
+  })
 
-const list=()=>{
-  let inputPlan =  $("#inputPlan");
-  let inputPlan2 = $("option:selected");
-  todoList.push(inputPlan2.val());
+  $('#age-check').change(function() {
+    if($('#age-check').is(':checked') && $('#agree').is(':checked')) {
+      $('#all').prop('checked', true)
+    } else {
+      $('#all').prop('checked', false)
+    }
+  })
 
-  render();
-  inputPlan.val("");
-  inputPlan.focus();
-}
-//삭제 기능 
-const deleteList = (index) =>{
-    todoList.splice(index, 1);
-    render();
-}
+  $('#agree').change(function() {
+    if($('#age-check').is(':checked') && $('#agree').is(':checked')) {
+      $('#all').prop('checked', true)
+    } else {
+      $('#all').prop('checked', false)
+    }
+  })
+})
+
