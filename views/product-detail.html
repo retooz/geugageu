@@ -73,7 +73,7 @@
         </div>
 
         <div class="direction-horizon">
-            <form action="http://localhost:3333/product/updatehttp://localhost:3333/product/update" method="post" id="rating">
+            <form action="http://localhost:3333/product/update" method="post" id="rating">
                 <input type="hidden" name="p_id" value="{{p_detail.p_id}}">
                 <fieldset>
                     <input type="radio" name="rating" value="5" id="rate5"><label for="rate5">★</label>
@@ -81,14 +81,11 @@
                     <input type="radio" name="rating" value="3" id="rate3"><label for="rate3">★</label>
                     <input type="radio" name="rating" value="2" id="rate2"><label for="rate2">★</label>
                     <input type="radio" name="rating" value="1" id="rate1"><label for="rate1">★</label>
-                <input type="submit" value="" display="none;" id="submit-btn">
                     <input type="submit" style="display:none;" id="rating-submit">
                 </fieldset>
             </form>
             <div class="submit">
-            <label for="submit-btn" id="submit-btn">평가하기</label>
-            {#     <label for="rating-submit" id="submit-btn">평가하기
-                    <!-- <button id="submit-btn" type="button">평가하기</button> #} -->
+                <label for="rating-submit" id="submit-btn">평가하기
                 </label>
             </div>
         </div>
