@@ -17,7 +17,6 @@ const homeService = {
     idCheck : async (data) => {
         try {
             const [results] = await conn.query(userQueries.idDoubleCheck, [data.user_id])
-
             return [results]
         } catch (err) {
             console.log(err)
@@ -36,7 +35,6 @@ const homeService = {
     },
 
     ratingModify : async (new_rat_value,new_rat_count, p_id)=>{
-        console.log('haha')
         try {
             const[results] = await conn.query(productQueries.rating, [new_rat_value, new_rat_count, p_id])
             return results
