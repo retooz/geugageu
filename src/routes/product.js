@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const homeService = require('../services/homeService')
-const { productDetail } = require('../queries/userQueries')
+
 
 router.get('/:p_id', async (req,res) => {
     const {p_id} = req.params
