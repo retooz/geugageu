@@ -2,6 +2,20 @@ const express = require('express');
 const homeService = require('../services/homeService');
 const router = express.Router()
 const passport = require('../passport/passport')
+const multer = require('multer')
+const path = require('path')
+const upload = multer({
+    storage: multer.diskStorage({
+
+        destination: function(req,file, cb) {
+            cb(null, './public/assets/uploaded/')
+        },
+        filename: function(req, file, cb) {
+            const ext = path.extname(file.originalname)
+            cb(null, path.basename('user_') + Date.now() + ext)
+        }
+    })
+})
 
 router.post('/join', async (req, res) => {
     const data = req.body;
@@ -62,4 +76,12 @@ router.get('/scrape', (req, res) => {
 router.get('/like', (req, res) => {
     res.render('like')
 })
+
+router.post('/upload', upload.single('input-image'), (req,res) => {
+    console.log(req.body)
+    console.log(req.file)
+    console.log(req.file.path)
+    console.log(req.file.filename)
+})
+
 module.exports = router

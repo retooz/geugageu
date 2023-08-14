@@ -3,20 +3,15 @@ const conn = require('../../config/database')
 const queries = require('../queries/userQueries')
 const { selectUser } = queries
 const LocalStrategy = require('passport-local').Strategy
-const KakaoStrategy = require('passport-kakao').Strategy
 
 passport.use(new LocalStrategy(
     { usernameField: 'user_id', passwordField: 'user_pw' },
     async (user_id, user_pw, done) => {
-        console.log(user_id,user_pw)
         try {
             console.log('asd')
             const [userRows] = await conn.query(selectUser, [user_id, user_pw], (err,rows) => {
-                console.log(err)
-                console.log(rows)
             })
             const user = userRows[0]
-            console.log(user)
             if (!user) {
                 return done(null, false, { message: '입력한 정보와 일치하는 회원이 없습니다.' })
             }

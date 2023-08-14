@@ -15,12 +15,16 @@ router.get('/login', (req,res) => {
     res.render('login')
 })
 
-router.get('/test', (req,res) => {
-    res.render('shop')
+router.get('/join', (req, res) => {
+    res.render('join')
 })
 
-router.get('/mypage', (req,res) => {
-    res.render('userpage')
+router.get('/test', (req,res) => {
+    res.render('join')
+})
+
+router.get('/upload', (req,res) => {
+    res.render('extract')
 })
 
 

@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
     $(".slider > ul").bxSlider({
         easing: "linear",
@@ -31,43 +32,118 @@ let currentPage = 1; // 현재 페이지
 
 // 아이템 로드 함수
 function loadItems(page) {
-    // AJAX 요청 또는 가상의 데이터 로드 코드
-    // 여기서는 setTimeout을 사용한 가상의 데이터 로드
-    setTimeout(function () {
-        for (let i = 0; i < itemsPerPage; i++) {
-            // 새로운 상품 아이템 생성 및 추가
-            const newItem = `
-            <article>
-                <a href="#">
-                    <div class="thumb">
-                        <div class="image-container"></div>
-                    </div>
-                    <h2>상품명</h2>
-                    <p>간단한 상품 설명</p>
-                    <div class="price">27,000</div>
-                    <div class="rating">
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
-                        <span class="star">&#9733;</span>
-                    </div>
-                </a>
-                <button class="wishlist-button">
-                    <i class="far fa-heart"></i> <!-- 빈 하트 아이콘 -->
-                    <i class="fas fa-heart filled"></i> <!-- 꽉 찬 하트 아이콘 -->
-                </button>
-            </article>
-                `;
-            $(".list").append(newItem);
-        }
-    }, 1000); // 1초 뒤에 실행
-    currentPage++;
+    const category = getCurrentCategory();
+
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            url: `http://localhost:3333/shop/${category}/${page}`,
+            type: 'GET',
+            success: function (result) {
+                resolve(result);
+            },
+            error: function (error) {
+                console.log(error);
+                reject(error);
+            }
+        });
+    });
 }
+
+let sortDirection = null; // 높은가격 & 낮은가격을 위한 전역변수값
+let allItems = []; // 높은가격 & 낮은가격을 위한 전역변수값
+
+
+
+function renderItems(items) {
+    items.forEach(function (item) {
+        // 템플릿 동적 생성
+        const newItem = `
+            <article>
+                <a href="${item.pip_url}">
+                    <div class="thumb">
+                        <div class="image-container">
+                            <img src="${item.img_url}">
+                        </div>
+                    </div>
+                    <h2>${item.p_name}</h2>
+                    <p>${item.p_type}</p>
+                    <div class="price">${item.p_price.toLocaleString()}</div>
+                </a>
+            </article>
+        `;
+        $(".list").append(newItem);
+    });
+}
+
+// 정렬 함수
+function sortItems(items, direction, sortBy) {
+    if (sortBy === "rating") {
+        return items.sort((a, b) => b.rat_value - a.rat_value);
+    } else {
+        return items.sort((a, b) => direction === "asc" ? a.p_price - b.p_price : b.p_price - a.p_price);
+    }
+}
+
+
+function loadSortedItems() {
+    if (allItems.length === 0) {
+        loadItems().then(items => {
+            allItems = sortItems(items, sortDirection);
+            renderItems(allItems.slice(0, itemsPerPage));
+            currentPage++;
+        });
+    } else {
+        allItems = sortItems(allItems, sortDirection);
+        const start = currentPage * itemsPerPage;
+        const slicedItems = allItems.slice(start, start + itemsPerPage);
+        renderItems(slicedItems);
+        currentPage++;
+    }
+}
+
 
 // 더 보기 버튼 클릭 이벤트
 $("#loadMore").on("click", function () {
-    loadItems(currentPage);
+    if (sortDirection === null) {
+        loadItems(currentPage).then(items => {
+            const start = currentPage * itemsPerPage;
+            const slicedItems = items.slice(start, start + itemsPerPage);
+            renderItems(slicedItems);
+            currentPage++;
+        });
+    } else {
+        loadSortedItems();
+    }
+});
+
+//전체보기 함수
+
+
+
+// 정렬 버튼 클릭 이벤트
+$("#sortHighPrice, #sortLowPrice").on("click", function () {
+    sortDirection = $(this).data("sort");
+    $(".list article").not(".sort").remove();
+    currentPage = 0;
+
+    loadSortedItems();
+});
+
+
+
+
+// 기본 화면에서의 오류 수정 
+// 더보기를 했을 때 똑같은 값이 한번 더 나옴
+function init() {
+    loadItems().then(items => {
+        allItems = items;
+        currentPage++; // 페이지를 2로 설정해 기본형 화면에서 더 보기를 누를 때 나중 값들이 나오도록 합니다.
+    });
+}
+
+// 처음 실행 시 함수 호출
+$(document).ready(function () {
+    init();
 });
 
 
