@@ -56,8 +56,8 @@ function loadItems(page) {
     });
 }
 
-let sortDirection = null; // 높은가격 + 낮은가격을 위한 전역변수값
-let allItems = []; // 높은가격 + 낮은가격을 위한 전역변수값
+let sortDirection = null; // 높은가격 & 낮은가격을 위한 전역변수값
+let allItems = []; // 높은가격 & 낮은가격을 위한 전역변수값
 
 
 
@@ -123,6 +123,8 @@ $("#loadMore").on("click", function () {
     }
 });
 
+//전체보기 함수
+
 
 
 // 정렬 버튼 클릭 이벤트
@@ -150,3 +152,5 @@ function init() {
 $(document).ready(function () {
     init();
 });
+
+
