@@ -28,7 +28,14 @@ $(function () {
 
 // 더보기 버튼
 const itemsPerPage = 12; // 한 번에 로드할 아이템 수
-let currentPage = 1; // 현재 페이지
+let currentPage = 0; // 현재 페이지
+
+function getCurrentCategory (){
+    const url = window.location.pathname; // 현재페이지의 url을 가져옵니다
+    const category = url.split('/').pop(); //urlpath를 '/'기준으로 나누어서 맨 마지막 요소, 즉 카테고리 값을 얻습니다.
+    return category;
+}
+
 
 // 아이템 로드 함수
 function loadItems(page) {
@@ -49,8 +56,8 @@ function loadItems(page) {
     });
 }
 
-let sortDirection = null; // 높은가격 & 낮은가격을 위한 전역변수값
-let allItems = []; // 높은가격 & 낮은가격을 위한 전역변수값
+let sortDirection = null; // 높은가격 + 낮은가격을 위한 전역변수값
+let allItems = []; // 높은가격 + 낮은가격을 위한 전역변수값
 
 
 
@@ -65,10 +72,16 @@ function renderItems(items) {
                             <img src="${item.img_url}">
                         </div>
                     </div>
-                    <h2>${item.p_name}</h2>
-                    <p>${item.p_type}</p>
-                    <div class="price">${item.p_price.toLocaleString()}</div>
+                    <div class="desc-container">
+                        <h2>${item.p_name}</h2>
+                        <p>${item.p_type}<</p>
+                        <div class="price">${item.p_price.toLocaleString()}</div>
+                    </div>
                 </a>
+                <button class="wishlist-button">
+                    <i class="far fa-heart"></i> 
+                    <i class="fas fa-heart filled"></i>
+                </button>
             </article>
         `;
         $(".list").append(newItem);
@@ -116,10 +129,6 @@ $("#loadMore").on("click", function () {
     }
 });
 
-//전체보기 함수
-
-
-
 // 정렬 버튼 클릭 이벤트
 $("#sortHighPrice, #sortLowPrice").on("click", function () {
     sortDirection = $(this).data("sort");
@@ -128,9 +137,6 @@ $("#sortHighPrice, #sortLowPrice").on("click", function () {
 
     loadSortedItems();
 });
-
-
-
 
 // 기본 화면에서의 오류 수정 
 // 더보기를 했을 때 똑같은 값이 한번 더 나옴
@@ -146,41 +152,9 @@ $(document).ready(function () {
     init();
 });
 
-
-// 하트
-
-$(document).ready(function() {
-    $(".wishlist-button").click(function() {
-        $(this).toggleClass("active");
-        // let heart = $(this).find('.fa-heart')
-        // for(i=0; i<heart.length; i++){
-        //     console.log(heart[i])
-        //     heart[i].toggle()
-        // }
-        var isFilled = $(this).hasClass("active");
-        if (isFilled) {
-            console.log($(this).find('.fa-heart.filled'))
-            $(this).find(".fa-heart.filled").show();
-            $(this).find(".fa-heart").hide();
-        } else {
-            $(this).find(".filled").hide();
-            $(this).find(".far").show();
-        }
-    });
+$(document).ready(function () {
+    let wishlist = $('.wishlist-button')
+    wishlist.click(function() {
+        $(this).find('.fa-heart').toggle()
+    })
 })
-
-
-
-
-
-
-
-
-// 별점....?
-$(document).ready(function() {
-    $(".ratings .star").click(function() {
-        $(this).toggleClass("active");
-        $(this).prevAll().toggleClass("active");
-        $(this).nextAll().removeClass("active");
-    });
-});

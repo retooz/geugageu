@@ -66,10 +66,10 @@ h2 {
     line-height: 16px;
     margin: 4px 0;
     
-    /*설명이 넘을때 숨기고 ... 표시
+    /*설명이 넘을때 숨기고 ... 표시 */
     text-overflow: ellipsis;
     white-space: nowrap;
-    overflow: hidden;*/
+    overflow: hidden;
 }
 
 .price::after {
@@ -113,7 +113,7 @@ main section {
     top: 0;
     background-color: rgba(0, 0, 0, 0.3);
     color: #fff;
-    padding: 20px;
+    padding: 0 4vw;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -167,18 +167,40 @@ main section {
     line-height: 15px;
 }
 
-.list  .sort  li  a {
+.list  .sort  li  a button{
     font-weight: bold;
     display: block;
     padding: 0 10px;
     border-right: 1px solid #ddd;
+    background-color: transparent;
 }
 
 .bxwraper {
     box-shadow: none;
 }
 
+article>a>div>h2 {
+    font-size: 1.2em;
+}
 
+article>a>div>p {
+    padding: 1vh 0;
+}
+
+.desc-container {
+    padding-left: 3vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.desc-container * {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 80%;
+}
 /* 필터링 삭제 버튼*/
 #result {
     margin-top: 10px;
@@ -217,7 +239,7 @@ main section {
     position: absolute;
     top: 0.5em; /* 원하는 위치로 조정 */
     right: 2em; /* 원하는 위치로 조정 */
-    color: #ffffff;
+    color: #F67329;
     font-size: 2em;
     cursor: pointer;
     z-index: 1; /* 버튼을 이미지 위에 표시하기 위해 추가 */
@@ -235,5 +257,6 @@ main section {
     display: none;
 }
 
-
-
+.bx-prev, .bx-next {
+    z-index: 0 !important;
+}
