@@ -42,46 +42,43 @@ function classifyColor(color, threshold) {
     return closestColorName;
 }
 
-$(document).ready(function() {
+$('#input-image').on('change', function (event) {
+    const file = event.target.files[0];
+    const imgElement = new Image();
 
-    $('#input-image').on('change', function (event) {
-        const file = event.target.files[0];
-        const imgElement = new Image();
+    imgElement.src = URL.createObjectURL(file);
+    $(imgElement).on('load', function () {
 
-        imgElement.src = URL.createObjectURL(file);
-        $(imgElement).on('load', function () {
+        const imgPreview = $('<img>');
+        imgPreview.attr('src', imgElement.src);
+        imgPreview.attr('width', 200);
 
-            const imgPreview = $('<img>');
-            imgPreview.attr('src', imgElement.src);
-            imgPreview.attr('width', 200);
-
-            $('.img-preview-container').empty();
-            $('.img-preview-container').append(imgPreview);
-            $('.img-preview-container').css('border', 'none');
+        $('.img-preview-container').empty();
+        $('.img-preview-container').append(imgPreview);
+        $('.img-preview-container').css('border','none');
 
 
-            const colorThief = new ColorThief();
-            const numberOfColors = 5;
-            const palette = colorThief.getPalette(imgElement, numberOfColors);
+        const colorThief = new ColorThief();
+        const numberOfColors = 5;
+        const palette = colorThief.getPalette(imgElement, numberOfColors);
 
-            $('#color-pallete').val(JSON.stringify(palette));
+        $('#color-array').text(JSON.stringify(palette));
+        
+        const colorArray = [];
+        $(palette).each((_, color) => {
+            if (colorArray.length >= 3) {
+                
+                return false;
+            }
 
-            const colorArray = [];
-            $(palette).each((_, color) => {
-                if (colorArray.length >= 3) {
-
-                    return false;
-                }
-
-                const closestColorName = classifyColor(color, deltaEThreshold);
-                if (closestColorName && !colorArray.includes(closestColorName)) {
-                    colorArray.push(closestColorName);
-                }
-            });
-
-            $('#color-array').val(JSON.stringify(colorArray, null, 2));
-            console.log(colorArray) // 추출 색상값
-            console.log(imgElement) // 추출 이미지값(preview)
+            const closestColorName = classifyColor(color, deltaEThreshold);
+            if (closestColorName && !colorArray.includes(closestColorName)) {
+                colorArray.push(closestColorName);
+            }
         });
+
+        $('#color-pallete').val(JSON.stringify(colorArray, null, 2));
+        console.log(colorArray) // 추출 색상값
+        console.log(imgElement) // 추출 이미지값(preview)
     });
-})
+});
