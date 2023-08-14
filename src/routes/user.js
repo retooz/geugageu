@@ -82,6 +82,7 @@ router.post('/upload', upload.single('input-image'), (req,res) => {
     console.log(req.file)
     console.log(req.file.path)
     console.log(req.file.filename)
+    res.redirect('/user/mypage')
 })
 
 module.exports = router
