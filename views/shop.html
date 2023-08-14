@@ -51,51 +51,59 @@
                     <span>베스트셀러</span>
                 </h3>
                 <article>
-                    <a href="#">
+                    <a href="{{bs[0].pip_url}}">
                         <div class="thumb">
-                            <div class="image-container"></div>
+                            <div class="image-container">
+                                <img src="{{bs[0].img_url}}">
+                            </div>
                         </div>
                         <img class="badge" src="https://atimg.sonyunara.com/2021/renewal/best/rank/best (1).png"
                             alt="best-seller-badge">
-                        <h2>상품명</h2>
-                        <p>간단한 상품 설명</p>
-                        <div class="price">27,000</div>
+                        <h2>{{bs[0].p_name}}</h2>
+                        <p>{{bs[0].p_type}}</p>
+                        <div class="price">{{bs[0].p_price}}</div>
                     </a>
                 </article>
                 <article>
-                    <a href="#">
+                    <a href="{{bs[1].pip_url}}">
                         <div class="thumb">
-                            <div class="image-container"></div>
+                            <div class="image-container">
+                                <img src="{{bs[1].img_url}}">
+                            </div>
                         </div>
                         <img class="badge" src="https://atimg.sonyunara.com/2021/renewal/best/rank/best (2).png"
                             alt="best-seller-badge">
-                        <h2>상품명</h2>
-                        <p>간단한 상품 설명</p>
-                        <div class="price">27,000</div>
+                        <h2>{{bs[1].p_name}}</h2>
+                        <p>{{bs[1].p_type}}</p>
+                        <div class="price">{{bs[1].p_price}}</div>
                     </a>
                 </article>
                 <article>
-                    <a href="#">
+                    <a href="{{bs[2].pip_url}}">
                         <div class="thumb">
-                            <div class="image-container"></div>
+                            <div class="image-container">
+                                <img src="{{bs[2].img_url}}">
+                            </div>
                         </div>
                         <img class="badge" src="https://atimg.sonyunara.com/2021/renewal/best/rank/best (3).png"
                             alt="best-seller-badge">
-                        <h2>상품명</h2>
-                        <p>간단한 상품 설명</p>
-                        <div class="price">27,000</div>
+                        <h2>{{bs[2].p_name}}</h2>
+                        <p>{{bs[2].p_type}}</p>
+                        <div class="price">{{bs[2].p_price}}</div>
                     </a>
                 </article>
                 <article>
-                    <a href="#">
+                    <a href="{{bs[3].pip_url}}">
                         <div class="thumb">
-                            <div class="image-container"></div>
+                            <div class="image-container">
+                                <img src="{{bs[3].img_url}}">
+                            </div>
                         </div>
                         <img class="badge" src="https://atimg.sonyunara.com/2021/renewal/best/rank/best (4).png"
                             alt="best-seller-badge">
-                        <h2>상품명</h2>
-                        <p>간단한 상품 설명</p>
-                        <div class="price">27,000</div>
+                        <h2>{{bs[3].p_name}}</h2>
+                        <p>{{bs[3].p_type}}</p>
+                        <div class="price">{{bs[3].p_price}}</div>
                     </a>
                 </article>
 
@@ -370,10 +378,14 @@
                             <a href="#">별점높은순</a>
                         </li>
                         <li>
-                            <a href="#">높은가격순</a>
+                            <a href="#">
+                                <button id="sortHighPrice" data-sort = "desc">높은가격순</button>
+                            </a>
                         </li>
                         <li>
-                            <a href="#" class="on">낮은가격순</a>
+                            <a href="#" class="on">
+                                <button id="sortLowPrice" data-sort="asc">낮은가격순</button>
+                            </a>
                         </li>
                         <li>
                             <a href="#">베스트셀러</a>
@@ -383,113 +395,147 @@
                         </li>
                     </ul>
                     <article>
-                        <a href="#">
+                        <a href="{{list[0].pip_url}}">
                             <div class="thumb">
-                                <div class="image-container"></div>
+                                <div class="image-container">
+                                    <img src="{{list[0].img_url}}">
+                                </div>
                             </div>
-                            <h2>상품명</h2>
-                            <p>간단한 상품 설명</p>
-                            <div class="price">27,000</div>
+                            <h2>{{list[0].p_name}}</h2>
+                            <p>{{list[0].p_type}}</p>
+                            <div class="price">{{list[0].p_price}}</div>
                         </a>
                     </article>
                     <article>
-                        <a href="#">
+                        <a href="{{list[1].pip_url}}">
                             <div class="thumb">
-                                <div class="image-container"></div>
+                                <div class="image-container">
+                                    <img src="{{list[1].img_url}}">
+                                </div>
                             </div>
-                            <h2>상품명</h2>
-                            <p>간단한 상품 설명</p>
-                            <div class="price">27,000</div>
+                            <h2>{{list[1].p_name}}</h2>
+                            <p>{{list[1].p_type}}</p>
+                            <div class="price">{{list[1].p_price}}</div>
                         </a>
                     </article>
                     <article>
-                        <a href="#">
+                        <a href="{{list[2].pip_url}}">
                             <div class="thumb">
-                                <div class="image-container"></div>
+                                <div class="image-container">
+                                    <img src="{{list[2].img_url}}">
+                                </div>
                             </div>
-                            <h2>상품명</h2>
-                            <p>간단한 상품 설명</p>
-                            <div class="price">27,000</div>
+                            <h2>{{list[2].p_name}}</h2>
+                            <p>{{list[2].p_type}}</p>
+                            <div class="price">{{list[2].p_price}}</div>
                         </a>
                     </article>
                     <article>
-                        <a href="#">
+                        <a href="{{list[3].pip_url}}">
                             <div class="thumb">
-                                <div class="image-container"></div>
+                                <div class="image-container">
+                                    <img src="{{list[3].img_url}}">
+                                </div>
                             </div>
-                            <h2>상품명</h2>
-                            <p>간단한 상품 설명</p>
-                            <div class="price">27,000</div>
+                            <h2>{{list[3].p_name}}</h2>
+                            <p>{{list[3].p_type}}</p>
+                            <div class="price">{{list[3].p_price}}</div>
                         </a>
                     </article>
                     <article>
-                        <a href="#">
+                        <a href="{{list[4].pip_url}}">
                             <div class="thumb">
-                                <div class="image-container"></div>
+                                <div class="image-container">
+                                    <img src="{{list[4].img_url}}">
+                                </div>
                             </div>
-                            <h2>상품명</h2>
-                            <p>간단한 상품 설명</p>
-                            <div class="price">27,000</div>
+                            <h2>{{list[4].p_name}}</h2>
+                            <p>{{list[4].p_type}}</p>
+                            <div class="price">{{list[4].p_price}}</div>
                         </a>
                     </article>
                     <article>
-                        <a href="#">
+                        <a href="{{list[5].pip_url}}">
                             <div class="thumb">
-                                <div class="image-container"></div>
+                                <div class="image-container">
+                                    <img src="{{list[5].img_url}}">
+                                </div>
                             </div>
-                            <h2>상품명</h2>
-                            <p>간단한 상품 설명</p>
-                            <div class="price">27,000</div>
+                            <h2>{{list[5].p_name}}</h2>
+                            <p>{{list[5].p_type}}</p>
+                            <div class="price">{{list[5].p_price}}</div>
                         </a>
                     </article>
                     <article>
-                        <a href="#">
+                        <a href="{{list[6].pip_url}}">
                             <div class="thumb">
-                                <div class="image-container"></div>
+                                <div class="image-container">
+                                    <img src="{{list[6].img_url}}">
+                                </div>
                             </div>
-                            <h2>상품명</h2>
-                            <p>간단한 상품 설명</p>
-                            <div class="price">27,000</div>
+                            <h2>{{list[6].p_name}}</h2>
+                            <p>{{list[6].p_type}}</p>
+                            <div class="price">{{list[6].p_price}}</div>
                         </a>
                     </article>
                     <article>
-                        <a href="#">
+                        <a href="{{list[7].pip_url}}">
                             <div class="thumb">
-                                <div class="image-container"></div>
+                                <div class="image-container">
+                                    <img src="{{list[7].img_url}}">
+                                </div>
                             </div>
-                            <h2>상품명</h2>
-                            <p>간단한 상품 설명</p>
-                            <div class="price">27,000</div>
+                            <h2>{{list[7].p_name}}</h2>
+                            <p>{{list[7].p_type}}</p>
+                            <div class="price">{{list[7].p_price}}</div>
                         </a>
                     </article>
                     <article>
-                        <a href="#">
+                        <a href="{{list[8].pip_url}}">
                             <div class="thumb">
-                                <div class="image-container"></div>
+                                <div class="image-container">
+                                    <img src="{{list[8].img_url}}">
+                                </div>
                             </div>
-                            <h2>상품명</h2>
-                            <p>간단한 상품 설명</p>
-                            <div class="price">27,000</div>
+                            <h2>{{list[8].p_name}}</h2>
+                            <p>{{list[8].p_type}}</p>
+                            <div class="price">{{list[8].p_price}}</div>
                         </a>
                     </article>
                     <article>
-                        <a href="#">
+                        <a href="{{list[9].pip_url}}">
                             <div class="thumb">
-                                <div class="image-container"></div>
+                                <div class="image-container">
+                                    <img src="{{list[9].img_url}}">
+                                </div>
                             </div>
-                            <h2>상품명</h2>
-                            <p>간단한 상품 설명</p>
-                            <div class="price">27,000</div>
+                            <h2>{{list[9].p_name}}</h2>
+                            <p>{{list[9].p_type}}</p>
+                            <div class="price">{{list[9].p_price}}</div>
                         </a>
                     </article>
                     <article>
-                        <a href="#">
+                        <a href="{{list[10].pip_url}}">
                             <div class="thumb">
-                                <div class="image-container"></div>
+                                <div class="image-container">
+                                    <img src="{{list[10].img_url}}">
+                                </div>
                             </div>
-                            <h2>상품명</h2>
-                            <p>간단한 상품 설명</p>
-                            <div class="price">27,000</div>
+                            <h2>{{list[10].p_name}}</h2>
+                            <p>{{list[10].p_type}}</p>
+                            <div class="price">{{list[10].p_price}}</div>
+                        </a>
+                    </article>
+                    <article>
+                        <a href="{{list[11].pip_url}}">
+                            <div class="thumb">
+                                <div class="image-container">
+                                    <img src="{{list[11].img_url}}">
+                                </div>
+                            </div>
+                            <h2>{{list[11].p_name}}</h2>
+                            <p>{{list[11].p_type}}</p>
+                            <div class="price">{{list[11].p_price}}</div>
                         </a>
                     </article>
                 </section>

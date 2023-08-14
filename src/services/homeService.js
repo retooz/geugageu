@@ -52,6 +52,16 @@ const homeService = {
             console.log(err)
             throw err
         }
+    },
+
+    getProductBS : async (category) => {
+        try {
+            const [results] = await conn.query(productQueries.getProductBS, [category])
+            return results
+        } catch (err) { 
+            console.log(err)
+            throw err
+        }
     }
 }
 
