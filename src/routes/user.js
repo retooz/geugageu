@@ -39,7 +39,7 @@ router.post('/login',
         failureRedirect: '/',
         failureFlash: true
     }), (err, req, res, next) => {
-        if (err) {
+        if(err) {
             console.log(err)
             next(err)
         }
@@ -47,22 +47,22 @@ router.post('/login',
     }
 )
 
-router.post('/check', async (req, res) => {
+router.post('/check', async (req,res) => {
     const data = req.body;
     try {
         const checkResult = await homeService.idCheck(data)
 
         if (checkResult.length == 0) {
-            res.json({ message: 'OK' })
+            res.json({ message : 'OK' })
         } else {
-            res.status(500).json({ message: 'reject' })
+            res.status(500).json({ message : 'reject'})
         }
     } catch (err) {
-        res.status(500).json({ message: 'error occurred' })
+        res.status(500).json({ message : 'error occurred'})
     }
 })
 
-router.get('/mypage', (req, res) => {
+router.get('/mypage', (req,res) => {
     res.render('userpage')
 })
 
@@ -77,7 +77,6 @@ router.get('/scrape', (req, res) => {
 router.get('/like', (req, res) => {
     res.render('like')
 })
-
 router.post('/upload', upload.single('input-image'), (req, res) => {
     console.log(req.body)
     console.log(req.file)

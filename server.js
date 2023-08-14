@@ -7,8 +7,6 @@ const fileStore = require('session-file-store')(session)
 const cors = require('cors')
 const passport = require('passport')
 const flash = require('express-flash')
-const multer = require('multer')
-
 
 const indexRouter = require('./src/routes')
 const userRouter = require('./src/routes/user')
