@@ -23,4 +23,5 @@ router.get('/mypage', (req,res) => {
     res.render('userpage')
 })
 
+
 module.exports = router

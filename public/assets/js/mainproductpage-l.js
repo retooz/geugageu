@@ -37,16 +37,27 @@ function loadItems(page) {
         for (let i = 0; i < itemsPerPage; i++) {
             // 새로운 상품 아이템 생성 및 추가
             const newItem = `
-                <article>
+            <article>
                 <a href="#">
-                <div class="thumb">
-                    <div class="image-container"></div>
-                </div>
-                <h2>상품명</h2>
-                <p>간단한 상품 설명</p>
-                <div class="price">27,000</div>
-            </a>
-                </article>
+                    <div class="thumb">
+                        <div class="image-container"></div>
+                    </div>
+                    <h2>상품명</h2>
+                    <p>간단한 상품 설명</p>
+                    <div class="price">27,000</div>
+                    <div class="rating">
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                    </div>
+                </a>
+                <button class="wishlist-button">
+                    <i class="far fa-heart"></i> <!-- 빈 하트 아이콘 -->
+                    <i class="fas fa-heart filled"></i> <!-- 꽉 찬 하트 아이콘 -->
+                </button>
+            </article>
                 `;
             $(".list").append(newItem);
         }
@@ -57,4 +68,43 @@ function loadItems(page) {
 // 더 보기 버튼 클릭 이벤트
 $("#loadMore").on("click", function () {
     loadItems(currentPage);
+});
+
+
+// 하트
+
+$(document).ready(function() {
+    $(".wishlist-button").click(function() {
+        $(this).toggleClass("active");
+        // let heart = $(this).find('.fa-heart')
+        // for(i=0; i<heart.length; i++){
+        //     console.log(heart[i])
+        //     heart[i].toggle()
+        // }
+        var isFilled = $(this).hasClass("active");
+        if (isFilled) {
+            console.log($(this).find('.fa-heart.filled'))
+            $(this).find(".fa-heart.filled").show();
+            $(this).find(".fa-heart").hide();
+        } else {
+            $(this).find(".filled").hide();
+            $(this).find(".far").show();
+        }
+    });
+})
+
+
+
+
+
+
+
+
+// 별점....?
+$(document).ready(function() {
+    $(".ratings .star").click(function() {
+        $(this).toggleClass("active");
+        $(this).prevAll().toggleClass("active");
+        $(this).nextAll().removeClass("active");
+    });
 });
