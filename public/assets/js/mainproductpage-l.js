@@ -49,13 +49,8 @@ function loadItems(page) {
     });
 }
 
-<<<<<<< HEAD
 let sortDirection = null; // 높은가격 & 낮은가격을 위한 전역변수값
 let allItems = []; // 높은가격 & 낮은가격을 위한 전역변수값
-=======
-let sortDirection = null; // 높은가격 + 낮은가격을 위한 전역변수값
-let allItems = []; // 높은가격 + 낮은가격을 위한 전역변수값
->>>>>>> e830c46db0783e5ae77666442a8d3f80f787ef00
 
 
 
@@ -121,11 +116,8 @@ $("#loadMore").on("click", function () {
     }
 });
 
-<<<<<<< HEAD
 //전체보기 함수
 
-=======
->>>>>>> e830c46db0783e5ae77666442a8d3f80f787ef00
 
 
 // 정렬 버튼 클릭 이벤트
@@ -152,10 +144,6 @@ function init() {
 // 처음 실행 시 함수 호출
 $(document).ready(function () {
     init();
-<<<<<<< HEAD
 });
 
 
-=======
-
->>>>>>> e830c46db0783e5ae77666442a8d3f80f787ef00
