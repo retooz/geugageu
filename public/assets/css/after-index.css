@@ -1,0 +1,59 @@
+.index-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2vh;
+}
+
+.index-header h2 {
+    padding: 1vh 0;
+    font-size: 2em;
+}
+
+.index-header h2 span {
+    color: #F67329;
+}
+.swiper-slide {
+    width: 25vw;
+    height: 58vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.index-lnk img {
+    height: 50vh;
+    width: 20vw;
+    object-fit: cover;
+}
+
+.index-lnk p {
+    font-size: 1.5em;
+    padding: 2vh 0;
+    text-align: center;
+    color: black;
+}
+
+.swiper-scrollbar {
+    height: 1vh;
+    width: 80%;
+}
+
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next {
+    left: 0;
+}
+
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+    right: 0;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    top: 0;
+    margin-top: 0;
+    width: 10%;
+    height: 100%;
+}
