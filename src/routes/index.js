@@ -23,8 +23,8 @@ router.get('/test', (req,res) => {
     res.render('join')
 })
 
-router.get('/mypage', (req,res) => {
-    res.render('userpage')
+router.get('/upload', (req,res) => {
+    res.render('extract')
 })
 
 module.exports = router

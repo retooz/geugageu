@@ -10,9 +10,7 @@
 .submenu {
     padding: 2vh 0 0 3vw;
     font-size: 1em;
-    color: var(--main-color);
-    background-color: var(--menu-bar);
-    position: absolute;
+    position: fixed;
     z-index: 2;
     height: 100vh;
     transition: all 0.3s ease-in;
