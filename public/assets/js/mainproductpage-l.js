@@ -28,14 +28,7 @@ $(function () {
 
 // 더보기 버튼
 const itemsPerPage = 12; // 한 번에 로드할 아이템 수
-let currentPage = 0; // 현재 페이지
-
-function getCurrentCategory (){
-    const url = window.location.pathname; // 현재페이지의 url을 가져옵니다
-    const category = url.split('/').pop(); //urlpath를 '/'기준으로 나누어서 맨 마지막 요소, 즉 카테고리 값을 얻습니다.
-    return category;
-}
-
+let currentPage = 1; // 현재 페이지
 
 // 아이템 로드 함수
 function loadItems(page) {
@@ -56,8 +49,13 @@ function loadItems(page) {
     });
 }
 
+<<<<<<< HEAD
 let sortDirection = null; // 높은가격 & 낮은가격을 위한 전역변수값
 let allItems = []; // 높은가격 & 낮은가격을 위한 전역변수값
+=======
+let sortDirection = null; // 높은가격 + 낮은가격을 위한 전역변수값
+let allItems = []; // 높은가격 + 낮은가격을 위한 전역변수값
+>>>>>>> e830c46db0783e5ae77666442a8d3f80f787ef00
 
 
 
@@ -123,8 +121,11 @@ $("#loadMore").on("click", function () {
     }
 });
 
+<<<<<<< HEAD
 //전체보기 함수
 
+=======
+>>>>>>> e830c46db0783e5ae77666442a8d3f80f787ef00
 
 
 // 정렬 버튼 클릭 이벤트
@@ -151,6 +152,10 @@ function init() {
 // 처음 실행 시 함수 호출
 $(document).ready(function () {
     init();
+<<<<<<< HEAD
 });
 
 
+=======
+
+>>>>>>> e830c46db0783e5ae77666442a8d3f80f787ef00
