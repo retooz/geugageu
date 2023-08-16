@@ -61,8 +61,14 @@ router.post('/check', async (req,res) => {
     }
 })
 
-router.get('/mypage', (req,res) => {
-    res.render('userpage')
+router.get('/mypage',  async (req,res) => {
+    const user_id = req.session.passport.user
+    try {
+        const userData = await homeService.getUserData(user_id)
+        res.render('userpage', {user : userData})
+    } catch (err) {
+        res.status(500).json({message : "error"})
+    }
 })
 
 router.get('/myGeuGaGeu', (req, res) => {

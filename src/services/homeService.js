@@ -24,6 +24,16 @@ const homeService = {
         }
     },
 
+    getUserData : async (user_id) => {
+        try {
+            const [results] = await conn.query(userQueries.getUserData, [user_id])
+            return results[0]
+        } catch (err) {
+            console.log(err)
+            throw err
+        }
+    },
+
     productDetail : async(data) => {
         try {
             const [results] = await conn.query(productQueries.productDetail, [data])
