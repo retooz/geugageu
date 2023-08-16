@@ -1,0 +1,86 @@
+{%extends 'layout.html'%}
+{%block content%}
+{% include 'submenu.html' %}
+{% include 'header.html' %}
+
+<link rel="stylesheet" href="/assets/css/index.css">
+<link rel="stylesheet" href="/assets/css/menu.css">
+<link rel="stylesheet" href="/assets/css/shop.css">
+
+<!-- 상품-->
+<div class="wrap">
+    {% include 'filter.html' %}
+    <main>
+        <section>
+            <section class="product">
+                <div id="result">
+                    <!-- 선택된 목록들을 보여줄 공간 -->
+                </div>
+                <section class="list">
+                    <ul class="sort">
+                        <li>
+                            <a href="#">
+                                <button id="sortHighRating" data-sort="desc">
+                                    별점높은순
+                                </button>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <button id="sortHighPrice" data-sort="desc">높은가격순</button>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="on">
+                                <button id="sortLowPrice" data-sort="asc">낮은가격순</button>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <button id="showBestSeller">
+                                    베스트셀러
+                                </button>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="on">
+                                <button id="all">전체보기</button>
+                            </a>
+                        </li>
+                    </ul>
+                    {% for i in list.slice(0,12)%}
+                    <article>
+                        <a href="/product/{{i.p_id}}">
+                            <div class="thumb">
+                                <div class="image-container">
+                                    <img src="{{i.img_url}}">
+                                </div>
+                            </div>
+                            <div class="desc-container">
+                                <h2>{{i.p_name}}</h2>
+                                <p>{{i.p_type}}</p>
+                                <div class="price">{{i.p_price}}</div>
+                                <p>★ ({{i.rat_value}})</p>
+                            </div>
+                        </a>
+                        <button class="wishlist-button">
+                            <i class="far fa-heart"></i> <!-- 빈 하트 아이콘 -->
+                            <i class="fas fa-heart filled"></i> <!-- 꽉 찬 하트 아이콘 -->
+                        </button>
+                    </article>
+                    {%endfor%}
+                </section>
+            </section>
+            <button class="load-more-button filter-button" id="loadMore">더 보기</button>
+        </section>
+    </main>
+</div>
+
+
+
+
+
+<script src="/assets/js/search.js"></script>
+<script src="/assets/js/layout.js"></script>
+{% include 'footer.html' %}
+{% endblock %}

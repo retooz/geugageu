@@ -62,6 +62,16 @@ const homeService = {
             console.log(err)
             throw err
         }
+    },
+
+    searchByKeyword : async (query) => {
+        try {
+            const [results] = await conn.query(productQueries.searchByKeyword, [query])
+            return results
+        } catch (err) {
+            console.log(err)
+            throw err
+        }
     }
 }
 

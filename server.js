@@ -12,6 +12,7 @@ const indexRouter = require('./src/routes')
 const userRouter = require('./src/routes/user')
 const productRouter = require('./src/routes/product')
 const shopRouter = require('./src/routes/shop')
+const searchRouter = require('./src/routes/search')
 
 app.set('port', process.env.PORT || 3333)
 
@@ -41,6 +42,7 @@ app.use('/', indexRouter)
 app.use('/user', userRouter)
 app.use('/product', productRouter)
 app.use('/shop', shopRouter)
+app.use('/search', searchRouter)
 
 app.listen(app.get('port'), () => {
     console.log('Listening at port '+app.get('port'))

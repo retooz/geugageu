@@ -1,0 +1,158 @@
+<link rel="stylesheet" href="/assets/css/filter.css">
+<!-- 필터링 -->
+<div class="btn-wrap">
+    <button class="filter-button" type="button" id="color" aria-expanded="true">색상</button>
+    <div class="drop-down" id="colorDropdown">
+        <label class="checkbox-wrap">
+            <span class="checkbox-txt">화이트</span>
+            <span class="checkbox-subtle">
+                <input type="checkbox" name="colors" id="white" data-testid="checkbox" value="화이트"
+                    onclick='getCheckboxValue()'>
+                <span class="checkbox-symbol"></span>
+            </span>
+        </label>
+        <label class="checkbox-wrap">
+            <span class="checkbox-txt">그레이</span>
+            <span class="checkbox-subtle">
+                <input type="checkbox" name="colors" id="grey" data-testid="checkbox" value="그레이"
+                    onclick='getCheckboxValue()'>
+                <span class="checkbox-symbol"></span>
+            </span>
+        </label>
+        <label class="checkbox-wrap">
+            <span class="checkbox-txt">블랙</span>
+            <span class="checkbox-subtle">
+                <input type="checkbox" name="colors" id="black" data-testid="checkbox" value="블랙"
+                    onclick='getCheckboxValue()'>
+                <span class="checkbox-symbol"> </span>
+            </span>
+        </label>
+        <label class="checkbox-wrap">
+            <span class="checkbox-txt">레드</span>
+            <span class="checkbox-subtle">
+                <input type="checkbox" name="colors" id="red" data-testid="checkbox" value="레드"
+                    onclick='getCheckboxValue()'>
+                <span class="checkbox-symbol"></span>
+            </span>
+        </label>
+        <label class="checkbox-wrap">
+            <span class="checkbox-txt">핑크</span>
+            <span class="checkbox-subtle">
+                <input type="checkbox" name="colors" id="pink" data-testid="checkbox" value="핑크"
+                    onclick='getCheckboxValue()'>
+                <span class="checkbox-symbol"> </span>
+            </span>
+        </label>
+        <label class="checkbox-wrap">
+            <span class="checkbox-txt">그린</span>
+            <span class="checkbox-subtle">
+                <input type="checkbox" name="colors" id="green" data-testid="checkbox" value="그린"
+                    onclick='getCheckboxValue()'>
+                <span class="checkbox-symbol"> </span>
+            </span>
+        </label>
+        <label class="checkbox-wrap">
+            <span class="checkbox-txt">베이지</span>
+            <span class="checkbox-subtle">
+                <input type="checkbox" name="colors" id="beige" data-testid="checkbox" value="베이지"
+                    onclick='getCheckboxValue()'>
+                <span class="checkbox-symbol"> </span>
+            </span>
+        </label>
+        <label class="checkbox-wrap">
+            <span class="checkbox-txt">브라운</span>
+            <span class="checkbox-subtle">
+                <input type="checkbox" name="colors" id="brown" data-testid="checkbox" value="브라운"
+                    onclick='getCheckboxValue()'>
+                <span class="checkbox-symbol"> </span>
+            </span>
+        </label>
+        <label class="checkbox-wrap">
+            <span class="checkbox-txt">오렌지</span>
+            <span class="checkbox-subtle">
+                <input type="checkbox" name="colors" id="orange" data-testid="checkbox" value="오렌지"
+                    onclick='getCheckboxValue()'>
+                <span class="checkbox-symbol"> </span>
+            </span>
+        </label>
+        <label class="checkbox-wrap">
+            <span class="checkbox-txt">라일락</span>
+            <span class="checkbox-subtle">
+                <input type="checkbox" name="colors" id="lilac" data-testid="checkbox" value="라일락"
+                    onclick='getCheckboxValue()'>
+                <span class="checkbox-symbol"> </span>
+            </span>
+        </label>
+        <label class="checkbox-wrap">
+            <span class="checkbox-txt">블루</span>
+            <span class="checkbox-subtle">
+                <input type="checkbox" name="colors" id="blue" data-testid="checkbox" value="블루"
+                    onclick='getCheckboxValue()'>
+                <span class="checkbox-symbol"> </span>
+            </span>
+        </label>
+        <label class="checkbox-wrap">
+            <span class="checkbox-txt">옐로우</span>
+            <span class="checkbox-subtle">
+                <input type="checkbox" name="colors" id="yellow" data-testid="checkbox" value="옐로우"
+                    onclick='getCheckboxValue()'>
+                <span class="checkbox-symbol"> </span>
+            </span>
+        </label>
+        <label class="checkbox-wrap">
+            <span class="checkbox-txt">터키석</span>
+            <span class="checkbox-subtle">
+                <input type="checkbox" name="colors" id="turquoise" data-testid="checkbox" value="터키석"
+                    onclick='getCheckboxValue()'>
+                <span class="checkbox-symbol"> </span>
+            </span>
+        </label>
+    </div>
+
+    <button class="filter-button" type="button" id="price" aria-expanded="true">가격</button>
+    <div class="drop-down" id="priceDropdown">
+        <label class="checkbox-wrap">
+            <span class="checkbox-txt">0 ~ 199,999</span>
+            <span class="checkbox-subtle">
+                <input type="checkbox" name="PRICE_0_20000000" id="PRICE_0_20000000" data-testid="checkbox"
+                    value="0 ~ 199,999" onclick='getCheckboxValue()'>
+                <span class="checkbox-symbol"></span>
+            </span>
+        </label>
+        <label class="checkbox-wrap">
+            <span class="checkbox-txt">200,000 ~ 399,999</span>
+            <span class="checkbox-subtle">
+                <input type="checkbox" name="PRICE_20000000_40000000" id="PRICE_20000000_40000000"
+                    data-testid="checkbox" value="200,000 ~ 399,9990" onclick='getCheckboxValue()'>
+                <span class="checkbox-symbol"></span>
+            </span>
+        </label>
+        <label class="checkbox-wrap">
+            <span class="checkbox-txt">400,000 ~ 599,999</span>
+            <span class="checkbox-subtle">
+                <input type="checkbox" name="PRICE_40000000_60000000" id="PRICE_40000000_60000000"
+                    data-testid="checkbox" value="400,000 ~ 599,999" onclick='getCheckboxValue()'>
+                <span class="checkbox-symbol"></span>
+            </span>
+        </label>
+        <label class="checkbox-wrap">
+            <span class="checkbox-txt">600,000 ~ 799,999</span>
+            <span class="checkbox-subtle">
+                <input type="checkbox" name="PRICE_60000000_80000000" id="PRICE_60000000_80000000"
+                    data-testid="checkbox" value="600,000 ~ 799,999" onclick='getCheckboxValue()'>
+                <span class="checkbox-symbol"></span>
+            </span>
+        </label>
+        <label class="checkbox-wrap">
+            <span class="checkbox-txt">800,000 ~</span>
+            <span class="checkbox-subtle">
+                <input type="checkbox" name="PRICE_80000000_2147483647" id="PRICE_80000000_2147483647"
+                    data-testid="checkbox" value="800,000 ~" onclick='getCheckboxValue()'>
+                <span class="checkbox-symbol"></span>
+            </span>
+        </label>
+    </div>
+    <button class="filter-button" id="reset-button" type="button">재설정하기</button>
+</div>
+
+<script src="/assets/js/filter.js"></script>
