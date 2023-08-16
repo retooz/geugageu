@@ -5,7 +5,6 @@
 
 <link rel="stylesheet" href="/assets/css/index.css">
 <link rel="stylesheet" href="/assets/css/menu.css">
-<link rel="stylesheet" href="/assets/css/filter.css">
 <link rel="stylesheet" href="/assets/css/shop.css">
 {% if category == "bedroom"%}
 {%include 'bedroom.html'%}
@@ -19,28 +18,52 @@
 {% include 'bathroom.html'%}
 {% endif %}
 <div class="wrap">
-
     <main>
-
         <section>
             <!-- 슬라이더 영역 -->
             <section class="slider">
                 <ul>
                     <li>
-                        <a href="#"><img src="/images/mainproduct1.jpg" alt="item1" /></a>
-
+                        <a href="#"><img src="/images/shopbed.jpg" alt="item1" />
+                            <div class="slider-caption">
+                                <h2>스타일과 수납을 갖춘 벽</h2>
+                                <p>비슷한 수납으로 차분한 룩을 연출, 서로 다른 높이로 흥미를 더했어요. <br />펜던트등으로 방 안의 분위기가 살려 보세요.</p>
+                            </div>
+                        </a>
                     </li>
                     <li>
-                        <a href="#"><img src="/images/mainproduct2.jpg" alt="item2" /></a>
+                        <a href="#"><img src="/images/shopliv.jpg" alt="item2" />
+                            <div class="slider-caption">
+                                <h2>나만의 스타일을 표현하는 공간</h2>
+                                <p>블루 톤은 사람들과 편히 쉬면서 개성을 표현할 수 있는 공간이에요. <br />아름다운 조명과 좋아하는 그림을 더하여 행복한 공간을 만들어 보세요.
+                                </p>
+                            </div>
+                        </a>
                     </li>
                     <li>
-                        <a href="#"><img src="/images/mainproduct3.jpg" alt="item3" /></a>
+                        <a href="#"><img src="/images/shopliv2.jpg" alt="item3" />
+                            <div class="slider-caption">
+                                <h2>언제나 쾌적하고 즐거운 공간</h2>
+                                <p>스타일리시한 거실은 식사를 즐기고 일도 하다가 커피 한잔 마실 수 있는 <br />휴게공간로도 바꿀 수 있어요. 이곳은 이 모든 것을 담고 있습니다.
+                                </p>
+                            </div>
+                        </a>
                     </li>
                     <li>
-                        <a href="#"><img src="/images/mainproduct4.jpg" alt="item4" /></a>
+                        <a href="#"><img src="/images/shopkit.jpg" alt="item4" />
+                            <div class="slider-caption">
+                                <h2>모던하고 생기 넘치는 주방</h2>
+                                <p>특이한 구조의 좁은 공간의 주방이라도 화이트 베이스에 천연 소재로<br />차분하면서도 개성 있는 주방으로 연출할 수 있어요.</p>
+                            </div>
+                        </a>
                     </li>
                     <li>
-                        <a href="#"><img src="/images/mainproduct5.jpg" alt="item5" /></a>
+                        <a href="#"><img src="/images/shopho.jpg" alt="item5" />
+                            <div class="slider-caption">
+                                <h2>나무 패널로 개성있는 홈오피스 스타일</h2>
+                                <p>부드러운 가죽 의자, 수납장, 책상 그리고 차분한 컬러의 커튼과 <br />함께 조화롭게 감싸주는 따뜻한 우드톤의 공간을 만끽해보세요.</p>
+                            </div>
+                        </a>
                     </li>
                 </ul>
             </section>
@@ -51,7 +74,7 @@
                     <span>베스트셀러</span>
                 </h3>
                 <article>
-                    <a href="{{bs[0].pip_url}}">
+                    <a href="/product/{{bs[0].p_id}}">
                         <div class="thumb">
                             <div class="image-container">
                                 <img src="{{bs[0].img_url}}">
@@ -63,9 +86,14 @@
                         <p>{{bs[0].p_type}}</p>
                         <div class="price">{{bs[0].p_price}}</div>
                     </a>
+                    <button class="wishlist-button">
+                        <i class="far fa-heart"></i> <!-- 빈 하트 아이콘 -->
+                        <i class="fas fa-heart filled"></i> <!-- 꽉 찬 하트 아이콘 -->
+                    </button>
                 </article>
+
                 <article>
-                    <a href="{{bs[1].pip_url}}">
+                    <a href="/product/{{bs[1].p_id}}">
                         <div class="thumb">
                             <div class="image-container">
                                 <img src="{{bs[1].img_url}}">
@@ -77,9 +105,13 @@
                         <p>{{bs[1].p_type}}</p>
                         <div class="price">{{bs[1].p_price}}</div>
                     </a>
+                    <button class="wishlist-button">
+                        <i class="far fa-heart"></i> <!-- 빈 하트 아이콘 -->
+                        <i class="fas fa-heart filled"></i> <!-- 꽉 찬 하트 아이콘 -->
+                    </button>
                 </article>
                 <article>
-                    <a href="{{bs[2].pip_url}}">
+                    <a href="/product/{{bs[2].p_id}}">
                         <div class="thumb">
                             <div class="image-container">
                                 <img src="{{bs[2].img_url}}">
@@ -91,9 +123,13 @@
                         <p>{{bs[2].p_type}}</p>
                         <div class="price">{{bs[2].p_price}}</div>
                     </a>
+                    <button class="wishlist-button">
+                        <i class="far fa-heart"></i> <!-- 빈 하트 아이콘 -->
+                        <i class="fas fa-heart filled"></i> <!-- 꽉 찬 하트 아이콘 -->
+                    </button>
                 </article>
                 <article>
-                    <a href="{{bs[3].pip_url}}">
+                    <a href="/product/{{bs[3].p_id}}">
                         <div class="thumb">
                             <div class="image-container">
                                 <img src="{{bs[3].img_url}}">
@@ -105,268 +141,14 @@
                         <p>{{bs[3].p_type}}</p>
                         <div class="price">{{bs[3].p_price}}</div>
                     </a>
+                    <button class="wishlist-button">
+                        <i class="far fa-heart"></i> <!-- 빈 하트 아이콘 -->
+                        <i class="fas fa-heart filled"></i> <!-- 꽉 찬 하트 아이콘 -->
+                    </button>
                 </article>
 
             </section>
-
-            <!-- 필터링 -->
-            <div class="btn-wrap">
-                <button class="filter-button" type="button" id="color" aria-expanded="true">색상</button>
-                <div class="drop-down" id="colorDropdown">
-                    <label class="checkbox-wrap">
-                        <span class="checkbox-txt">화이트</span>
-                        <span class="checkbox-subtle">
-                            <input type="checkbox" name="화이트" id="white" data-testid="checkbox" value="white"
-                                onclick='getCheckboxValue()'>
-                            <span class="checkbox-symbol"></span>
-                        </span>
-                    </label>
-                    <label class="checkbox-wrap">
-                        <span class="checkbox-txt">그레이</span>
-                        <span class="checkbox-subtle">
-                            <input type="checkbox" name="그레이" id="grey" data-testid="checkbox" value="grey"
-                                onclick='getCheckboxValue()'>
-                            <span class="checkbox-symbol"></span>
-                        </span>
-                    </label>
-                    <label class="checkbox-wrap">
-                        <span class="checkbox-txt">블랙</span>
-                        <span class="checkbox-subtle">
-                            <input type="checkbox" name="블랙" id="black" data-testid="checkbox" value="black"
-                                onclick='getCheckboxValue()'>
-                            <span class="checkbox-symbol"> </span>
-                        </span>
-                    </label>
-                    <label class="checkbox-wrap">
-                        <span class="checkbox-txt">레드</span>
-                        <span class="checkbox-subtle">
-                            <input type="checkbox" name="레드" id="red" data-testid="checkbox" value="red"
-                                onclick='getCheckboxValue()'>
-                            <span class="checkbox-symbol"></span>
-                        </span>
-                    </label>
-                    <label class="checkbox-wrap">
-                        <span class="checkbox-txt">핑크</span>
-                        <span class="checkbox-subtle">
-                            <input type="checkbox" name="핑크" id="pink" data-testid="checkbox" value="pink"
-                                onclick='getCheckboxValue()'>
-                            <span class="checkbox-symbol"> </span>
-                        </span>
-                    </label>
-                    <label class="checkbox-wrap">
-                        <span class="checkbox-txt">그린</span>
-                        <span class="checkbox-subtle">
-                            <input type="checkbox" name="그린" id="green" data-testid="checkbox" value="green"
-                                onclick='getCheckboxValue()'>
-                            <span class="checkbox-symbol"> </span>
-                        </span>
-                    </label>
-                    <label class="checkbox-wrap">
-                        <span class="checkbox-txt">베이지</span>
-                        <span class="checkbox-subtle">
-                            <input type="checkbox" name="베이지" id="beige" data-testid="checkbox" value="beige"
-                                onclick='getCheckboxValue()'>
-                            <span class="checkbox-symbol"> </span>
-                        </span>
-                    </label>
-                    <label class="checkbox-wrap">
-                        <span class="checkbox-txt">브라운</span>
-                        <span class="checkbox-subtle">
-                            <input type="checkbox" name="브라운" id="brown" data-testid="checkbox" value="brown"
-                                onclick='getCheckboxValue()'>
-                            <span class="checkbox-symbol"> </span>
-                        </span>
-                    </label>
-                    <label class="checkbox-wrap">
-                        <span class="checkbox-txt">오렌지</span>
-                        <span class="checkbox-subtle">
-                            <input type="checkbox" name="오렌지" id="orange" data-testid="checkbox" value="orange"
-                                onclick='getCheckboxValue()'>
-                            <span class="checkbox-symbol"> </span>
-                        </span>
-                    </label>
-                    <label class="checkbox-wrap">
-                        <span class="checkbox-txt">라일락</span>
-                        <span class="checkbox-subtle">
-                            <input type="checkbox" name="라일락" id="lilac" data-testid="checkbox" value="lilac"
-                                onclick='getCheckboxValue()'>
-                            <span class="checkbox-symbol"> </span>
-                        </span>
-                    </label>
-                    <label class="checkbox-wrap">
-                        <span class="checkbox-txt">블루</span>
-                        <span class="checkbox-subtle">
-                            <input type="checkbox" name="블루" id="blue" data-testid="checkbox" value="blue"
-                                onclick='getCheckboxValue()'>
-                            <span class="checkbox-symbol"> </span>
-                        </span>
-                    </label>
-                    <label class="checkbox-wrap">
-                        <span class="checkbox-txt">옐로우</span>
-                        <span class="checkbox-subtle">
-                            <input type="checkbox" name="블루" id="yellow" data-testid="checkbox" value="yellow"
-                                onclick='getCheckboxValue()'>
-                            <span class="checkbox-symbol"> </span>
-                        </span>
-                    </label>
-                    <label class="checkbox-wrap">
-                        <span class="checkbox-txt">터키석</span>
-                        <span class="checkbox-subtle">
-                            <input type="checkbox" name="터키석" id="turquoise" data-testid="checkbox" value="turquoise"
-                                onclick='getCheckboxValue()'>
-                            <span class="checkbox-symbol"> </span>
-                        </span>
-                    </label>
-                </div>
-
-                <button class="filter-button" type="button" id="price" aria-expanded="true">가격</button>
-                <div class="drop-down" id="priceDropdown">
-                    <label class="checkbox-wrap">
-                        <span class="checkbox-txt">0 ~ 199,999</span>
-                        <span class="checkbox-subtle">
-                            <input type="checkbox" name="0 ~ 199,999" id="PRICE_0_20000000" data-testid="checkbox"
-                                value="PRICE_0_20000000" onclick='getCheckboxValue()'>
-                            <span class="checkbox-symbol"></span>
-                        </span>
-                    </label>
-                    <label class="checkbox-wrap">
-                        <span class="checkbox-txt">200,000 ~ 399,999</span>
-                        <span class="checkbox-subtle">
-                            <input type="checkbox" name="200,000 ~ 399,9990" id="PRICE_20000000_40000000"
-                                data-testid="checkbox" value="PRICE_20000000_40000000" onclick='getCheckboxValue()'>
-                            <span class="checkbox-symbol"></span>
-                        </span>
-                    </label>
-                    <label class="checkbox-wrap">
-                        <span class="checkbox-txt">400,000 ~ 599,999</span>
-                        <span class="checkbox-subtle">
-                            <input type="checkbox" name="400,000 ~ 599,999" id="PRICE_40000000_60000000"
-                                data-testid="checkbox" value="PRICE_40000000_60000000" onclick='getCheckboxValue()'>
-                            <span class="checkbox-symbol"></span>
-                        </span>
-                    </label>
-                    <label class="checkbox-wrap">
-                        <span class="checkbox-txt">600,000 ~ 799,999</span>
-                        <span class="checkbox-subtle">
-                            <input type="checkbox" name="600,000 ~ 799,999" id="PRICE_60000000_80000000"
-                                data-testid="checkbox" value="PRICE_60000000_80000000" onclick='getCheckboxValue()'>
-                            <span class="checkbox-symbol"></span>
-                        </span>
-                    </label>
-                    <label class="checkbox-wrap">
-                        <span class="checkbox-txt">800,000 ~</span>
-                        <span class="checkbox-subtle">
-                            <input type="checkbox" name="800,000 ~" id="PRICE_80000000_2147483647"
-                                data-testid="checkbox" value="PRICE_80000000_2147483647" onclick='getCheckboxValue()'>
-                            <span class="checkbox-symbol"></span>
-                        </span>
-                    </label>
-                </div>
-
-                <button class="filter-button" type="button" id="material" aria-expanded="true">소재</button>
-                <div class="drop-down" id="materialDropdown">
-                    <label class="checkbox-wrap">
-                        <span class="checkbox-txt">패브릭</span>
-                        <span class="checkbox-subtle">
-                            <input type="checkbox" name="패브릭" id="38828" data-testid="checkbox" value="38828"
-                                onclick='getCheckboxValue()'>
-                            <span class="checkbox-symbol"></span>
-                        </span>
-                    </label>
-                    <label class="checkbox-wrap">
-                        <span class="checkbox-txt">인조가죽</span>
-                        <span class="checkbox-subtle">
-                            <input type="checkbox" name="인조가죽" id="38830" data-testid="checkbox" value="38830"
-                                onclick='getCheckboxValue()'>
-                            <span class="checkbox-symbol"></span>
-                        </span>
-                    </label>
-                    <label class="checkbox-wrap">
-                        <span class="checkbox-txt">가죽</span>
-                        <span class="checkbox-subtle">
-                            <input type="checkbox" name="가죽" id="38829" data-testid="checkbox" value="38829"
-                                onclick='getCheckboxValue()'>
-                            <span class="checkbox-symbol"></span>
-                        </span>
-                    </label>
-                    <label class="checkbox-wrap">
-                        <span class="checkbox-txt">목재(보드포함)</span>
-                        <span class="checkbox-subtle">
-                            <input type="checkbox" name="목재(보드포함)" id="47349" data-testid="checkbox" value="47349"
-                                onclick='getCheckboxValue()'>
-                            <span class="checkbox-symbol"></span>
-                        </span>
-                    </label>
-                    <label class="checkbox-wrap">
-                        <span class="checkbox-txt">메탈</span>
-                        <span class="checkbox-subtle">
-                            <input type="checkbox" name="메탈" id="47350" data-testid="checkbox" value="47350"
-                                onclick='getCheckboxValue()'>
-                            <span class="checkbox-symbol"></span>
-                        </span>
-                    </label>
-                    <label class="checkbox-wrap">
-                        <span class="checkbox-txt">원목</span>
-                        <span class="checkbox-subtle">
-                            <input type="checkbox" name="원목" id="50788" data-testid="checkbox" value="50788"
-                                onclick='getCheckboxValue()'>
-                            <span class="checkbox-symbol"></span>
-                        </span>
-                    </label>
-                    <label class="checkbox-wrap">
-                        <span class="checkbox-txt">대나무</span>
-                        <span class="checkbox-subtle">
-                            <input type="checkbox" name="대나무" id="47653" data-testid="checkbox" value="47653"
-                                onclick='getCheckboxValue()'>
-                            <span class="checkbox-symbol"></span>
-                        </span>
-                    </label>
-                    <label class="checkbox-wrap">
-                        <span class="checkbox-txt">합성섬유</span>
-                        <span class="checkbox-subtle">
-                            <input type="checkbox" name="힙성섬유" id="48360" data-testid="checkbox" value="48360"
-                                onclick='getCheckboxValue()'>
-                            <span class="checkbox-symbol"></span>
-                        </span>
-                    </label>
-                    <label class="checkbox-wrap">
-                        <span class="checkbox-txt">천연섬유</span>
-                        <span class="checkbox-subtle">
-                            <input type="checkbox" name="천연섬유" id="47477" data-testid="checkbox" value="47477"
-                                onclick='getCheckboxValue()'>
-                            <span class="checkbox-symbol"></span>
-                        </span>
-                    </label>
-                    <label class="checkbox-wrap">
-                        <span class="checkbox-txt">플라스틱</span>
-                        <span class="checkbox-subtle">
-                            <input type="checkbox" name="플라스틱" id="47675" data-testid="checkbox" value="47675"
-                                onclick='getCheckboxValue()'>
-                            <span class="checkbox-symbol"></span>
-                        </span>
-                    </label>
-                    <label class="checkbox-wrap">
-                        <span class="checkbox-txt">유리</span>
-                        <span class="checkbox-subtle">
-                            <input type="checkbox" name="유리" id="47660" data-testid="checkbox" value="47660"
-                                onclick='getCheckboxValue()'>
-                            <span class="checkbox-symbol"></span>
-                        </span>
-                    </label>
-                    <label class="checkbox-wrap">
-                        <span class="checkbox-txt">베니어</span>
-                        <span class="checkbox-subtle">
-                            <input type="checkbox" name="베니어" id="53958" data-testid="checkbox" value="53958"
-                                onclick='getCheckboxValue()'>
-                            <span class="checkbox-symbol"></span>
-                        </span>
-                    </label>
-                </div>
-                <button class="filter-button" id="reset-button" type="button">재설정하기</button>
-            </div>
-
-
-
+            {% include 'filter.html' %}
             <!-- 상품-->
             <section class="product">
                 <div id="result">
@@ -375,11 +157,15 @@
                 <section class="list">
                     <ul class="sort">
                         <li>
-                            <a href="#">별점높은순</a>
+                            <a href="#">
+                                <button id="sortHighRating" data-sort="desc">
+                                    별점높은순
+                                </button>
+                            </a>
                         </li>
                         <li>
                             <a href="#">
-                                <button id="sortHighPrice" data-sort = "desc">높은가격순</button>
+                                <button id="sortHighPrice" data-sort="desc">높은가격순</button>
                             </a>
                         </li>
                         <li>
@@ -388,7 +174,11 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">베스트셀러</a>
+                            <a href="#">
+                                <button id="showBestSeller">
+                                    베스트셀러
+                                </button>
+                            </a>
                         </li>
                         <li>
                             <a href="#" class="on">
@@ -396,160 +186,35 @@
                             </a>
                         </li>
                     </ul>
+                    {% for i in list.slice(0,12)%}
                     <article>
-                        <a href="{{list[0].pip_url}}">
+                        <a href="/product/{{i.p_id}}">
                             <div class="thumb">
                                 <div class="image-container">
-                                    <img src="{{list[0].img_url}}">
+                                    <img src="{{i.img_url}}">
                                 </div>
                             </div>
-                            <h2>{{list[0].p_name}}</h2>
-                            <p>{{list[0].p_type}}</p>
-                            <div class="price">{{list[0].p_price}}</div>
-                        </a>
-                    </article>
-                    <article>
-                        <a href="{{list[1].pip_url}}">
-                            <div class="thumb">
-                                <div class="image-container">
-                                    <img src="{{list[1].img_url}}">
-                                </div>
+                            <div class="desc-container">
+                                <h2>{{i.p_name}}</h2>
+                                <p>{{i.p_type}}</p>
+                                <div class="price">{{i.p_price}}</div>
                             </div>
-                            <h2>{{list[1].p_name}}</h2>
-                            <p>{{list[1].p_type}}</p>
-                            <div class="price">{{list[1].p_price}}</div>
                         </a>
+                        <button class="wishlist-button">
+                            <i class="far fa-heart"></i> <!-- 빈 하트 아이콘 -->
+                            <i class="fas fa-heart filled"></i> <!-- 꽉 찬 하트 아이콘 -->
+                        </button>
                     </article>
-                    <article>
-                        <a href="{{list[2].pip_url}}">
-                            <div class="thumb">
-                                <div class="image-container">
-                                    <img src="{{list[2].img_url}}">
-                                </div>
-                            </div>
-                            <h2>{{list[2].p_name}}</h2>
-                            <p>{{list[2].p_type}}</p>
-                            <div class="price">{{list[2].p_price}}</div>
-                        </a>
-                    </article>
-                    <article>
-                        <a href="{{list[3].pip_url}}">
-                            <div class="thumb">
-                                <div class="image-container">
-                                    <img src="{{list[3].img_url}}">
-                                </div>
-                            </div>
-                            <h2>{{list[3].p_name}}</h2>
-                            <p>{{list[3].p_type}}</p>
-                            <div class="price">{{list[3].p_price}}</div>
-                        </a>
-                    </article>
-                    <article>
-                        <a href="{{list[4].pip_url}}">
-                            <div class="thumb">
-                                <div class="image-container">
-                                    <img src="{{list[4].img_url}}">
-                                </div>
-                            </div>
-                            <h2>{{list[4].p_name}}</h2>
-                            <p>{{list[4].p_type}}</p>
-                            <div class="price">{{list[4].p_price}}</div>
-                        </a>
-                    </article>
-                    <article>
-                        <a href="{{list[5].pip_url}}">
-                            <div class="thumb">
-                                <div class="image-container">
-                                    <img src="{{list[5].img_url}}">
-                                </div>
-                            </div>
-                            <h2>{{list[5].p_name}}</h2>
-                            <p>{{list[5].p_type}}</p>
-                            <div class="price">{{list[5].p_price}}</div>
-                        </a>
-                    </article>
-                    <article>
-                        <a href="{{list[6].pip_url}}">
-                            <div class="thumb">
-                                <div class="image-container">
-                                    <img src="{{list[6].img_url}}">
-                                </div>
-                            </div>
-                            <h2>{{list[6].p_name}}</h2>
-                            <p>{{list[6].p_type}}</p>
-                            <div class="price">{{list[6].p_price}}</div>
-                        </a>
-                    </article>
-                    <article>
-                        <a href="{{list[7].pip_url}}">
-                            <div class="thumb">
-                                <div class="image-container">
-                                    <img src="{{list[7].img_url}}">
-                                </div>
-                            </div>
-                            <h2>{{list[7].p_name}}</h2>
-                            <p>{{list[7].p_type}}</p>
-                            <div class="price">{{list[7].p_price}}</div>
-                        </a>
-                    </article>
-                    <article>
-                        <a href="{{list[8].pip_url}}">
-                            <div class="thumb">
-                                <div class="image-container">
-                                    <img src="{{list[8].img_url}}">
-                                </div>
-                            </div>
-                            <h2>{{list[8].p_name}}</h2>
-                            <p>{{list[8].p_type}}</p>
-                            <div class="price">{{list[8].p_price}}</div>
-                        </a>
-                    </article>
-                    <article>
-                        <a href="{{list[9].pip_url}}">
-                            <div class="thumb">
-                                <div class="image-container">
-                                    <img src="{{list[9].img_url}}">
-                                </div>
-                            </div>
-                            <h2>{{list[9].p_name}}</h2>
-                            <p>{{list[9].p_type}}</p>
-                            <div class="price">{{list[9].p_price}}</div>
-                        </a>
-                    </article>
-                    <article>
-                        <a href="{{list[10].pip_url}}">
-                            <div class="thumb">
-                                <div class="image-container">
-                                    <img src="{{list[10].img_url}}">
-                                </div>
-                            </div>
-                            <h2>{{list[10].p_name}}</h2>
-                            <p>{{list[10].p_type}}</p>
-                            <div class="price">{{list[10].p_price}}</div>
-                        </a>
-                    </article>
-                    <article>
-                        <a href="{{list[11].pip_url}}">
-                            <div class="thumb">
-                                <div class="image-container">
-                                    <img src="{{list[11].img_url}}">
-                                </div>
-                            </div>
-                            <h2>{{list[11].p_name}}</h2>
-                            <p>{{list[11].p_type}}</p>
-                            <div class="price">{{list[11].p_price}}</div>
-                        </a>
-                    </article>
+                    {%endfor%}
                 </section>
             </section>
             <button class="load-more-button filter-button" id="loadMore">더 보기</button>
+        </section>
     </main>
 </div>
 
 
-<script src="/assets/js/mainproductpage-l.js"></script>
-<script src="/assets/js/filter.js"></script>
-<script src="/assets/js/all.min.js"></script>
+<script src="/assets/js/shop.js"></script>
 <script src="/assets/js/layout.js"></script>
 {% include 'footer.html' %}
 {% endblock %}

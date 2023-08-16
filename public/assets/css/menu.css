@@ -18,7 +18,7 @@
 
 .pd-menu {
     list-style: none;
-    padding: 0;
+    padding: 4vh 0 0 0;
     margin: 0;
     text-align: center;
     position: relative;
@@ -28,7 +28,7 @@
 .pd-menu li {
     display: inline-block;
     position: relative;
-    margin-right: 50px;
+    margin: 1vh 1vw;
     
 }
 
@@ -48,7 +48,9 @@
     position: fixed;
     width: 90vw;
     left: 5vw;
-    background-color: #fcfafa;
+    background-color: #ffffff;
+    border:#F67329 1px solid;
+    border-radius: 10px;
 }
 
 .pd-menu li:hover .sub-layer {
@@ -80,6 +82,7 @@
 
 .mc li {
     margin: 0;
+    padding: 0.3vh 0;
     display: block;
 }
 

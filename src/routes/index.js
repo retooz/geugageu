@@ -19,11 +19,9 @@ router.get('/join', (req, res) => {
     res.render('join')
 })
 
-router.get('/test', (req,res) => {
-    res.render('join')
-})
-
 router.get('/upload', (req,res) => {
     res.render('extract')
 })
+
+
 module.exports = router

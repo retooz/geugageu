@@ -7,6 +7,7 @@ main > section > section {
 }
 
 article {
+    position: relative;
     float: left;
     width: 25%;
     height: auto;
@@ -19,6 +20,7 @@ article {
     justify-content: center;
     height: 30vh;
     padding-bottom: 2vh;
+    position: relative;
 }
 .image-container {
     width: 80%;
@@ -64,10 +66,10 @@ h2 {
     line-height: 16px;
     margin: 4px 0;
     
-    /*설명이 넘을때 숨기고 ... 표시
+    /*설명이 넘을때 숨기고 ... 표시 */
     text-overflow: ellipsis;
     white-space: nowrap;
-    overflow: hidden;*/
+    overflow: hidden;
 }
 
 .price::after {
@@ -78,14 +80,60 @@ main section {
     text-align: center;
 }
 
+/* 슬라이더 이미지 */
 .slider {
     overflow: hidden;
+    position: relative;
     width: 100%;
     height: 90%;
     margin: 1.5% 0 5% 0;
     padding-top: 4vh;
     box-shadow: none;
 }
+
+.slider ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.slider ul li {
+    position: relative;
+}
+
+.slider ul li a img {
+    opacity: 0.9; /* 이미지의 투명도 설정 */
+}
+
+
+.slider-caption {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    padding: 0 4vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    transition: width 0.5s ease-in-out;
+}
+
+.slider-caption h2 {
+    margin: 0;
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+.slider-caption p {
+    margin: 0;
+    font-size: 1em;
+    color: #ddd;
+}
+
 
 .best {
     margin-bottom: 10%;
@@ -119,13 +167,96 @@ main section {
     line-height: 15px;
 }
 
-.list  .sort  li  a {
+.list  .sort  li  a button{
     font-weight: bold;
     display: block;
     padding: 0 10px;
     border-right: 1px solid #ddd;
+    background-color: transparent;
 }
 
 .bxwraper {
     box-shadow: none;
+}
+
+article>a>div>h2 {
+    font-size: 1.2em;
+}
+
+article>a>div>p {
+    padding: 1vh 0;
+}
+
+.desc-container {
+    padding-left: 3vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.desc-container * {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 80%;
+}
+/* 필터링 삭제 버튼*/
+#result {
+    margin-top: 10px;
+}
+
+.selected-item {
+    display: inline-block;
+    background-color: #f8f8f8;
+    color: rgb(0, 0, 0);
+    padding: 0.4% 1.5%;
+    margin-right: 0.7em;
+    border-radius: 3em;
+    font-size: 1em;
+    position: relative;
+}
+
+.close-button {
+    cursor: pointer;
+    position: absolute;
+    top: 0em;
+    padding: 0.5em;
+    font-size: 1em;
+}
+
+
+/* 하트 별점*/
+.star {
+    font-size: 1em;
+    color: #000000;
+}
+
+/* 하트 아이콘 위치 및 스타일 설정 */
+.wishlist-button {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 0.5em; /* 원하는 위치로 조정 */
+    right: 2em; /* 원하는 위치로 조정 */
+    color: #F67329;
+    font-size: 2em;
+    cursor: pointer;
+    z-index: 1; /* 버튼을 이미지 위에 표시하기 위해 추가 */
+}
+
+.filled {
+    display: none;
+}
+
+.wishlist-button.active .filled {
+    display: inline-block;
+}
+
+.wishlist-button.active .far {
+    display: none;
+}
+
+.bx-prev, .bx-next {
+    z-index: 0 !important;
 }

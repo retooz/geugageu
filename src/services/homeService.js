@@ -25,6 +25,16 @@ const homeService = {
         }
     },
 
+    getUserData : async (user_id) => {
+        try {
+            const [results] = await conn.query(userQueries.getUserData, [user_id])
+            return results[0]
+        } catch (err) {
+            console.log(err)
+            throw err
+        }
+    },
+
     productDetail : async(data) => {
         try {
             const [results] = await conn.query(productQueries.productDetail, [data])
@@ -80,6 +90,16 @@ const homeService = {
         } catch (err) {
             console.log(err)
             throw err;
+        }
+    },
+
+    searchByKeyword : async (query) => {
+        try {
+            const [results] = await conn.query(productQueries.searchByKeyword, [query])
+            return results
+        } catch (err) {
+            console.log(err)
+            throw err
         }
     }
 }

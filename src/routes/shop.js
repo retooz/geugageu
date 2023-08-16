@@ -2,7 +2,6 @@ const express = require('express')
 const homeService = require('../services/homeService')
 const router = express.Router()
 
-
 router.get('/:category', async(req, res)=>{
     const {category} = req.params
     let categoryKo = ''
@@ -15,10 +14,13 @@ router.get('/:category', async(req, res)=>{
             break
         case 'homeoffice' :
             categoryKo = '홈오피스'
+            break
         case 'livingroom' :
             categoryKo = '가구'
+            break
         case 'kids' :
             categoryKo ='어린이 IKEA'
+            break
         case 'kitchen' :
             categoryKo = '주방가구'
     } try {
@@ -30,7 +32,7 @@ router.get('/:category', async(req, res)=>{
         for(let i = 0; i < 12; i++){
             result[i].p_price = result[i].p_price.toLocaleString();
         }
-        res.render('shop', {list : result, bs : result2})
+        res.render('shop', {list : result, bs : result2, category : category})
     } catch (err){
         res.status(500).json({message : "error"})
     }

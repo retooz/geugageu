@@ -6,5 +6,7 @@ module.exports = {
 
     getProductList : `SELECT * FROM tb_product where p_category1 = ?`,
 
-    getProductBS : `SELECT * FROM tb_product WHERE p_category1 = ? AND best_sell = 'Y'`
+    getProductBS : `SELECT * FROM tb_product WHERE p_category1 = ? AND best_sell = 'Y'`,
+
+    searchByKeyword : `SELECT * FROM tb_product WHERE p_type like ?`
 }
