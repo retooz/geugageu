@@ -13,7 +13,7 @@ router.get('/:p_id', async (req,res) => {
         result.p_detail = result.p_detail.replace('[', '').replace(']', '')
         result.p_material = result.p_material.replace('[', '').replace(']', '')
         result.p_measure_detail = result.p_measure_detail.replace('[', '').replace(']', '').replaceAll('?','').replaceAll(':', " : ")
-        res.render('product-detail',{p_detail : result})
+        res.render('product-detail', {p_detail : result})
     } catch (err){
         res.status(500).json({ message: 'error' })
     }

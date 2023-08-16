@@ -1,17 +1,18 @@
 const conn = require('../../config/database')
 const userQueries = require('../queries/userQueries')
 const productQueries = require('../queries/productQueries')
+const { use } = require('passport')
 
 const homeService = {
-    join : async (data) => {
-        console.log(data);
+    join : async (user_id, user_pw, user_nick, p_color, p_furniture, user_family) => {
         try {
-            const [results] = await conn.query(userQueries.userJoin, [data.user_id, user_pw, user_nick, user_type, user_family, user_joindate])
+            const [results] = await conn.query(userQueries.userJoin, [user_id, user_pw, user_nick, p_color, p_furniture, user_family])
             return results
         } catch (err) {
             console.log(err)
             throw err;
         }
+
     },
 
     idCheck : async (data) => {
@@ -50,7 +51,7 @@ const homeService = {
             return results
         } catch (err) { 
             console.log(err)
-            throw err
+            throw err;
         }
     },
 
@@ -60,7 +61,25 @@ const homeService = {
             return results
         } catch (err) { 
             console.log(err)
-            throw err
+            throw err;
+        }
+    },
+    getExtract : async (u_url,ex_color,user_id) => {
+        try {
+            const [results] = await conn.query(userQueries.getExtract, [u_url,ex_color, user_id])
+            return results
+        } catch (err) { 
+            console.log(err)
+            throw err;
+        }
+    },
+    selectUser : async (data) => {
+        try {
+            const [results] = await conn.query(userQueries.selectUser, [data])
+            return results
+        } catch (err) {
+            console.log(err)
+            throw err;
         }
     }
 }
