@@ -54,5 +54,17 @@ $(document).ready(() => {
       $('#all').prop('checked', false)
     }
   })
+  
+  familyValueCheck()
+  $("input:checkbox[name=family]").change(() =>{
+    familyValueCheck()
+  })
+  function familyValueCheck () {
+    if($("input:checkbox[name=family]").is(":checked")) {
+      $("#family_hidden").attr("disabled", true)
+    } else {
+      $("#family_hidden").attr("disabled", false)
+    }
+  }
 })
 

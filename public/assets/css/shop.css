@@ -245,18 +245,6 @@ article>a>div>p {
     z-index: 1; /* 버튼을 이미지 위에 표시하기 위해 추가 */
 }
 
-.filled {
-    display: none;
-}
-
-.wishlist-button.active .filled {
-    display: inline-block;
-}
-
-.wishlist-button.active .far {
-    display: none;
-}
-
 .bx-prev, .bx-next {
     z-index: 0 !important;
 }

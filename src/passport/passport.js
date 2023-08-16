@@ -8,7 +8,6 @@ passport.use(new LocalStrategy(
     { usernameField: 'user_id', passwordField: 'user_pw' },
     async (user_id, user_pw, done) => {
         try {
-            console.log('asd')
             const [userRows] = await conn.query(selectUser, [user_id, user_pw], (err,rows) => {
             })
             const user = userRows[0]

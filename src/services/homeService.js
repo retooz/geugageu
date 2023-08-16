@@ -4,9 +4,9 @@ const productQueries = require('../queries/productQueries')
 const { use } = require('passport')
 
 const homeService = {
-    join : async (user_id, user_pw, user_nick, p_color, p_furniture, user_family) => {
+    join : async (data, colors, furniture) => {
         try {
-            const [results] = await conn.query(userQueries.userJoin, [user_id, user_pw, user_nick, p_color, p_furniture, user_family])
+            const [results] = await conn.query(userQueries.userJoin, [data.id, data.pw, data.nick, colors, furniture, data.family])
             return results
         } catch (err) {
             console.log(err)
@@ -96,6 +96,47 @@ const homeService = {
     searchByKeyword : async (query) => {
         try {
             const [results] = await conn.query(productQueries.searchByKeyword, [query])
+            return results
+        } catch (err) {
+            console.log(err)
+            throw err
+        }
+    },
+    getFav : async (u_id) => {
+        try {
+            const[results] = await conn.query(userQueries.getFav, [u_id])
+            return results
+        } catch (err) {
+            console.log(err)
+            throw err
+        }
+    },
+
+    modFav : async (pid, u_id, mod) => {
+        try {
+            const [getList] = await conn.query(userQueries.getFav, [u_id])
+            let favList = getList[0].like_prd
+            console.log(mod)
+            if(mod == 'add') {
+                favList = favList + pid + ','
+                console.log(favList)
+                const [results] = await conn.query(userQueries.modFav, [favList, u_id])
+                return results
+            } else {
+                favList = favList.replace(`${pid},`, '')
+                console.log(favList)
+                const [results] = await conn.query(userQueries.modFav, [favList, u_id])
+                return results
+            }
+        } catch (err) {
+            console.log(err)
+            throw err
+        }
+    },
+    
+    getUserFav : async(fav) => {
+        try {
+            const [results] = await conn.query(userQueries.getFavList, [fav])
             return results
         } catch (err) {
             console.log(err)

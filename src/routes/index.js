@@ -6,15 +6,6 @@ router.get('/', (req, res) => {
     res.render('index', {user : data.passport})
 })
 
-router.get('/main', (req,res) => {
-    let data = req.session
-    res.render('main', {'user' : data.passport.user})
-})
-
-router.get('/login', (req,res) => {
-    res.render('login')
-})
-
 router.get('/join', (req, res) => {
     res.render('join')
 })

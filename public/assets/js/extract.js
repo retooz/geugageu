@@ -1,17 +1,17 @@
 const colorNames = {
-    베이지: chroma('rgb(244, 243, 215)').lab(),
-    브라운: chroma('rgb(129, 72, 32)').lab(),
-    블루: chroma('rgb(0, 88, 163)').lab(),
-    그레이: chroma('rgb(148, 148, 148)').lab(),
-    핑크: chroma('rgb(255, 184, 195)').lab(),
-    터키석: chroma('rgb(119, 221, 208)').lab(),
-    옐로우: chroma('rgb(255, 219, 0)').lab(),
-    그린: chroma('rgb(59, 125, 34)').lab(),
-    라일락: chroma('rgb(169,110,204)').lab(),
-    오렌지: chroma('rgb(255,154,2)').lab(),
-    레드: chroma('rgb(240,15,0)').lab(),
-    화이트: chroma('rgb(255,255,255)').lab(),
-    블랙: chroma('rgb(0,0,0)').lab()
+    beige: chroma('rgb(244, 243, 215)').lab(),
+    brown: chroma('rgb(129, 72, 32)').lab(),
+    blue: chroma('rgb(0, 88, 163)').lab(),
+    grey: chroma('rgb(148, 148, 148)').lab(),
+    pink: chroma('rgb(255, 184, 195)').lab(),
+    lightblue: chroma('rgb(119, 221, 208)').lab(),
+    yellow: chroma('rgb(255, 219, 0)').lab(),
+    green: chroma('rgb(59, 125, 34)').lab(),
+    purple: chroma('rgb(169,110,204)').lab(),
+    orange: chroma('rgb(255,154,2)').lab(),
+    red: chroma('rgb(240,15,0)').lab(),
+    white: chroma('rgb(255,255,255)').lab(),
+    black: chroma('rgb(0,0,0)').lab()
 };
 
 const deltaEThreshold = 30;    // 임계 설정값
