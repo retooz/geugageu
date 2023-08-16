@@ -1,0 +1,30 @@
+{%extends 'layout.html'%}
+{%block content%}
+{% include 'submenu.html' %}
+{% include 'header.html' %}
+<link rel="stylesheet" href="/assets/css/index.css">
+<link rel="stylesheet" href="/assets/css/user-header.css">
+<link rel="stylesheet" href="/assets/css/userpage.css">
+<nav>
+    <div class="wrap">
+        <ul>
+            <li><a href="/user/myGeuGaGeu" id="current">나의 그가그</a></li>
+            <li><a href="/user/scrape">스크랩</a></li>
+            <li><a href="/user/like">좋아요</a></li>
+            <li><a href="/user/mypage">내 정보</a></li>
+        </ul>
+    </div>
+    <hr>
+</nav>
+<div class="wrap userpage-head">
+    <h1>내가 올린 글을 확인해보세요.</h1>
+    <div id="contens-not-exist">
+        <h1>결과가 없습니다</h1>
+        <a href=""><h1>자랑하러가기</h1></a>
+    </div>
+</div>
+
+<script src="/assets/js/all.min.js"></script>
+<script src="/assets/js/layout.js"></script>
+{% include 'footer.html' %}
+{% endblock %}

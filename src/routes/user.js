@@ -1,3 +1,19 @@
+
+// router.get('/mypage', async (req,res) => {
+//     const user_id = req.session.passport.user;
+//     // const user_id = req.body.user_id;
+//     try {
+//         const extractReusult = await homeService.selectUser(user_id);
+//         if (extractReusult.affectedRows > 0) {
+//             res.render('userpage',{ extractValue : extractReusult})
+//         } else {
+//             res.status(500).json({ message: 'failed' })
+//         }
+//     } catch (err){
+//         res.status(500).json({ message: 'error' })
+//     } 
+// })
+
 const express = require('express');
 const homeService = require('../services/homeService');
 const router = express.Router()
@@ -61,8 +77,14 @@ router.post('/check', async (req,res) => {
     }
 })
 
-router.get('/mypage', (req,res) => {
-    res.render('userpage')
+router.get('/mypage',  async (req,res) => {
+    const user_id = req.session.passport.user
+    try {
+        const userData = await homeService.getUserData(user_id)
+        res.render('userpage', {user : userData})
+    } catch (err) {
+        res.status(500).json({message : "error"})
+    }
 })
 
 router.get('/myGeuGaGeu', (req, res) => {
@@ -77,12 +99,25 @@ router.get('/like', (req, res) => {
     res.render('like')
 })
 
-router.post('/upload', upload.single('input-image'), (req,res) => {
-    console.log(req.body)
-    console.log(req.file)
-    console.log(req.file.path)
-    console.log(req.file.filename)
-    res.redirect('/user/mypage')
+router.post('/upload', upload.single('input-image'), async (req,res) => {
+    const u_url = req.file.path;
+    const ex_color = req.body.color_pallete;
+    const user_id = req.session.passport.user;
+    try {
+        console.log(req.body)
+        console.log(req.file)
+        console.log(req.file.path)
+        console.log(req.file.filename)
+        const result = await homeService.insertExtract(u_url, ex_color, user_id)
+        console.log(result)
+        if (result.affectedRows > 0) {
+            res.redirect('/user/mypage')
+        } else {
+            res.status(500).json({ message: 'failed' })
+        }
+    } catch (err) {
+        res.status(500).json({ message: 'error occured' })
+    }
 })
 
 module.exports = router
