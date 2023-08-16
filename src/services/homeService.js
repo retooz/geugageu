@@ -74,9 +74,9 @@ const homeService = {
             throw err;
         }
     },
-    getExtract : async (u_url,ex_color,user_id) => {
+    insertExtract : async (u_url,ex_color,user_id) => {
         try {
-            const [results] = await conn.query(userQueries.getExtract, [u_url,ex_color, user_id])
+            const [results] = await conn.query(userQueries.insertExtract, [u_url,ex_color, user_id])
             return results
         } catch (err) { 
             console.log(err)
