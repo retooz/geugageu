@@ -176,12 +176,6 @@ a#MOVE_TOP_BTN {
     z-index: 999;
 }
 
-body {
-    position: relative;
-    width: 20vw;
-    height: 200vh;
-}
-
 .button-container {
     display: flex;
     position: fixed;
@@ -194,6 +188,7 @@ body {
     width: 2vw;
     border-radius: 4em;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.187); 
+    z-index: 9999;
 }
 
 .scroll-btn button{
