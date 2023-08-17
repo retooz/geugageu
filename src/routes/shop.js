@@ -78,7 +78,7 @@ router.get('/:category', async(req, res)=>{
         for(let i = 0; i < 12; i++){
             result[i].p_price = result[i].p_price.toLocaleString();
         }
-        res.render('shop', {list : result, bs : result2, favList : favList})
+        res.render('shop', {list : result, bs : result2, favList : favList, category : category})
     } catch (err){
         res.status(500).json({message : "error occured in router"})
     }

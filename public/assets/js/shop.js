@@ -77,7 +77,7 @@ function renderItems(items) {
                         <h2>${item.p_name}</h2>
                         <p>${item.p_type}<</p>
                         <div class="price">${item.p_price.toLocaleString()}</div>
-                        <div>* (${item.rat_value})</div>
+                        <div>★ (${item.rat_value})</div>
                     </div>
                 </a>
                 <button class="wishlist-button" id="${item.p_id}">
@@ -105,7 +105,7 @@ function renderItems(items) {
                         <h2>${item.p_name}</h2>
                         <p>${item.p_type}<</p>
                         <div class="price">${item.p_price.toLocaleString()}</div>
-                        <div>* (${item.rat_value})</div>
+                        <div>★ (${item.rat_value})</div>
                     </div>
                 </a>
                 <button class="wishlist-button" id="${item.p_id}">

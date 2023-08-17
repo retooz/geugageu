@@ -17,8 +17,24 @@
                         <h1>
                             {{p_detail.p_name}}
                         </h1>
-                        <div class="mark">
-                            <i id="heart" class="fa-regular fa-heart"></i>
+                        <div class="mark" id="{{p_id}}">
+                            <button class="wishlist-button" id="{{p_id}}">
+                                {% if fav == 1 %}
+                                <div style="display: none;">
+                                    <i class="far fa-heart"></i> 
+                                </div>
+                                <div class="filled">
+                                    <i class="fas fa-heart filled"></i> 
+                                </div>
+                                {% else %}
+                                <div>
+                                    <i class="far fa-heart"></i> 
+                                </div>
+                                <div class="filled" style="display: none;">
+                                    <i class="fas fa-heart filled"></i>
+                                </div>
+                                {%endif%}
+                            </button>
                         </div>
                     </div>
                     <p id="product-price"> {{p_detail.p_price}}원</p>
@@ -66,9 +82,9 @@
             </div>
             <div class="direction-horizon" id="img-section">
                 <div><img class="style-img" src="/images/bed.png" alt=""></div>
-                <div><img class="style-img" src="/images/bed.png" alt=""></div>
-                <div><img class="style-img" src="/images/bed.png" alt=""></div>
-                <div><img class="style-img" src="/images/bed.png" alt=""></div>
+                <div><img class="style-img" src="/images/styling_1.png" alt=""></div>
+                <div><img class="style-img" src="/images/styling_2.png" alt=""></div>
+                <div><img class="style-img" src="/images/styling_3.png" alt=""></div>
             </div>
         </div>
 
