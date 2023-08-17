@@ -104,8 +104,15 @@
   justify-content: space-evenly;
 }
 
+.image-container {
+  width: 25%;
+  height: 30vh;
+  padding: 1.5vh;
+}
+
 .style-img {
-  margin: 1vh 0 1vh 0;
+  width: 100%;
+  height: 100%;
 }
 
 #rating fieldset {
