@@ -153,21 +153,21 @@ main section {
 
 
 /* 상품목록 */
-.list  .sort {
+.list .sort {
     margin: 0 0 20px 0;
     border-top: 1px solid #dfdfdf;
     border-bottom: 1px solid #dfdfdf;
     overflow: hidden;
 }
 
-.list  .sort  li {
+.list .sort li {
     float: right;
     position: relative;
     padding: 15px 0;
     line-height: 15px;
 }
 
-.list  .sort  li  a button{
+.list .sort li button{
     font-weight: bold;
     display: block;
     padding: 0 10px;

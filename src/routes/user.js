@@ -77,6 +77,10 @@ router.post('/check', async (req, res) => {
 })
 
 router.get('/mypage', async (req, res) => {
+    const session = req.session.passport;
+    if(session == undefined) {
+        return res.redirect('/')
+    }
     const user_id = req.session.passport.user
     try {
         const userData = await homeService.getUserData(user_id)
@@ -92,6 +96,10 @@ router.get('/mypage', async (req, res) => {
 })
 
 router.get('/like', async (req, res) => {
+    const session = req.session.passport;
+    if(session == undefined) {
+        return res.redirect('/')
+    }
     const user_id = req.session.passport.user
     try {
         const userData = await homeService.getUserData(user_id)

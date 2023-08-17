@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
         href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css" />
 </head>
+
 <body>
     {% block content %}
     {% endblock %}
@@ -30,6 +32,21 @@
             </div>
         </div>
     </div>
+    <div class="button-container">
+        <div class="scroll-btn">
+            <a href="/user/like">
+                <button>
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+            </a>
+        </div>
+        <div class="scroll-btn">
+            <button id="scroll-to-top">
+                <i class="fa-solid fa-arrow-up"></i>
+            </button>
+        </div>
+    </div>
+
     <script src="/assets/js/all.min.js"></script>
     <script src="/assets/js/layout.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>

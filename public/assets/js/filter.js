@@ -10,7 +10,8 @@ $(document).ready(function () {
         });
     });
 });
-
+let temp = [''];
+let selectedColors = [''];
 $(document).ready(function () {
     $("#color").click(function () {
         $("#colorDropdown").toggle();
@@ -38,24 +39,37 @@ $(document).ready(function () {
     });
 
 });
-
-$(document).ready(function () {
-    $('#getCheckboxValue').click(function () {
-        getCheckboxValue();
+$("input[type='checkbox'][name='colors']").change(function () {
+    temp = ['']
+    $("input[type='checkbox'][name='colors']:checked").each(function () {
+        temp.push($(this).val());
     });
-});
-
-function getCheckboxValue() {
-    const query = ".drop-down input[type='checkbox']:checked";
-    const selectedEls = $(query);
-
-    let result = '';
-    selectedEls.each(function () {
-        result += $(this).attr('value') + ' ';
-    });
-
+    selectedColors = [...new Set(temp)]
+    currentPage = 0;
+    console.log(selectedColors)
     $('#result').text(result);
-}
+    console.log(selectedColors.length)
+    if (selectedColors.length > 1 && bs == 1) {
+        console.log('best filter')
+        loadFilteredBestItems()
+    } else if (sortDirection != null && selectedColors.length > 1) {
+        console.log('sorted fitered')
+        loadSortedFilterdItems()
+    } else if (selectedColors.length > 1) {
+        console.log('filtered')
+        loadFilteredItems()
+    } else if (bs == 1) {
+        console.log('best all')
+        currentPage = 0;
+        renderBestAll()
+    } else if (sortDirection != null) {
+        console.log('sorted')
+        loadSortedItems()
+    } else {
+        currentPage = 0;
+        renderAllItems();
+    }
+})
 
 $(document).ready(function () {
     // 색상 체크 초기화 버튼 클릭 시
@@ -72,7 +86,6 @@ $(document).ready(function () {
 
     // 체크박스를 클릭할 때마다
     $(".drop-down input[type='checkbox']").change(function () {
-        console.log(1);
         // 체크박스 선택 상태에 따라 #reset-button 가시성 변경
         if ($(".drop-down input[type='checkbox']:checked").length > 0) {
             $("#reset-button").show();
@@ -85,6 +98,8 @@ $(document).ready(function () {
     $("#reset-button").click(function () {
         $(".drop-down input[type='checkbox']").prop("checked", false);
         $("#result").text(""); // 결과 영역 초기화
+        $(".list article").remove();
+        renderAllItems();
         $(this).hide();
     });
 });

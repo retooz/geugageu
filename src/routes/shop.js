@@ -39,6 +39,10 @@ router.post('/favDel/:pid', async(req,res) => {
 })
 
 router.get('/:category', async(req, res)=>{
+    const session = req.session.passport;
+    if(session == undefined) {
+        return res.redirect('/')
+    }
     const user_id = req.session.passport.user
     const {category} = req.params
     let categoryKo = ''
@@ -63,7 +67,10 @@ router.get('/:category', async(req, res)=>{
     } try {
         const result = await homeService.getProductList(categoryKo)
         const fav = await homeService.getFav(user_id)
-        const favList = fav[0].like_prd.split(',')
+        let favList;
+        if(fav[0].like_prd != null) {
+            favList = fav[0].like_prd.split(',')
+        }
         const result2 = await homeService.getProductBS(categoryKo) // 베스트셀러
         for(let i = 0; i <= 3; i++){
             result2[i].p_price = result2[i].p_price.toLocaleString();
@@ -71,9 +78,9 @@ router.get('/:category', async(req, res)=>{
         for(let i = 0; i < 12; i++){
             result[i].p_price = result[i].p_price.toLocaleString();
         }
-        res.render('shop', {list : result, bs : result2, category : category, favList : favList})
+        res.render('shop', {list : result, bs : result2, favList : favList})
     } catch (err){
-        res.status(500).json({message : "error"})
+        res.status(500).json({message : "error occured in router"})
     }
 })
 
@@ -104,8 +111,10 @@ router.get('/:category/:page', async(req,res)=>{
     const page = parseInt(req.params.page);
     const itemsPerPage = 12;
     const fav = await homeService.getFav(user_id)
-    const favList = fav[0].like_prd.split(',')
-    
+    let favList;
+    if(fav[0].like_prd != null) {
+        favList = fav[0].like_prd.split(',')
+    }
     try {
         const result = await homeService.getProductList(categoryKo, itemsPerPage, page);
         res.json({result: result, favList: favList});

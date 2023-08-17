@@ -45,8 +45,8 @@ function loadItems(page) {
                     if (result.favList != undefined) {
                         favList = result.favList;
                     }
-                    allItems = [...result.result]
-                    viewAllItems = [...result.result]
+                    allItems = result.result;
+                    viewAllItems = [...result.result];
                     bestItems = [...allItems.filter((value) => value.best_sell == "Y")]
                     viewBestItems = [...allItems.filter((value) => value.best_sell == "Y")]
                     console.log('done')
@@ -128,14 +128,12 @@ function sortItems(items, direction, sortBy) {
     if (sortBy === "rating") {
         return items.sort((a, b) => b.rat_value - a.rat_value);
     } else {
-        let priceSort = items.sort((a, b) => direction === "asc" ? a.p_price - b.p_price : b.p_price - a.p_price)
-        return priceSort;
+        return items.sort((a, b) => direction === "asc" ? a.p_price - b.p_price : b.p_price - a.p_price);
     }
 }
 
 function filterItems(items, colors) {
-    const filteredItems = items.filter((value) => colors.includes(value.colors));
-    return filteredItems;
+    return items.filter((value) => colors.includes(value.colors))
 }
 
 function loadFilteredBestItems() {
@@ -149,8 +147,7 @@ function loadFilteredBestItems() {
             currentPage++;
         })
     } else {
-        bestItems = [...viewBestItems]
-        bestItems = filterItems(bestItems, selectedColors);
+        bestItems = filterItems(viewBestItems, selectedColors);
         const start = currentPage * itemsPerPage;
         const slicedItems = bestItems.slice(start, start + itemsPerPage);
         renderItems(slicedItems);
@@ -186,9 +183,7 @@ function renderBestAll() {
 }
 
 function renderAllItems() {
-    if (currentPage === 0) {
-        $(".list article").remove();
-    }
+    $(".list article").remove();
     const start = currentPage * itemsPerPage;
     const slicedItems = viewAllItems.slice(start, start + itemsPerPage);
     renderItems(slicedItems);
@@ -196,26 +191,16 @@ function renderAllItems() {
 }
 
 function loadSortedItems() {
-    if (currentPage === 0) {
-        $(".list article").remove();
-    }
     if (allItems.length === 0) {
         loadItems().then(items => {
-            allItems = items;
-            const sortedItems = sortItems(items, sortDirection);
-            renderItems(sortedItems.slice(0, itemsPerPage));
+            allItems = sortItems(items, sortDirection);
+            renderItems(allItems.slice(0, itemsPerPage));
             currentPage++;
         });
     } else {
-        allItems = [...viewAllItems]
-        let sortedItems
-        if (sortDirection === 'rating'){
-            sortedItems = sortItems(allItems, 'desc', 'rating');
-        } else {
-            sortedItems = sortItems(allItems, sortDirection)
-        }
+        allItems = sortItems(viewAllItems, sortDirection);
         const start = currentPage * itemsPerPage;
-        const slicedItems = sortedItems.slice(start, start + itemsPerPage);
+        const slicedItems = allItems.slice(start, start + itemsPerPage);
         renderItems(slicedItems);
         currentPage++;
     }
@@ -231,18 +216,12 @@ function loadSortedFilterdItems() {
             allItems = sortItems(allItems, sortDirection);
             renderItems(allItems.slice(0, itemsPerPage));
             currentPage++;
-        });
+        })
     } else {
-        allItems = [...viewAllItems]
-        const filteredItems = filterItems(allItems, selectedColors);
-        let sortedItems
-        if (sortDirection === 'rating'){
-            sortedItems = sortItems(filteredItems, 'desc', 'rating');
-        } else {
-            sortedItems = sortItems(filteredItems, sortDirection)
-        }
-        const start = currentPage * itemsPerPage;
-        const slicedItems = sortedItems.slice(start, start + itemsPerPage);
+        allItems = filterItems(viewAllItems)
+        allItems = sortItems(allItems, sortDirection);
+        const start = currentPage + itemsPerPage;
+        const slicedItems = allItems.slice(start, start + itemsPerPage);
         renderItems(slicedItems);
         currentPage++;
     }
@@ -251,12 +230,17 @@ function loadSortedFilterdItems() {
 // 더 보기 버튼 클릭 이벤트
 $("#loadMore").on("click", function () {
     bs = 0;
-    if (sortDirection == null && selectedColors < 2) {
-        renderAllItems()
+    if (sortDirection == null && selectedColors == null) {
+        loadItems(currentPage).then(items => {
+            const start = currentPage * itemsPerPage;
+            const slicedItems = items.slice(start, start + itemsPerPage);
+            renderItems(slicedItems, favList);
+            currentPage++;
+        })
     } else if (sortDirection == null) {
         console.log('filtered')
         loadFilteredItems();
-    } else if (selectedColors.length < 2) {
+    } else if (selectedColors == null) {
         console.log('sorted')
         loadSortedItems();
     } else {
@@ -268,8 +252,8 @@ $("#loadMore").on("click", function () {
 // 정렬 버튼 클릭 이벤트
 $("#sortHighPrice, #sortLowPrice").on("click", function () {
     bs = 0;
-    $("#loadMore").show()
     sortDirection = $(this).data("sort");
+    $(".list article").not(".sort").remove();
     currentPage = 0;
     if (selectedColors.length > 1) {
         loadSortedFilterdItems();
@@ -281,15 +265,13 @@ $("#sortHighPrice, #sortLowPrice").on("click", function () {
 // 별점 정렬 버튼
 $("#sortHighRating").on("click", function () {
     bs = 0;
-    console.log('rating')
     $("#loadMore").show()
     sortDirection = "rating";
+    sortItems(allItems, "desc", "rating")
+    $(".list article").not(".sort").remove();
+    renderItems(allItems.slice(0, itemsPerPage));
     currentPage = 0;
-    if (selectedColors.length > 1) {
-        loadSortedFilterdItems();
-    } else {
-        loadSortedItems();
-    }
+    currentPage++;
     if (allItems.length - (12 * currentPage) < 12) {
         $("#loadMore").hide()
     }
@@ -301,12 +283,10 @@ $("#showAll").on("click", function () {
     bs = 0;
     $("#loadMore").show()
     sortDirection = null;
+    $(".list article").not(".sort").remove();
+    renderItems(viewAllItems.slice(0, itemsPerPage));
     currentPage = 0;
-    if (selectedColors.length > 1) {
-        loadFilteredItems()
-    } else {
-        renderAllItems()
-    }
+    currentPage++;
     if (viewAllItems.length - (12 * currentPage) < 12) {
         $("#loadMore").hide()
     }
@@ -318,10 +298,9 @@ $("#bestSell").on("click", function () {
     $("#loadMore").show()
     $(".list article").not(".sort").remove();
     if (selectedColors.length > 1) {
-        bestItems = [...viewBestItems]
-        bestItems = filterItems(bestItems, selectedColors)
+        bestItems = filterItems(viewBestItems, selectedColors)
     } else {
-        bestItems = [...viewBestItems]
+        bestItems = viewBestItems
     }
     renderItems(bestItems.slice(0, itemsPerPage));
     currentPage = 0;

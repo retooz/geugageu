@@ -19,6 +19,9 @@
 {% elif category == 'bathroom' %}
 {% include 'bathroom.html'%}
 {% endif %}
+{% if favList == undefined %}
+{% set favList = [''] %}
+{% endif %}
 <div class="wrap">
     <main>
         <section>
@@ -90,20 +93,20 @@
                     </a>
                     <button class="wishlist-button" id="{{bs[0].p_id}}">
                         {% if i.p_id in favList %}
-                            <div style="display: none;">
-                                <i class="far fa-heart"></i> <!-- 빈 하트 아이콘 -->
-                            </div>
-                            <div class="filled">
-                                <i class="fas fa-heart filled"></i> <!-- 꽉 찬 하트 아이콘 -->
-                            </div>
-                            {% else %}
-                            <div>
-                                <i class="far fa-heart"></i> <!-- 빈 하트 아이콘 -->
-                            </div>
-                            <div class="filled" style="display: none;">
-                                <i class="fas fa-heart filled"></i> <!-- 꽉 찬 하트 아이콘 -->
-                            </div>
-                            {%endif%}
+                        <div style="display: none;">
+                            <i class="far fa-heart"></i> <!-- 빈 하트 아이콘 -->
+                        </div>
+                        <div class="filled">
+                            <i class="fas fa-heart filled"></i> <!-- 꽉 찬 하트 아이콘 -->
+                        </div>
+                        {% else %}
+                        <div>
+                            <i class="far fa-heart"></i> <!-- 빈 하트 아이콘 -->
+                        </div>
+                        <div class="filled" style="display: none;">
+                            <i class="fas fa-heart filled"></i> <!-- 꽉 찬 하트 아이콘 -->
+                        </div>
+                        {%endif%}
                     </button>
                 </article>
 
@@ -122,20 +125,20 @@
                     </a>
                     <button class="wishlist-button" id="{{bs[1].p_id}}">
                         {% if i.p_id in favList %}
-                            <div style="display: none;">
-                                <i class="far fa-heart"></i> <!-- 빈 하트 아이콘 -->
-                            </div>
-                            <div class="filled">
-                                <i class="fas fa-heart filled"></i> <!-- 꽉 찬 하트 아이콘 -->
-                            </div>
-                            {% else %}
-                            <div>
-                                <i class="far fa-heart"></i> <!-- 빈 하트 아이콘 -->
-                            </div>
-                            <div class="filled" style="display: none;">
-                                <i class="fas fa-heart filled"></i> <!-- 꽉 찬 하트 아이콘 -->
-                            </div>
-                            {%endif%}
+                        <div style="display: none;">
+                            <i class="far fa-heart"></i> <!-- 빈 하트 아이콘 -->
+                        </div>
+                        <div class="filled">
+                            <i class="fas fa-heart filled"></i> <!-- 꽉 찬 하트 아이콘 -->
+                        </div>
+                        {% else %}
+                        <div>
+                            <i class="far fa-heart"></i> <!-- 빈 하트 아이콘 -->
+                        </div>
+                        <div class="filled" style="display: none;">
+                            <i class="fas fa-heart filled"></i> <!-- 꽉 찬 하트 아이콘 -->
+                        </div>
+                        {%endif%}
                     </button>
                 </article>
                 <article>
@@ -153,20 +156,20 @@
                     </a>
                     <button class="wishlist-button" id="{{bs[2].p_id}}">
                         {% if i.p_id in favList %}
-                            <div style="display: none;">
-                                <i class="far fa-heart"></i> <!-- 빈 하트 아이콘 -->
-                            </div>
-                            <div class="filled">
-                                <i class="fas fa-heart filled"></i> <!-- 꽉 찬 하트 아이콘 -->
-                            </div>
-                            {% else %}
-                            <div>
-                                <i class="far fa-heart"></i> <!-- 빈 하트 아이콘 -->
-                            </div>
-                            <div class="filled" style="display: none;">
-                                <i class="fas fa-heart filled"></i> <!-- 꽉 찬 하트 아이콘 -->
-                            </div>
-                            {%endif%}
+                        <div style="display: none;">
+                            <i class="far fa-heart"></i> <!-- 빈 하트 아이콘 -->
+                        </div>
+                        <div class="filled">
+                            <i class="fas fa-heart filled"></i> <!-- 꽉 찬 하트 아이콘 -->
+                        </div>
+                        {% else %}
+                        <div>
+                            <i class="far fa-heart"></i> <!-- 빈 하트 아이콘 -->
+                        </div>
+                        <div class="filled" style="display: none;">
+                            <i class="fas fa-heart filled"></i> <!-- 꽉 찬 하트 아이콘 -->
+                        </div>
+                        {%endif%}
                     </button>
                 </article>
                 <article>
@@ -184,20 +187,20 @@
                     </a>
                     <button class="wishlist-button" id="{{bs[3].p_id}}">
                         {% if i.p_id in favList %}
-                            <div style="display: none;">
-                                <i class="far fa-heart"></i> <!-- 빈 하트 아이콘 -->
-                            </div>
-                            <div class="filled">
-                                <i class="fas fa-heart filled"></i> <!-- 꽉 찬 하트 아이콘 -->
-                            </div>
-                            {% else %}
-                            <div>
-                                <i class="far fa-heart"></i> <!-- 빈 하트 아이콘 -->
-                            </div>
-                            <div class="filled" style="display: none;">
-                                <i class="fas fa-heart filled"></i> <!-- 꽉 찬 하트 아이콘 -->
-                            </div>
-                            {%endif%}
+                        <div style="display: none;">
+                            <i class="far fa-heart"></i> <!-- 빈 하트 아이콘 -->
+                        </div>
+                        <div class="filled">
+                            <i class="fas fa-heart filled"></i> <!-- 꽉 찬 하트 아이콘 -->
+                        </div>
+                        {% else %}
+                        <div>
+                            <i class="far fa-heart"></i> <!-- 빈 하트 아이콘 -->
+                        </div>
+                        <div class="filled" style="display: none;">
+                            <i class="fas fa-heart filled"></i> <!-- 꽉 찬 하트 아이콘 -->
+                        </div>
+                        {%endif%}
                     </button>
                 </article>
 
@@ -211,33 +214,23 @@
                 <section class="list">
                     <ul class="sort">
                         <li>
-                            <a href="#">
-                                <button id="sortHighRating" data-sort="desc">
-                                    별점높은순
-                                </button>
-                            </a>
+                            <button id="sortHighRating" data-sort="desc">
+                                별점높은순
+                            </button>
                         </li>
                         <li>
-                            <a href="#">
-                                <button id="sortHighPrice" data-sort="desc">높은가격순</button>
-                            </a>
+                            <button id="sortHighPrice" data-sort="desc">높은가격순</button>
                         </li>
                         <li>
-                            <a href="#" class="on">
-                                <button id="sortLowPrice" data-sort="asc">낮은가격순</button>
-                            </a>
+                            <button id="sortLowPrice" data-sort="asc">낮은가격순</button>
                         </li>
                         <li>
-                            <a href="#">
-                                <button id="showBestSeller">
-                                    베스트셀러
-                                </button>
-                            </a>
+                            <button id="bestSell">
+                                베스트셀러
+                            </button>
                         </li>
                         <li>
-                            <a href="#" class="on">
-                                <button id="all">전체보기</button>
-                            </a>
+                            <button id="showAll">전체보기</button>
                         </li>
                     </ul>
                     {% for i in list.slice(0,12)%}
@@ -252,6 +245,7 @@
                                 <h2>{{i.p_name}}</h2>
                                 <p>{{i.p_type}}</p>
                                 <div class="price">{{i.p_price}}</div>
+                                <div>* ({{i.rat_value}})</div>
                             </div>
                         </a>
                         <button class="wishlist-button" id="{{i.p_id}}">
@@ -280,7 +274,7 @@
     </main>
 </div>
 
-
+<script src="/assets/js/filter.js"></script>
 <script src="/assets/js/shop.js"></script>
 <script src="/assets/js/layout.js"></script>
 {% include 'footer.html' %}

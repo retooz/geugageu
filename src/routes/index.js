@@ -11,6 +11,10 @@ router.get('/join', (req, res) => {
 })
 
 router.get('/upload', (req,res) => {
+    const session = req.session.passport;
+    if(session == undefined) {
+        return res.redirect('/')
+    }
     res.render('extract')
 })
 

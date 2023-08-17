@@ -3,6 +3,10 @@ const router = express.Router()
 const homeService = require('../services/homeService');
 
 router.get('/:query', async (req,res) => {
+    const session = req.session.passport;
+    if(session == undefined) {
+        return res.redirect('/')
+    }
     const query = "%"+decodeURIComponent(req.params.query)+"%"
     try {
         const result = await homeService.searchByKeyword(query)

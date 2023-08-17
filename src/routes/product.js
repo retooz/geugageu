@@ -4,6 +4,10 @@ const homeService = require('../services/homeService')
 
 
 router.get('/:p_id', async (req,res) => {
+    const session = req.session.passport;
+    if(session == undefined) {
+        return res.redirect('/')
+    }
     const {p_id} = req.params
     try {
         const result = await homeService.productDetail(p_id)
@@ -30,9 +34,4 @@ router.post('/update', async (req,res)=>{
     } 
 })
 
-
-
-router.post('/update', async(req,res) => {
-    console.log('as')
-})
 module.exports = router

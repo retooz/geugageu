@@ -142,7 +142,7 @@ const homeService = {
             console.log(err)
             throw err
         }
-    }
+    },
 }
 
 module.exports = homeService;
