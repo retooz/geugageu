@@ -8,5 +8,7 @@ module.exports = {
 
     getProductBS : `SELECT * FROM tb_product WHERE p_category1 = ? AND best_sell = 'Y'`,
 
-    searchByKeyword : `SELECT * FROM tb_product WHERE p_type like ?`
+    searchByKeyword : `SELECT * FROM tb_product WHERE p_type like ?`,
+    
+    searchByKeywordBS : `SELECT * FROM tb_product WHERE p_type like ? AND best_sell = 'Y'`
 }
