@@ -105,6 +105,7 @@ router.get('/like', async (req, res) => {
         const userData = await homeService.getUserData(user_id)
         const fav = userData.like_prd.split(',')
         const favList = await homeService.getUserFav(fav)
+        console.log(favList)
         res.render('like', {favList: favList})
     } catch (err) {
         res.status(500).json({ message: "error" })

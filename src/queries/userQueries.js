@@ -14,5 +14,5 @@ module.exports = {
 
     modFav : `UPDATE tb_user SET like_prd = ? WHERE user_id = ?`,
 
-    getFavList : `SELECT p_name, p_type, img_url FROM tb_product WHERE p_id in (?)`,
+    getFavList : `SELECT p_id, p_name, p_type, img_url FROM tb_product WHERE p_id in (?)`,
 }
