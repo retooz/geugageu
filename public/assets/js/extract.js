@@ -1,6 +1,6 @@
 const colorNames = {
     beige: chroma('rgb(244, 243, 215)').lab(),
-    brown: chroma('rgb(129, 72, 32)').lab(),
+    brown: chroma('rb(129, 72, 32)').lab(),
     blue: chroma('rgb(0, 88, 163)').lab(),
     grey: chroma('rgb(148, 148, 148)').lab(),
     pink: chroma('rgb(255, 184, 195)').lab(),
